@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import fire from './fire';
 import Login from './Login';
+import Hero from './Hero';
 import './App.css';
 
 function App() {
   const [user, setUser] = useState('');
-  const [mail, setMail] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -13,7 +14,7 @@ function App() {
 
   //Clears the input
 const clearInput = () => {
-  setEMail('');
+  setEmail('');
   setPassword('');
 }
 
@@ -82,7 +83,22 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} />       
+      {user ? (
+        <Hero handleLogout={handleLogout}/>  
+      ) : (
+        <Login 
+      email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            handleLogin={handleLogin}
+            handleSignup={handleSignup}
+            hasAccount={hasAccount}
+            setHasAccount={setHasAccount}
+            emailError={emailError}
+            passwordError={passwordError} 
+            />  
+      )}
     </div>
   );
 }
