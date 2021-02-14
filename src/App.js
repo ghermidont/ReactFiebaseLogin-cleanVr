@@ -1,105 +1,26 @@
-import React, {useState, useEffect} from 'react';
-import fire from './fire';
-import Login from './Login';
-import Hero from './Hero';
+import React from 'react';
+//import {storage} from "./fire";
+import LoginPage from './components/LoginPage';
+import {BrowserRouter as Router} from 'react-router-dom';
 import './App.css';
+import NavBar from './components/NavBar';
+import HomePage from './components/HomePage';
+import {Route, Switch} from 'react-router';
 
 function App() {
-  const [user, setUser] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  const [hasAccount, setHasAccount] = useState(false);
-
-  //Clears the input
-const clearInput = () => {
-  setEmail('');
-  setPassword('');
-}
-
-//Clears the errors
-const clearErrors = () => {
-  setEmailError('');
-  setPasswordError('');
-}
-  const handleLogin = () => {
-    clearErrors();
-    fire
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .catch((err) => {
-      switch(err.code){
-        case "auth/invalid-email":
-        case "auth/user-disabled":
-        case "auth/user-not-found":
-        setEmailError(err.message);
-        break;
-        case "auth/wrong-password":
-          setPasswordError(err.message);
-          break;
-      }
-    });
-  }
-
-  const handleSignup = () => {
-    clearErrors();
-    fire
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .catch((err) => {
-      switch(err.code){
-        case "auth/email-already-in-use":
-        case "auth/invalid-email":
-          setEmailError(err.message);
-        break;
-        case "auth/weak-password":
-          setPasswordError(err.message);
-          break;
-      }
-    });
-  }
-    
-const handleLogout = () => {
-  fire.auth().signOut();
-};
-
-//Function that checks if user exists when user signup and login. 
-const authListener = ()=> {
-  fire.auth().onAuthStateChanged((user) => {
-  if(user) {
-    //every time we have a user we clear the inputs
-    clearInput();
-    setUser(user);
-  }else{
-    setUser("");
-  }
-});
-};
-
-useEffect(() => {
-  authListener();
-},[]);
-
+  
   return (
-    <div className="App">
-      {user ? (
-        <Hero handleLogout={handleLogout}/>  
-      ) : (
-        <Login 
-      email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            handleLogin={handleLogin}
-            handleSignup={handleSignup}
-            hasAccount={hasAccount}
-            setHasAccount={setHasAccount}
-            emailError={emailError}
-            passwordError={passwordError} 
-            />  
-      )}
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        
+          <Switch>
+              <Route path="/" exact component={HomePage} />
+              <Route path="/LoginPage" component={LoginPage} />
+          </Switch>
+       
+      </div>
+      </Router>
   );
 }
 

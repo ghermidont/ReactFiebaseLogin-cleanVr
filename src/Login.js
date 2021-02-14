@@ -44,8 +44,6 @@ return <section className="login">
             </div>
     </div>
 </section>
-        //17:27
-    
 }
 
 export default Login;
