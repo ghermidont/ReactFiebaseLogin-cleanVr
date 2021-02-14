@@ -6,7 +6,7 @@ export default function NavBar() {
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="/">AkiDragon</a>
             <Link to="/LoginPage">
-                <button type="button" class="btn btn-primary">Login</button>
+                <button type="button" class="btn btn-primary">Login/Signup</button>
             </Link>
         </nav>
     );

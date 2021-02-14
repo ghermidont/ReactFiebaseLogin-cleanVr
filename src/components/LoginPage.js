@@ -5,7 +5,7 @@ import Hero from '../Hero';
 import fire from '../fire';
 
 export default function LoginPage() {
-    const [currentUser, setCurrentUser] = useState('');
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -71,6 +71,7 @@ const authListener = ()=> {
     //every time we have a user we clear the inputs
     clearInput();
     setCurrentUser(user);
+    setLoading(false);
   }else{
     setCurrentUser("");
   }

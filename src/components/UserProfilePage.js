@@ -1,6 +1,28 @@
-import React from 'react';
+//To be adapted
+import React, { useState } from "react";
+//to be integrated
+/*import { useAuth } from "../contexts/AuthContext";
+import { Link, useHistory } from "react-router-dom";*/
+//end of to be integrated
 
 const UserProfilePage = () =>{
+    //to be integrated
+  /*const [error, setError] = useState("")
+  const {currentUser, logout } = useAuth()
+  const history = useHistory()
+
+  async function handleLogout() {
+    setError("")
+
+    try {
+      await logout()
+      history.push("/login")
+    } catch {
+      setError("Failed to log out")
+    }
+  }*/
+  //end of to be integrated
+
     return(
         <div className="row py-5 px-4">
             <div className="col-md-5 mx-auto">

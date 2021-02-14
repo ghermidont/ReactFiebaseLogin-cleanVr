@@ -11,6 +11,7 @@ function App() {
   
   return (
     <Router>
+      <AuthProvider>
       <div className="App">
         <NavBar />
         
@@ -20,6 +21,7 @@ function App() {
           </Switch>
        
       </div>
+      <AuthProvider />
       </Router>
   );
 }
