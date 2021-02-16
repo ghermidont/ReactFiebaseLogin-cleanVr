@@ -1,7 +1,7 @@
 import React from 'react';
 //import UserProfilePage from './components/UserProfilePage';
 
-const Hero = ({handleLogout}) =>{
+const UserProfilePage = ({handleLogout}) =>{
     return(
     <section className="hero">
         <nav>
@@ -13,4 +13,4 @@ const Hero = ({handleLogout}) =>{
     );
 };
 
-export default Hero;
+export default UserProfilePage;

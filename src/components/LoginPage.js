@@ -1,7 +1,7 @@
 
-import React, {useState, useEffect} from 'react';
+/*import React, {useState, useEffect} from 'react';
 import Login from '../Login';
-import Hero from '../Hero';
+import Hero from '../UserProfilePage';
 import fire from '../fire';
 
 export default function LoginPage() {
@@ -100,4 +100,4 @@ useEffect(() => {
             )}
         </div>
     );
-}
+}*/

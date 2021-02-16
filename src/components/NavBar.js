@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar() {
     return(
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="/">AkiDragon</a>
-            <Link to="/LoginPage">
-                <button type="button" class="btn btn-primary">Login/Signup</button>
+        <nav className="navbar navbar-light bg-light">
+            <a className="navbar-brand" href="/">AkiDragon</a>
+            <Link to="/Login">
+                <button type="button" className="btn btn-primary">Login/Signup</button>
             </Link>
         </nav>
     );
