@@ -1,5 +1,7 @@
  import firebase from 'firebase';
- 
+ import 'firebase/storage';
+ import 'firebase/firestore';
+
  //Firebase configuration
  var firebaseConfig = {
     apiKey: "AIzaSyBC-2iuFdcWQME2_0P5c35MiJa9aXi2pVU",
@@ -11,8 +13,10 @@
   };
   // Initialize Firebase
   const fire = firebase.initializeApp(firebaseConfig);
-  const storage = firebase.storage();
+  
+  const projectStorage = firebase.storage();
+  const projectFirestore = firebase.firestore();
   
   export  {
-    storage, fire as default
-  }
+    projectStorage, projectFirestore, fire as default
+  };
