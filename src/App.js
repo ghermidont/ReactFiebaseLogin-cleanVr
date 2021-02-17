@@ -1,8 +1,8 @@
 import React from 'react';
 //import {storage} from "./fire";
-import Login from './Login';
+import LoginPage from './components/LoginPage';
 import {BrowserRouter as Router} from 'react-router-dom';
-import './App.css';
+import './styles/App.css';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import {Route, Switch} from 'react-router';
@@ -16,7 +16,7 @@ function App() {
           <NavBar />
             <Switch>
               <Route path="/" exact component={HomePage} />
-              <Route path="/Login" component={Login} />
+              <Route path="/Login" component={LoginPage} />
             </Switch>
         </div>
       {/*</AuthProvider>*/}

@@ -1,11 +1,11 @@
-
-/*import React, {useState, useEffect} from 'react';
-import Login from '../Login';
-import Hero from '../UserProfilePage';
-import fire from '../fire';
+import React, {useState, useEffect} from 'react';
+import LoginSignUpForm from './LoginSignUpForm';
+import UserProfilePage from './UserProfilePage';
+import fireBase from '../fireBase';
 
 export default function LoginPage() {
-  
+  const [currentUser, setCurrentUser] = useState('');
+  //const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -25,7 +25,7 @@ const clearErrors = () => {
 }
   const handleLogin = () => {
     clearErrors();
-    fire.auth().signInWithEmailAndPassword(email, password)
+    fireBase.auth().signInWithEmailAndPassword(email, password)
     .catch((err) => {
       switch(err.code){
         case "auth/invalid-email":
@@ -42,7 +42,7 @@ const clearErrors = () => {
 
   const handleSignup = () => {
     clearErrors();
-    fire
+    fireBase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .catch((err) => {
@@ -59,17 +59,17 @@ const clearErrors = () => {
   }
     
 const handleLogout = () => {
-  fire.auth().signOut();
+  fireBase.auth().signOut();
 };
 
 //Function that checks if user exists when user signup and login. 
 const authListener = ()=> {
-  fire.auth().onAuthStateChanged((user) => {
+  fireBase.auth().onAuthStateChanged((user) => {
   if(user) {
     //every time we have a user we clear the inputs
     clearInput();
     setCurrentUser(user);
-    setLoading(false);
+    //setLoading(false);
   }else{
     setCurrentUser("");
   }
@@ -81,11 +81,11 @@ useEffect(() => {
 },[]);
 
     return(
-        <div>
+          <div>
             {currentUser ? (
-                <Hero handleLogout={handleLogout}/>  
+                <UserProfilePage handleLogout={handleLogout} />  
             ) : (
-                <Login 
+                <LoginSignUpForm 
                     email={email}
                     setEmail={setEmail}
                     password={password}
@@ -98,6 +98,7 @@ useEffect(() => {
                     passwordError={passwordError} 
                 />  
             )}
+            
         </div>
     );
-}*/
+}

@@ -1,7 +1,7 @@
 import React from 'react';
-//import PictureUploadForm from './components/PictureUploadForm';
+import PictureUploadForm from './PictureUploadForm';
 
-const Login = (props)=>{
+const LoginSignUpForm = (props)=>{
 
     const {email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError} = props;
     
@@ -29,7 +29,7 @@ const Login = (props)=>{
                                 Have an account? 
                                 <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span>
                             </p>
-                            {/*<PictureUploadForm />*/}
+                            <PictureUploadForm />
                         </>
                     )}
                 </div>
@@ -37,4 +37,4 @@ const Login = (props)=>{
     </section>
 }
 
-export default Login;
+export default LoginSignUpForm;
