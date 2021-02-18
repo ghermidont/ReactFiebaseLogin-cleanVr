@@ -1,18 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import LoginSignUpForm from './LoginSignUpForm';
 import UserProfilePage from './UserProfilePage';
-import fireBase from '../fireBase';
+import fireBase from "../fireBase";
 
-export default function LoginPage() {
+export default function LoginPage({ file, setFile }) {
   const [currentUser, setCurrentUser] = useState('');
-  //const [loading, setLoading] = useState(true);
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
-
-  //Clears the input
+  
+    //Clears the input
 const clearInput = () => {
   setEmail('');
   setPassword('');

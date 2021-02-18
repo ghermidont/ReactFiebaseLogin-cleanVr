@@ -20,9 +20,8 @@
   
   const projectStorage = firebase.storage();
   const projectFirestore = firebase.firestore();
-  //Is special type of data tha firebase uses in firestore we will use it for 
-  const timestamp = firebase.firestore.FieldValue.serverTimestamp;
-
-  export {projectStorage, projectFirestore, timestamp,  fireBase as default};
+  
+  export {projectStorage, projectFirestore, fireBase as default};
+  
 
  

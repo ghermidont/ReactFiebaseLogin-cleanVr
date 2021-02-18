@@ -2,6 +2,7 @@ import React from 'react';
 import UserProfilePageContent from './UserProfilePageContent';
 
 const UserProfilePage = ({handleLogout}, {currentUser}) =>{
+    
     return(
     <section className="hero">
         <nav>

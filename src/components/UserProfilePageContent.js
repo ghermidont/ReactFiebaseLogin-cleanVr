@@ -1,14 +1,14 @@
 //To be adapted
-import React, { useState } from "react";
+import React from "react";
 import useFirestore from '../hooks/useFirestore';
 //to be integrated
 /*import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";*/
 //end of to be integrated
 
-const UserProfilePageContent = () =>{
+const UserProfilePageContent = ({ setSelectedImg }) =>{
     const { docs } = useFirestore('images');
-    //to be integrated
+  //to be integrated
   /*const [error, setError] = useState("")
   const {currentUser, logout } = useAuth()
   const history = useHistory()
