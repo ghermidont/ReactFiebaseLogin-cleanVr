@@ -5,6 +5,7 @@
  import firebase from 'firebase';
  import 'firebase/storage';
  import 'firebase/firestore';
+ import 'firebase/auth';
 
  //Firebase configuration
  var firebaseConfig = {
@@ -22,6 +23,6 @@
   const projectFirestore = firebase.firestore();
   
   export {projectStorage, projectFirestore, fireBase as default};
-  
+  export const auth = fireBase.auth();
 
  

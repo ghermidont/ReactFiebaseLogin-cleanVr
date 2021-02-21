@@ -1,9 +1,10 @@
 import React from 'react';
 import PictureUploadForm from './PictureUploadForm';
+import {useAuthContext} from '../context/AuthProvider';
 
-const LoginSignUpForm = (props)=>{
+const LoginSignUpForm = ()=>{
 
-    const {email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError} = props;
+    const {email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError} = useAuthContext();
     
     return <section className="login">
         <div className="loginContainer">

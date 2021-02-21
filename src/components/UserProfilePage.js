@@ -7,8 +7,8 @@ const UserProfilePage = ({handleLogout}, {currentUser}) =>{
     <section className="hero">
         <nav>
             <h2>Welcome</h2>
-            <button onClick={handleLogout}>Logout</button>
-        </nav>
+           <button onClick={handleLogout}>Logout</button>
+        </nav> 
         <UserProfilePageContent />
     </section>
     );
