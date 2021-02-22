@@ -72,10 +72,10 @@ const UserProfilePageContent = ({ setSelectedImg }) =>{
                     {/* Image gallery title END*/}
                     {/* Image gallery */}
                     <div className="row">
-                        <div className="col-lg-6 mb-2 pr-lg-1"> Image 1</div>
-                        <div className="col-lg-6 mb-2 pl-lg-1">Image 2</div>
-                        <div className="col-lg-6 pr-lg-1 mb-2">Image 3</div>
-                        <div className="col-lg-6 pl-lg-1">Image 4</div>
+                        <div className="col-lg-6 mb-2 pr-lg-1 bg-success"> Image 1</div>
+                        <div className="col-lg-6 mb-2 pl-lg-1 bg-primary">Image 2</div>
+                        <div className="col-lg-6 pr-lg-1 mb-2 bg-danger">Image 3</div>
+                        <div className="col-lg-6 pl-lg-1 bg-warning">Image 4</div>
                     </div>
                     {/* Image gallery END*/}
                 </div>

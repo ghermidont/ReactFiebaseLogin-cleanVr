@@ -10,7 +10,7 @@ export default function NavBar() {
         <nav className="navbar navbar-light bg-light">
             <a className="navbar-brand" href="/">AkiDragon</a>
             <Link to="/Login">
-            <button type="button" className="btn btn-primary">Login/Signup</button>
+                {!currentUser && <button type="button" className="btn btn-primary">Login/Signup</button>}
             </Link>
         </nav>
     );
