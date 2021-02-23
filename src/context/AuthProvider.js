@@ -14,6 +14,7 @@ function AuthProvider({ children }) {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState('false');
+  const [userPoints, setUserPoints] = useState(0);
 
   const clearErrors = () => {
     setEmailError('');
@@ -91,6 +92,8 @@ function AuthProvider({ children }) {
   */
 
   const value = {
+    userPoints,
+    setUserPoints,
     auth,
     hasAccount,
     setHasAccount,
