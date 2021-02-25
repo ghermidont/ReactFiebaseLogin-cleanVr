@@ -1,3 +1,19 @@
+//https://firebase.google.com/docs/auth/web/manage-users
+//https://firebase.google.com/docs/auth/users
+//integrate this to get and display user info on profile page.
+/*var user = firebase.auth().currentUser;
+var name, email, photoUrl, uid, emailVerified;
+
+if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+    emailVerified = user.emailVerified;
+    uid = user.uid; */ // The user's ID, unique to the Firebase project. Do NOT use
+                     // this value to authenticate with your backend server, if
+                     // you have one. Use User.getToken() instead.
+//}
+
 //To be adapted
 import React from "react";
 import useFirestore from '../hooks/useFirestore';
@@ -6,9 +22,8 @@ import useFirestore from '../hooks/useFirestore';
 import { Link, useHistory } from "react-router-dom";*/
 //end of to be integrated
 
-const UserProfilePageContent = ({ setSelectedImg }) =>{
-    const { docs } = useFirestore('images');
-  //to be integrated
+const UserProfilePageContent = () =>{
+    const { docs } = useFirestore('images');  //to be integrated
   /*const [error, setError] = useState("")
   const {currentUser, logout } = useAuth()
   const history = useHistory()
@@ -38,7 +53,7 @@ const UserProfilePageContent = ({ setSelectedImg }) =>{
                                 <p className="small mb-4"> <i className="fas fa-map-marker-alt mr-2"></i>New York</p>
                             </div>
                         </div>
-                    </div>    
+                    </div>
                 </div>
 
                 <div className="bg-light p-4 d-flex justify-content-end text-center">
@@ -72,10 +87,10 @@ const UserProfilePageContent = ({ setSelectedImg }) =>{
                     {/* Image gallery title END*/}
                     {/* Image gallery */}
                     <div className="row">
-                        <div className="col-lg-6 mb-2 pr-lg-1 bg-success"> Image 1</div>
-                        <div className="col-lg-6 mb-2 pl-lg-1 bg-primary">Image 2</div>
-                        <div className="col-lg-6 pr-lg-1 mb-2 bg-danger">Image 3</div>
-                        <div className="col-lg-6 pl-lg-1 bg-warning">Image 4</div>
+                        <div className="col-lg-6 mb-2 pr-lg-1 bg-success"> Article 1</div>
+                        <div className="col-lg-6 mb-2 pl-lg-1 bg-primary">Article 2</div>
+                        <div className="col-lg-6 pr-lg-1 mb-2 bg-danger">Article 3</div>
+                        <div className="col-lg-6 pl-lg-1 bg-warning">article 4</div>
                     </div>
                     {/* Image gallery END*/}
                 </div>
