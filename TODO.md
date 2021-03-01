@@ -1,0 +1,1 @@
+1. Fix the file upload trigger issue in UserProfilePage.js
