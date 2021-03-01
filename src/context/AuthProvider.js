@@ -1,13 +1,15 @@
-import React, { useContext, useState} from "react"
+import React, { useContext, useState} from "react";
 //auth is the auth function we created in the firebase.js file. All functions called after auth. are firebase functions.
-import { auth } from "../fireBase";
+import {auth} from "../fireBase";
 
-const CreateContext = React.createContext()
+const CreateContext = React.createContext();
 
 export function useAuthContext() {
   return useContext(CreateContext);
 }
+
 function AuthProvider({ children }) {
+  const [uploadedFile, uploadedFileSetter] = useState(null);
   const [currentUser, setCurrentUser] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,11 +17,17 @@ function AuthProvider({ children }) {
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState('false');
   const [userPoints, setUserPoints] = useState(0);
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+
 
   const clearErrors = () => {
     setEmailError('');
     setPasswordError('');
   }
+
+  //const addExtraUserInfo = auth.functions().setUserData('addExtraUserInfo');
+  //addExtraUserInfo({"firstName": firstName, "lastName": lastName });
 
   const handleSignup = () => {
     clearErrors();
@@ -36,7 +44,7 @@ function AuthProvider({ children }) {
           break;
       }
     });
-  }
+ }
 
   const handleLogout = () => {
     auth.signOut();
@@ -77,6 +85,20 @@ function AuthProvider({ children }) {
     setPassword('');
   }
 
+  const setUserPictureUrl = (url) => {
+    const user = auth.currentUser;
+
+    user.updateProfile({
+      photoURL: "https://example.com/jane-q-user/profile.jpg"
+    }).then(function() {
+      console.log('update successful');
+    }).catch(function(error) {
+      console.log(error);
+    });
+
+    console.log(user.photoURL);
+  }
+
   /*   ###To implement###
   function resetPassword(email) {
     return auth.sendPasswordResetEmail(email)
@@ -112,9 +134,17 @@ function AuthProvider({ children }) {
     handleLogout,
     password, 
     setPassword,
-    passwordError, 
-    setPasswordError
-  }
+    passwordError,
+    //addExtraUserInfo,
+    setPasswordError,
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    setUserPictureUrl,
+    uploadedFile,
+    uploadedFileSetter
+}
 
   return (
     <CreateContext.Provider value={value}>

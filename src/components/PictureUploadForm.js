@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import FileLoadedMessage from "./FileLoadedMessage";
-//import useStorage from '../hooks/useStorage';
+
+//import useStorage from '../helperFunct/useStorage';
+import {useAuthContext} from '../context/AuthProvider';
 
 const PictureUploadForm = () => {
   //store file in a local state
-  const [uploadedFile, uploadedFileSetter] = useState(null);
+  const {uploadedFile, uploadedFileSetter} = useAuthContext();
   const [error, setError] = useState(null);
   const fileTypesArray = ['image/png', 'image/jpeg'];
   
@@ -16,7 +17,6 @@ const PictureUploadForm = () => {
     if (uploadedFilesArray && fileTypesArray.includes(uploadedFilesArray.type)) {
       uploadedFileSetter(uploadedFilesArray);
       setError('');
-     
     } else {
       //reset the value.
       uploadedFileSetter(null);
@@ -31,8 +31,6 @@ const PictureUploadForm = () => {
       </label>
       <div className="output">
         { error && <div className="error">{ error }</div>}
-        { uploadedFile && <div>{ uploadedFile.name}</div>}
-        { uploadedFile && <FileLoadedMessage file={uploadedFile} setFile={uploadedFileSetter} /> }
       </div>
     </form>
   );
