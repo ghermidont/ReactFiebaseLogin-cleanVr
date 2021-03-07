@@ -1,8 +1,8 @@
 import React from 'react';
-import {useAuthContext} from "../context/AuthProvider";
+import {useContextProvider} from "../../context/ContextProvider";
 
 export default function UserPointsField (){
-const{userPoints, setUserPoints} = useAuthContext();
+const{userPoints, setUserPoints} = useContextProvider();
 
     return(
         <div className="font-weight-bold mb-0">Points {userPoints}</div>

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { projectStorage, projectFirestore } from '../fireBase';
-import {useAuthContext} from '../context/AuthProvider';
+import {useContextProvider} from '../context/ContextProvider';
 
 const useStorage = (file) => {
     const [error, setError] = useState(null);
     //Here we will tore the url we get from the storage after the file has fully uploaded.
     const [url, setUrl] = useState(null);
-    const {auth, setUserPictureUrl} = useAuthContext();
+    const {auth, setUserPictureUrl} = useContextProvider();
 
     const storageRef = projectStorage.ref();//file.name
 

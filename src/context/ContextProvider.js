@@ -4,11 +4,11 @@ import {auth} from "../fireBase";
 
 const CreateContext = React.createContext();
 
-export function useAuthContext() {
+export function useContextProvider() {
   return useContext(CreateContext);
 }
 
-function AuthProvider({ children }) {
+function ContextProvider({ children }) {
   const [uploadedFile, uploadedFileSetter] = useState(null);
   const [currentUser, setCurrentUser] = useState('');
   const [email, setEmail] = useState('');
@@ -153,4 +153,4 @@ function AuthProvider({ children }) {
   )
 }
 
-export default AuthProvider;
+export default ContextProvider;

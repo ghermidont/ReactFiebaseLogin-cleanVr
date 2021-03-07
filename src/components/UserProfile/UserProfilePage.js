@@ -1,10 +1,10 @@
 import React from 'react';
 import UserProfilePageContent from './UserProfilePageContent';
-import FileLoadedMessage from "./FileLoadedMessage";
-import {useAuthContext} from '../context/AuthProvider';
+import FileLoadedMessage from "../FileLoadedMessage";
+import {useContextProvider} from '../../context/ContextProvider';
 
 const UserProfilePage = () =>{
-    const {uploadedFile, uploadedFileSetter, handleLogout} = useAuthContext();
+    const {uploadedFile, uploadedFileSetter, handleLogout} = useContextProvider();
     return(
     <section className="hero">
         <nav>

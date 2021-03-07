@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {useAuthContext} from "../../context/AuthProvider";
+import {useContextProvider} from "../../context/ContextProvider";
 
-export default function NameInput() {
-    const {currentUser, handleLogout} = useAuthContext();
+export default function Step2CompleteProfile() {
+    const {currentUser, handleLogout, auth} = useContextProvider();
     let currentUserFirstName = "";
     let currentUserLastName = "";
 
@@ -36,14 +36,17 @@ export default function NameInput() {
                         </div>
                     </div>
                 </div>
-                <Link to="/GameCategory">
+                <Link to="/Step3RadioGameQt">
                     <button
                         type="button"
                         className="btn btn-light"
                         onClick={
-                            ()=>currentUser.displayName = currentUserFirstName + currentUserLastName
+                            ()=>{
+                                let name = (currentUserFirstName + " " + currentUserLastName);
+                                currentUser.updateProfile({displayName: name});
+                                console.log(name);}
                         }
-                    >Save changes</button>
+                    >Next</button>
                 </Link>
             </div>
         </section>

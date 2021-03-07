@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 //import useStorage from '../helperFunct/useStorage';
-import {useAuthContext} from '../context/AuthProvider';
+import {useContextProvider} from '../context/ContextProvider';
 
 const PictureUploadForm = () => {
   //store file in a local state
-  const {uploadedFile, uploadedFileSetter} = useAuthContext();
+  const {uploadedFile, uploadedFileSetter} = useContextProvider();
   const [error, setError] = useState(null);
   const fileTypesArray = ['image/png', 'image/jpeg'];
   

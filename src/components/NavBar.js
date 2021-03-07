@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {useAuthContext} from '../context/AuthProvider';
+import {useContextProvider} from '../context/ContextProvider';
 
 export default function NavBar() {
-    const {currentUser} = useAuthContext();
+    const {currentUser} = useContextProvider();
     console.log(currentUser);
 
     return(

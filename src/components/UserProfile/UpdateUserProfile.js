@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {useAuthContext} from '../context/AuthProvider';
+import {useContextProvider} from '../../context/ContextProvider';
 
 const UserProfilePage = () =>{
-    const {currentUser, handleLogout, auth} = useAuthContext();
+    const {currentUser, handleLogout, auth} = useContextProvider();
     let currentUserFirstName = "";
     let currentUserLastName = "";
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import IndividualShopItem from 'IndividualShopItem';
-import {useAuthContext} from '../context/AuthProvider';
+import {useContextProvider} from '../../context/ContextProvider';
 
     export default function ShopItemsList() {
-        const {userPoints, setUserPoints} = useAuthContext();
+        const {userPoints, setUserPoints} = useContextProvider();
 
         return(
         <>

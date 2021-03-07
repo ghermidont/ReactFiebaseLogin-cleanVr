@@ -1,1 +1,1 @@
-1. Fix the file upload trigger issue in UserProfilePage.js
+1. implement the updateProfile method int Step2CompleteProfile.js.
