@@ -23,7 +23,7 @@ export default function Step2CompleteProfile() {
                                 autoFocus
                                 required
                                 onChange={
-                                    (e)=>currentUserFirstName=e.target.value}
+                                    (e) => currentUserFirstName = e.target.value}
                             />
 
                             <label>Last name</label>
@@ -31,7 +31,7 @@ export default function Step2CompleteProfile() {
                                 type="text"
                                 required
                                 onChange={
-                                    (e)=>currentUserLastName = e.target.value}
+                                    (e) => currentUserLastName = e.target.value}
                             />
                         </div>
                     </div>

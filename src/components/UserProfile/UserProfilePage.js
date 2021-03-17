@@ -5,6 +5,9 @@ import {useContextProvider} from '../../context/ContextProvider';
 
 const UserProfilePage = () =>{
     const {uploadedFile, uploadedFileSetter, handleLogout} = useContextProvider();
+
+    console.log("UserProfilePage worked.");
+
     return(
     <section className="hero">
         <nav>
@@ -13,6 +16,7 @@ const UserProfilePage = () =>{
         </nav>
         { uploadedFile && <FileLoadedMessage file={uploadedFile} setFile={uploadedFileSetter} /> }
         <UserProfilePageContent />
+        <div><a href={"/deleteProfile"}>Delete Profile</a></div>
     </section>
     );
 };

@@ -3,6 +3,7 @@ import { projectStorage, projectFirestore } from '../fireBase';
 import {useContextProvider} from '../context/ContextProvider';
 
 const useStorage = (file) => {
+    console.log("SearchResults() worked!");
     const [error, setError] = useState(null);
     //Here we will tore the url we get from the storage after the file has fully uploaded.
     const [url, setUrl] = useState(null);

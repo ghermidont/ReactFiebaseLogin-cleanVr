@@ -5,7 +5,7 @@
 //To be adapted
 import React from "react";
 import UserPointsField from "./UserPointsField";
-//import useFirestore from '../helperFunct/useFirestore';
+//import useFirestore from '../customHooks/useFirestore';
 //import {auth} from './firebase';
 
 //const user = auth.currentUser;
@@ -28,6 +28,8 @@ import { Link, useHistory } from "react-router-dom";*/
 //end of to be integrated
 
 const UserProfilePageContent = () =>{
+
+    console.log("UserProfilePageContent worked.");
     //const { docs } = useFirestore('images');  //to be integrated
   /*const [error, setError] = useState("")
   const {currentUser, logout } = useAuth()

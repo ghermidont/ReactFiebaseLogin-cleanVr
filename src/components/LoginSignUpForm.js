@@ -7,11 +7,14 @@ import UserProfilePage from "./UserProfile/UserProfilePage";
 const LoginSignUpForm = ()=>{
 
     useEffect(() => {
+        console.log("LoginSignUpForm useEffect worked.");
         authListener();
     });
 
     const {authListener, handleLogout, currentUser, email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError} = useContextProvider();
-    
+
+    console.log("LoginSignUpForm worked.");
+
     return(
         <div>
             {currentUser ? (
@@ -19,7 +22,7 @@ const LoginSignUpForm = ()=>{
             ) : (
                 <section className="login">
                     <div className="loginContainer">
-                        <label>Username</label>
+                        <label>Email Address</label>
                         <input type="text" autoFocus required value={email} onChange={(e)=>setEmail(e.target.value)}/>
                         <p className="errorMsg">{emailError}</p>
 
@@ -38,7 +41,7 @@ const LoginSignUpForm = ()=>{
                             ):(
                                 <>
                                     <PictureUploadForm />
-                                    <Link to="/Step2CompleteProfile">
+                                    <Link to="/Step1EmailVerification">
                                         <button onClick={handleSignup}>Sign up</button>
                                     </Link>
                                     <p>

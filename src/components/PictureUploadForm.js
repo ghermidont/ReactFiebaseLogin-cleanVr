@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-//import useStorage from '../helperFunct/useStorage';
+//import useStorage from '../customHooks/useStorage';
 import {useContextProvider} from '../context/ContextProvider';
 
 const PictureUploadForm = () => {
@@ -8,7 +8,9 @@ const PictureUploadForm = () => {
   const {uploadedFile, uploadedFileSetter} = useContextProvider();
   const [error, setError] = useState(null);
   const fileTypesArray = ['image/png', 'image/jpeg'];
-  
+
+  console.log("PictureUploadForm worked");
+
   //use the event object. 'target' is the imported object. [0] is because we want the first element of the array and the only one in our case.
   //'e' stands for the event Object that we get automatically.
   const fileUploadEventListener = (e) => {

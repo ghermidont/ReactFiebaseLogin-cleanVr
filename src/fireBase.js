@@ -1,6 +1,6 @@
  //In order to communicate with the Firebase we need to use the FireBase SDK.
 
-  //In order to keep the FireBase logic separate form the components we create a separate folder (helperFunct) that contains the logic for interaction with the database.
+  //In order to keep the FireBase logic separate form the components we create a separate folder (customHooks) that contains the logic for interaction with the database.
 
  import firebase from 'firebase';
  import 'firebase/storage';
@@ -16,11 +16,10 @@
     messagingSenderId: "1043614064825",
     appId: "1:1043614064825:web:dacd90cbd848872559bb68"
   };
+
   // Initialize Firebase
   const fireBase = firebase.initializeApp(firebaseConfig);
-
   const functions = firebase.functions();
-
   const projectStorage = firebase.storage();
   const projectFirestore = firebase.firestore();
   
