@@ -4,7 +4,11 @@
 
 //To be adapted
 import React from "react";
-import UserPointsField from "./UserPointsField";
+import UserPointsFieldPh2 from "./UserPointsField-Ph2";
+import {useContextProvider} from "../../context/ContextProvider";
+
+
+
 //import useFirestore from '../customHooks/useFirestore';
 //import {auth} from './firebase';
 
@@ -27,9 +31,12 @@ import UserPointsField from "./UserPointsField";
 import { Link, useHistory } from "react-router-dom";*/
 //end of to be integrated
 
-const UserProfilePageContent = () =>{
+const UserProfilePageContentPh2 = () =>{
 
-    console.log("UserProfilePageContent worked.");
+    const {currentUser} = useContextProvider();
+
+
+    console.log("UserProfilePageContentPh2 worked.");
     //const { docs } = useFirestore('images');  //to be integrated
   /*const [error, setError] = useState("")
   const {currentUser, logout } = useAuth()
@@ -57,6 +64,7 @@ const UserProfilePageContent = () =>{
                             <div className="media-body mb-5 text-white">
 
                                 <h4 className="mt-0 mb-0">Mark Williams</h4>
+                                <h4 className="mt-0 mb-0">Email {currentUser.email}</h4>
                                 <p className="small mb-4"> <i className="fas fa-map-marker-alt mr-2"></i>New York</p>
                             </div>
                         </div>
@@ -64,7 +72,7 @@ const UserProfilePageContent = () =>{
                 </div>
 
                 <div className="bg-light p-4 d-flex justify-content-end text-center">
-                   <UserPointsField />
+                   <UserPointsFieldPh2 />
                 </div>
 
                 <div className="px-4 py-3">
@@ -97,4 +105,4 @@ const UserProfilePageContent = () =>{
     );
 };
 
-export default UserProfilePageContent;
+export default UserProfilePageContentPh2;

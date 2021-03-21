@@ -1,7 +1,78 @@
 import { useState, useEffect } from 'react';
-import { projectStorage, projectFirestore } from '../fireBase';
-import {useContextProvider} from '../context/ContextProvider';
+import { projectFirestore } from '../fireBase';
 
+const useDataFromFirestore = (collection) => {
+    const [docs, setDocs] = useState([]);
+
+    //this useEffect interacts with the database every time the db changes (the collection).
+    useEffect(() => {
+        //this method unsubscribes from the collection every time we unmount an element.
+        // Like in case when we are not showing an element anymore, like an images grid.
+        const unsubFromCollection = projectFirestore.collection(collection)
+            .orderBy('createdAt')
+            //onSnapshot rune every time a change in the db occurs. A real time monitor.
+            .onSnapshot(snap => {
+                //the array where all the data from the db will be stored.
+                let documents = [];
+                //Now we circle through the documents of the database that are there at this specific moment.
+                snap.forEach(doc => {
+                    documents.push({...doc.data(), id: doc.id});
+                });
+                setDocs(documents);
+            });
+
+        return () => unsubFromCollection();
+        // this is a cleanup function that react will run when
+        // a component using the hook unmounts
+    }, [collection]);
+
+    return { docs };
+}
+
+const useOneArticleFirestore = (docId) => {
+    const [docs, setDocs] = useState([]);
+
+    //this useEffect interacts with the database every time the db changes (the collection).
+    useEffect(() => {
+        //this method unsubscribes from the collection every time we unmount an element.
+        // Like in case when we are not showing an element anymore, like an images grid.
+        const unsubFromCollection = projectFirestore.collection('articles').where("id", "==", docId)
+            //onSnapshot rune every time a change in the db occurs. A real time monitor.
+            .onSnapshot(snap => {
+                //the array where all the data from the db will be stored.
+                let documents = [];
+                //Now we circle through the documents of the database that are there at this specific moment.
+                snap.forEach(doc => {
+                    documents.push({...doc.data(), id: doc.id});
+                });
+                setDocs(documents);
+            });
+
+        return () => unsubFromCollection();
+        // this is a cleanup function that react will run when
+        // a component using the hook unmounts
+    }, [collection]);
+
+    return { docs };
+}
+ export {useDataFromFirestore, useOneArticleFirestore};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 const useStorage = (file) => {
     console.log("SearchResults() worked!");
     const [error, setError] = useState(null);
@@ -33,18 +104,18 @@ const useStorage = (file) => {
     return { url, error };
 }
 
-export default useStorage;
+export default useStorage;*/
 
 
 
 /*###FIRESTORE###*/
-import { useState, useEffect } from 'react';
-import { projectFirestore } from '../fireBase';
 
 
 
 
-async function addUserPoints (){
+
+
+/*async function addUserPoints (){
     const collectionRef = projectFirestore.collection(collection);
     await collectionRef.add({  first: "Alan",
         middle: "Mathison",
@@ -57,37 +128,9 @@ async function addUserPoints (){
         .catch((error) => {
             console.error("Error adding document: ", error);
         });
-}
+}*/
 
 
 
 
-//Use this with articles
-const getDataFromFirestore = (collection) => {
-    const [docs, setDocs] = useState([]);
 
-    //this useEffect interacts with the database every time the db changes (the collection).
-    useEffect(() => {
-        //this method unsubscribes from the collection every time we unmount an element. Like in case when we are not showing an element anymore, like an images grid.
-        const unsubFromCollection = projectFirestore.collection(collection)
-            .orderBy('createdAt')
-            //onSnapshot rune every time a change in the db occurs. A real time monitor.
-            .onSnapshot(snap => {
-                //the array where all the data from the db will be stored.
-                let documents = [];
-                //Now we circle through the documents of the database that are there at this specific moment.
-                snap.forEach(doc => {
-                    documents.push({...doc.data()});
-                });
-                setDocs(documents);
-            });
-
-        return () => unsubFromCollection();
-        // this is a cleanup function that react will run when
-        // a component using the hook unmounts
-    }, [collection]);
-
-    return { docs };
-}
-
-//export default useFirestore;

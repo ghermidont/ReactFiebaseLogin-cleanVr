@@ -1,4 +1,7 @@
 //https://www.freecodecamp.org/news/how-to-identify-and-resolve-wasted-renders-in-react-cc4b1e910d10/
+//https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/
+//https://javascript.plainenglish.io/react-context-why-am-i-getting-unnecessary-re-renders-b61836d224a7
+
 import React, { useContext, useState} from "react";
 //auth is the auth function we created in the firebase.js file. All functions called after auth. are firebase functions.
 import {auth, projectFirestore } from "../fireBase";
@@ -11,7 +14,7 @@ export function useContextProvider() {
 
 export function ContextProvider({ children }) {
   const [uploadedFile, uploadedFileSetter] = useState(null);
-  const [currentUser, setCurrentUser] = useState('');
+  const [currentUser, setCurrentUser] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -32,11 +35,13 @@ export function ContextProvider({ children }) {
   //const addExtraUserInfo = auth.functions().setUserData('addExtraUserInfo');
   //addExtraUserInfo({"firstName": firstName, "lastName": lastName });
 
-  const updateTotalUsers = () => {
+  const updateTotalUsersNumber = () => {
     //connect to database function here
+    //......
     setUserPoints(userPoints + 1);
     //query to update the db value.
-    console.log("updateTotalUsers() worked");
+    //.....
+    console.log("updateTotalUsersNumber() worked");
   };
 
   const handleSignup = () => {
@@ -55,13 +60,18 @@ export function ContextProvider({ children }) {
       }
     });
 
-    updateTotalUsers();
-    setEmail(email);
-    verifyEmail();
+    //updateTotalUsersNumber();
+    //setEmail(email);
+    //verifyEmail();
     console.log("handleSignup() worked!");
  };
 
- const verifyEmail = () => {
+  const handleLogout = () => {
+    auth.signOut();
+    console.log("handleLogout() worked!");
+  };
+
+  const verifyEmail = () => {
    currentUser.sendEmailVerification().then(function(){
      window.alert("Verification email sent!");
    }).catch(function(error){
@@ -70,14 +80,13 @@ export function ContextProvider({ children }) {
    console.log("VerifyEmail function worked!");
  };
 
-  const handleLogout = () => {
-    auth.signOut();
-    console.log("handleLogout() worked!");
-  };
-  
+
   const authListener = ()=> {
     console.log("authListener() worked!");
     auth.onAuthStateChanged((user) => {
+
+      console.log("this is the user object from the onAuthStateChanged()" + user);
+
       console.log("auth.onAuthStateChanged() listener from authListener() worked!");
     if(user) {
       //every time we have a user we clear the inputs
@@ -89,6 +98,7 @@ export function ContextProvider({ children }) {
       setCurrentUser("");
       console.log("else of if(user) condition from authListener()/auth.onAuthStateChanged() worked!");
     }
+      console.log("user value  authListener:" + currentUser);
   });
   };
 
@@ -153,9 +163,17 @@ export function ContextProvider({ children }) {
   };
 
   const getAllArticles = () => {
-    projectFirestore.collection('restaurants').orderBy('avgRating', 'desc').limit(50);
-    //The query will retrieve up to 10 articles from the articles collection. After we declared this query, we pass it to the getDocumentsInQuery() method which is responsible for loading and rendering the data.
+    //let articlesDB = projectFirestore.collection('articles')//.orderBy('createdAt', 'desc').limit(3);
     console.log("getAllArticles() worked!");
+    return projectFirestore.collection('articles').get().then((querySnapshot)=>
+    {
+      querySnapshot.forEach((doc)=>{
+        console.log(doc.data().category);
+      });
+    });
+    //The query will retrieve up to 10 articles from the articles collection. After we declared this query, we pass it
+    // to the getDocumentsInQuery() method which is responsible for loading and rendering the data.
+
   };
 
   const getAnArticle = (id, userId) => {

@@ -1,24 +1,27 @@
+//https://react.i18next.com/guides/quick-start
 import React, {useEffect} from 'react';
-import PictureUploadForm from './PictureUploadForm';
+import PictureUploadFormPh2 from './PictureUploadForm-Ph2';
 import {useContextProvider} from '../context/ContextProvider';
 import {Link} from "react-router-dom";
-import UserProfilePage from "./UserProfile/UserProfilePage";
+import UserProfilePagePh2 from "./UserProfile/UserProfilePage-Ph2";
+import { Trans } from 'react-i18next';
 
-const LoginSignUpForm = ()=>{
+const LoginSignUpFormPh2 = ()=>{
 
     useEffect(() => {
-        console.log("LoginSignUpForm useEffect worked.");
+        console.log("LoginSignUpFormPh2 useEffect worked.");
         authListener();
     });
 
     const {authListener, handleLogout, currentUser, email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError} = useContextProvider();
 
-    console.log("LoginSignUpForm worked.");
+    console.log("LoginSignUpFormPh2 worked.");
 
     return(
+        <Trans>
         <div>
             {currentUser ? (
-                <UserProfilePage handleLogout={handleLogout} />
+                <UserProfilePagePh2 handleLogout={handleLogout} />
             ) : (
                 <section className="login">
                     <div className="loginContainer">
@@ -40,8 +43,8 @@ const LoginSignUpForm = ()=>{
                                 </>
                             ):(
                                 <>
-                                    <PictureUploadForm />
-                                    <Link to="/Step1EmailVerification">
+                                    <PictureUploadFormPh2 />
+                                    <Link to="/UserProfilePage">
                                         <button onClick={handleSignup}>Sign up</button>
                                     </Link>
                                     <p>
@@ -55,7 +58,8 @@ const LoginSignUpForm = ()=>{
                 </section>
             )}
         </div>
+        </Trans>
     );
 };
 
-export default LoginSignUpForm;
+export default LoginSignUpFormPh2;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-export default function Step5CheckboxGameQt() {
+export default function Step5CheckboxGameQtPh2() {
     return(
         <>
             <div className="form-check">
@@ -28,12 +28,12 @@ export default function Step5CheckboxGameQt() {
                     Fourth checkbox
                 </label>
             </div>
-            <Link to="/UserProfilePage">
+            <Link to="/UserProfilePagePh2">
                 <button
                     type="button"
                     className="btn btn-light"
                     onClick={
-                        ()=>console.log("Hello from Step5CheckboxGameQt")
+                        ()=>console.log("Hello from Step5CheckboxGameQtPh2")
                     }
                 >Finish</button>
             </Link>

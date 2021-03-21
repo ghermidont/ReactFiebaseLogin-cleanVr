@@ -1,24 +1,27 @@
+//https://react.i18next.com/guides/quick-start
 import React from 'react';
-import UserProfilePageContent from './UserProfilePageContent';
+import UserProfilePageContentPh2 from './UserProfilePageContent-Ph2';
 import FileLoadedMessage from "../FileLoadedMessage";
 import {useContextProvider} from '../../context/ContextProvider';
+import { useTranslation } from 'react-i18next';
 
-const UserProfilePage = () =>{
+const UserProfilePagePh2 = () =>{
     const {uploadedFile, uploadedFileSetter, handleLogout} = useContextProvider();
+    const { t, i18n } = useTranslation();
 
-    console.log("UserProfilePage worked.");
+    console.log("UserProfilePagePh2 worked.");
 
     return(
     <section className="hero">
         <nav>
-            <h2>Welcome</h2>
+            <h2>{t('Welcome')}</h2>
            <button onClick={handleLogout}>Logout</button>
         </nav>
         { uploadedFile && <FileLoadedMessage file={uploadedFile} setFile={uploadedFileSetter} /> }
-        <UserProfilePageContent />
+        <UserProfilePageContentPh2 />
         <div><a href={"/deleteProfile"}>Delete Profile</a></div>
     </section>
     );
 };
 
-export default UserProfilePage;
+export default UserProfilePagePh2;

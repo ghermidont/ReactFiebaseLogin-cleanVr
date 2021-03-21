@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-export default function Step4InputGamesQt() {
+export default function Step4InputGamesQtPh2() {
     return(
         <div>
             <label>Some question about games:</label>
@@ -17,7 +17,7 @@ export default function Step4InputGamesQt() {
                     type="button"
                     className="btn btn-light"
                     onClick={
-                        ()=>console.log("Hello from Step4InputGamesQt")
+                        ()=>console.log("Hello from Step4InputGamesQtPh2")
                     }
                 >Save changes</button>
             </Link>

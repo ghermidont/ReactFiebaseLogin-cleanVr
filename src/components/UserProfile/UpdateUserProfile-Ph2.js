@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {useContextProvider} from '../../context/ContextProvider';
 
-const UserProfilePage = () =>{
+const UserProfilePagePh2 = () =>{
     const {currentUser, handleLogout} = useContextProvider();
     let currentUserDisplayName = "";
     let currentUserEmail = "";
     let currentUserPassword = "";
 
-    console.log("UserProfilePage worked.");
-
+    console.log("UserProfilePagePh2 worked.");
+    console.log("The current user:" + currentUser);
     return(
         <section className="hero">
             <nav>
@@ -23,21 +23,21 @@ const UserProfilePage = () =>{
                             <label>Display name</label>
                             <input type="text" autoFocus onChange={(e)=>currentUserDisplayName = e.target.value}/>
 
-                            <label>Email address</label>
+                            {/*<label>Email address</label>
                             <input type="text" onChange={(e)=>currentUserEmail = e.target.value}/>
 
                             <label>Password</label>
-                            <input type="text" onChange={(e)=>currentUserPassword = e.target.value}/>
+                            <input type="text" onChange={(e)=>currentUserPassword = e.target.value}/>*/}
                         </div>
                     </div>
                 </div>
-                <Link to="/UserProfilePage">
+                <Link to="/UserProfilePagePh2">
                     <button
                         type="button"
                         className="btn btn-light"
                         onClick={
                             ()=>{
-                                if(currentUserDisplayName != "") {
+                                if(currentUserDisplayName !== "") {
                                     currentUser.updateProfile({displayName: currentUserDisplayName})
                                         .then(function() {
                                         // Update successful.
@@ -45,22 +45,22 @@ const UserProfilePage = () =>{
                                             // An error happened.
                                         });
                                 }
-                                if(currentUserEmail != "") {
-                                    currentUser.updateEmail(currentUserEmail)
-                                        .then(function() {
-                                            // Update successful.
-                                        }).catch(function(error) {
-                                        // An error happened.
-                                    });
-                                }
-                                if(currentUserPassword != "") {
-                                    currentUser.updatePassword(currentUserPassword)
-                                        .then(function() {
-                                            // Update successful.
-                                        }).catch(function(error) {
-                                        // An error happened.
-                                    });
-                                }
+                                // if(currentUserEmail !== "") {
+                                //     currentUser.updateEmail(currentUserEmail)
+                                //         .then(function() {
+                                //             // Update successful.
+                                //         }).catch(function(error) {
+                                //         // An error happened.
+                                //     });
+                                // }
+                                // if(currentUserPassword !== "") {
+                                //     currentUser.updatePassword(currentUserPassword)
+                                //         .then(function() {
+                                //             // Update successful.
+                                //         }).catch(function(error) {
+                                //         // An error happened.
+                                //     });
+                                // }
                             }
                         }
                     >Save changes</button>
@@ -71,4 +71,4 @@ const UserProfilePage = () =>{
     );
 };
 
-export default UserProfilePage;
+export default UserProfilePagePh2;

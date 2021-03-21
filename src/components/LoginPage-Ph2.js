@@ -1,6 +1,6 @@
 /*import React, {useEffect} from 'react';
-import LoginSignUpForm from './LoginSignUpForm';
-import UserProfilePage from './UserProfile/UserProfilePage';
+import LoginSignUpFormPh2 from './LoginSignUpFormPh2';
+import UserProfilePagePh2 from './UserProfile/UserProfilePagePh2';
 import {useContextProvider} from '../context/ContextProvider';
 
 export default function LoginPage() {
@@ -14,9 +14,9 @@ useEffect(() => {
     return(
           <div>
             {user ? (
-                <UserProfilePage handleLogout={handleLogout} />
+                <UserProfilePagePh2 handleLogout={handleLogout} />
             ) : (
-                <LoginSignUpForm />  
+                <LoginSignUpFormPh2 />
             )}
           </div>
     );

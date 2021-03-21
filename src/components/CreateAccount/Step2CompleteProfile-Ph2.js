@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {useContextProvider} from "../../context/ContextProvider";
 
-export default function Step2CompleteProfile() {
+export default function Step2CompleteProfilePh2() {
     const {currentUser, handleLogout, auth} = useContextProvider();
     let currentUserFirstName = "";
     let currentUserLastName = "";
@@ -36,7 +36,7 @@ export default function Step2CompleteProfile() {
                         </div>
                     </div>
                 </div>
-                <Link to="/Step3RadioGameQt">
+                <Link to="/Step3RadioGameQtPh2">
                     <button
                         type="button"
                         className="btn btn-light"
