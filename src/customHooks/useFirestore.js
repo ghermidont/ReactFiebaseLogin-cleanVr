@@ -1,9 +1,11 @@
+//https://github.com/firebase/snippets-web/blob/a9ac6e6628816293e850eafa6c994a7b9d4d5831/firestore/test.firestore.js#L1089-L1094
+//https://firebase.google.com/docs/firestore/query-data/index-overview
 import { useState, useEffect } from 'react';
 import { projectFirestore } from '../fireBase';
 
 const useDataFromFirestore = (collection) => {
     const [docs, setDocs] = useState([]);
-
+    console.log("useDataFromFirestore() hook worked");
     //this useEffect interacts with the database every time the db changes (the collection).
     useEffect(() => {
         //this method unsubscribes from the collection every time we unmount an element.
@@ -31,46 +33,21 @@ const useDataFromFirestore = (collection) => {
 
 const useOneArticleFirestore = (docId) => {
     const [docs, setDocs] = useState([]);
-
-    //this useEffect interacts with the database every time the db changes (the collection).
     useEffect(() => {
-        //this method unsubscribes from the collection every time we unmount an element.
-        // Like in case when we are not showing an element anymore, like an images grid.
         const unsubFromCollection = projectFirestore.collection('articles').where("id", "==", docId)
-            //onSnapshot rune every time a change in the db occurs. A real time monitor.
             .onSnapshot(snap => {
-                //the array where all the data from the db will be stored.
                 let documents = [];
-                //Now we circle through the documents of the database that are there at this specific moment.
                 snap.forEach(doc => {
                     documents.push({...doc.data(), id: doc.id});
                 });
                 setDocs(documents);
             });
-
         return () => unsubFromCollection();
-        // this is a cleanup function that react will run when
-        // a component using the hook unmounts
-    }, [collection]);
-
+    }, );
     return { docs };
 }
- export {useDataFromFirestore, useOneArticleFirestore};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export {useDataFromFirestore, useOneArticleFirestore};
 
 /*
 const useStorage = (file) => {
@@ -106,14 +83,7 @@ const useStorage = (file) => {
 
 export default useStorage;*/
 
-
-
 /*###FIRESTORE###*/
-
-
-
-
-
 
 /*async function addUserPoints (){
     const collectionRef = projectFirestore.collection(collection);

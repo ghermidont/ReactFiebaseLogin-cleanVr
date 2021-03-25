@@ -5,7 +5,7 @@
 //To be adapted
 import React from "react";
 import UserPointsFieldPh2 from "./UserPointsField-Ph2";
-import {useContextProvider} from "../../context/ContextProvider";
+import {useAuthContext} from "../../context/ContextProvider";
 
 
 
@@ -33,7 +33,7 @@ import { Link, useHistory } from "react-router-dom";*/
 
 const UserProfilePageContentPh2 = () =>{
 
-    const {currentUser} = useContextProvider();
+    const {currentUser} = useAuthContext();
 
 
     console.log("UserProfilePageContentPh2 worked.");

@@ -1,8 +1,8 @@
 import React from 'react';
-import {useContextProvider} from "../../context/ContextProvider";
+import {useAuthContext} from "../../context/ContextProvider";
 
 export default function UserPointsFieldPh2 (){
-    const{userPoints} = useContextProvider();
+    const{userPoints} = useAuthContext();
 
     console.log("UserPointsFieldPh2 worked.");
 

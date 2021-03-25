@@ -1,9 +1,9 @@
 import React from 'react';
-import {useContextProvider} from '../../context/ContextProvider';
+import {useAuthContext} from '../../context/ContextProvider';
 //https://www.youtube.com/watch?v=Vj96piq6WGk
 
 export default function Step1EmailVerificationPh2() {
-    const {verifyEmail, email, currentUser } = useContextProvider;
+    const {verifyEmail, email, currentUser } = useAuthContext;
     window.alert(email);
     return(
         <>

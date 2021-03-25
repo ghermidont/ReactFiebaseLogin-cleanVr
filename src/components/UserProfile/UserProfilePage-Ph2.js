@@ -2,11 +2,11 @@
 import React from 'react';
 import UserProfilePageContentPh2 from './UserProfilePageContent-Ph2';
 import FileLoadedMessage from "../FileLoadedMessage";
-import {useContextProvider} from '../../context/ContextProvider';
+import {useAuthContext} from '../../context/ContextProvider';
 import { useTranslation } from 'react-i18next';
 
 const UserProfilePagePh2 = () =>{
-    const {uploadedFile, uploadedFileSetter, handleLogout} = useContextProvider();
+    const {uploadedFile, uploadedFileSetter, handleLogout} = useAuthContext();
     const { t, i18n } = useTranslation();
 
     console.log("UserProfilePagePh2 worked.");

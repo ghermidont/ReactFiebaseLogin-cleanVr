@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { projectStorage, projectFirestore } from '../fireBase';
-import {useContextProvider} from '../context/ContextProvider';
+import {useAuthContext} from '../context/ContextProvider';
 
 const useStorage = (file) => {
-  console.log("useStorage custom hook worked!");
+  console.log("useStorage() custom hook worked!");
   const [error, setError] = useState(null);
   //Here we will tore the url we get from the storage after the file has fully uploaded.
   const [url, setUrl] = useState(null);
-  const {setUserPictureUrl} = useContextProvider();
+  const {setUserPictureUrl} = useAuthContext();
 
   //This function will handle all the file upload and will run every time the user uploads a file thus the file dependency changes.
   useEffect(() => {

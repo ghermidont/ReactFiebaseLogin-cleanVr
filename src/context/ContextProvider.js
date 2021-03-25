@@ -2,17 +2,27 @@
 //https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/
 //https://javascript.plainenglish.io/react-context-why-am-i-getting-unnecessary-re-renders-b61836d224a7
 
-import React, { useContext, useState} from "react";
+import React, {useState, useContext} from "react";
 //auth is the auth function we created in the firebase.js file. All functions called after auth. are firebase functions.
-import {auth, projectFirestore } from "../fireBase";
+import {auth} from "../fireBase";
 
-const CreateContext = React.createContext();
+const authContext = React.createContext();
+const articlesContext = React.createContext();
+const userProfileContext = React.createContext();
 
-export function useContextProvider() {
-  return useContext(CreateContext);
+
+export function useAuthContext(){
+  return useContext(authContext);
+}
+export function useArticlesContext(){
+  return useContext(articlesContext);
+}
+export function useUserProfileContext(){
+  return useContext(userProfileContext);
 }
 
-export function ContextProvider({ children }) {
+/*########################## Authentication Context Provider ##########################*/
+export function AuthContextProvider({ children }) {
   const [uploadedFile, uploadedFileSetter] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
   const [email, setEmail] = useState('');
@@ -24,7 +34,7 @@ export function ContextProvider({ children }) {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
 
-  console.log("Context Provider worked!");
+  console.log("AuthContextProvider() worked!");
 
   const clearErrors = () => {
     setEmailError('');
@@ -35,14 +45,14 @@ export function ContextProvider({ children }) {
   //const addExtraUserInfo = auth.functions().setUserData('addExtraUserInfo');
   //addExtraUserInfo({"firstName": firstName, "lastName": lastName });
 
-  const updateTotalUsersNumber = () => {
+ // const updateTotalUsersNumber = () => {
     //connect to database function here
     //......
-    setUserPoints(userPoints + 1);
+    //setUserPoints(userPoints + 1);
     //query to update the db value.
     //.....
-    console.log("updateTotalUsersNumber() worked");
-  };
+   // console.log("updateTotalUsersNumber() worked");
+  //};
 
   const handleSignup = () => {
     clearErrors();
@@ -154,34 +164,6 @@ export function ContextProvider({ children }) {
   }
   */
 
-  /* ######################## Functions for managing collections ########################*/
-
-  const addArticle = (article, userId) => {
-    projectFirestore.collection('users').doc(userId).collection('articles').add(article);
-    console.log("addArticle() worked!");
-    //Adds a new document to the articles collection.
-  };
-
-  const getAllArticles = () => {
-    //let articlesDB = projectFirestore.collection('articles')//.orderBy('createdAt', 'desc').limit(3);
-    console.log("getAllArticles() worked!");
-    return projectFirestore.collection('articles').get().then((querySnapshot)=>
-    {
-      querySnapshot.forEach((doc)=>{
-        console.log(doc.data().category);
-      });
-    });
-    //The query will retrieve up to 10 articles from the articles collection. After we declared this query, we pass it
-    // to the getDocumentsInQuery() method which is responsible for loading and rendering the data.
-
-  };
-
-  const getAnArticle = (id, userId) => {
-    projectFirestore.collection('users').doc(userId).collection('articles').doc(id).get().then(() => console.log('article retrieved'));
-    //After you've implemented this method, you'll be able to view pages for each restaurant. Just click on a restaurant in the list and you should see the restaurant's details page.
-    console.log("getAnArticle() worked!");
-  };
-
   /*const addRating = function(restaurantID, rating) {
     const collection = projectFirestore.collection('restaurants');
     const document = collection.doc(restaurantID);
@@ -212,9 +194,6 @@ export function ContextProvider({ children }) {
   const value = {
     userPoints,
     setUserPoints,
-    addArticle,
-    getAllArticles,
-    getAnArticle,
     auth,
     hasAccount,
     setHasAccount,
@@ -247,10 +226,69 @@ export function ContextProvider({ children }) {
   }
 
   return (
-    <CreateContext.Provider value={value}>
+    <authContext.Provider value={value}>
       {children}
-    </CreateContext.Provider>
+    </authContext.Provider>
   );
 }
 
+/*########################## Articles Context Provider ##########################*/
+export function ArticlesContextProvider({ children }) {
+  const [contextDocs, setContextDocs] = useState('');
+  const [gridArticleId, setGridArticleId] = useState('');
 
+  console.log("ArticlesContextProvider() worked!");
+  /* ######################## Functions for managing collections ########################*/
+
+  // const addArticle = (article, userId) => {
+  //   projectFirestore.collection('users').doc(userId).collection('articles').add(article);
+  //   console.log("addArticle() worked!");
+  //   //Adds a new document to the articles collection.
+  // };
+
+  // const getAllArticles = () => {
+  //   //let articlesDB = projectFirestore.collection('articles')//.orderBy('createdAt', 'desc').limit(3);
+  //   console.log("getAllArticles() worked!");
+  //   return projectFirestore.collection('articles').get().then((querySnapshot)=>
+  //   {
+  //     querySnapshot.forEach((doc)=>{
+  //       console.log(doc.data().category);
+  //     });
+  //   });
+    //The query will retrieve up to 10 articles from the articles collection. After we declared this query, we pass it
+    // to the getDocumentsInQuery() method which is responsible for loading and rendering the data.
+
+  // };
+
+  // const getAnArticle = (id, userId) => {
+  //   projectFirestore.collection('users').doc(userId).collection('articles').doc(id).get().then(() => console.log('article retrieved'));
+  //   //After you've implemented this method, you'll be able to view pages for each restaurant. Just click on a restaurant in the list and you should see the restaurant's details page.
+  //   console.log("getAnArticle() worked!");
+  // };
+
+  const value = {
+    contextDocs,
+    setContextDocs,
+    gridArticleId,
+    setGridArticleId
+  }
+
+  return (
+      <articlesContext.Provider value={value}>
+        {children}
+      </articlesContext.Provider>
+  );
+}
+
+/*########################## User Profile Context Provider ##########################*/
+export function UserProfileContextProvider({ children }) {
+
+  const value = {}
+  console.log("UserProfileContextProvider() worked!");
+
+  return (
+      <userProfileContext.Provider value={value}>
+        {children}
+      </userProfileContext.Provider>
+  );
+}

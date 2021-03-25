@@ -1,18 +1,16 @@
 import React from 'react';
 import SwiperCoverflowPh1 from "./SwiperCoverflow-Ph1";
-import NavBar from "./NavBar-Ph1";
+//import NavBar from "./NavBar-Ph1";
 import Footer from "./Footer-Ph1";
-import {useContextProvider} from "../context/ContextProvider";
 import ArticlesList from "./Articles/ArticlesList-Ph1";
 
-export default function HomePagePh1() {
-    const {getAllArticles} = useContextProvider();
+export default function HomePage() {
+
     console.log("HomePagePh1 worked.");
-    getAllArticles();
+
     return(
         <div>
             <h1>HomePage</h1>
-            <NavBar />
             <div>Latest articles</div>
             <ArticlesList />
             <div>Button link to articles page</div>

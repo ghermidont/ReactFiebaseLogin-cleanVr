@@ -1,12 +1,15 @@
-import React from 'react';
-import IndividualArticlePh1 from "./IndividualArticle-Ph1";
 //https://firebase.google.com/docs/firestore/data-model
 //https://firebase.google.com/docs/firestore/query-data/index-overview
-import useDataFromFirestore from '../../customHooks/useFirestore';
+//https://www.pluralsight.com/guides/how-to-implement-a-read-more-link-in-react
+import React, {useContext} from 'react';
+import {useDataFromFirestore} from '../../customHooks/useFirestore';
+import {useArticlesContext} from "../../context/ContextProvider";
 
 export default function ArticlesList() {
     //We pass the name of the collection we want to work with to the useDataFromFirestore hook
     const {docs} = useDataFromFirestore('articles');
+
+    const{setGridArticleId} = useArticlesContext();
 
     return(
         <>
@@ -19,7 +22,10 @@ export default function ArticlesList() {
                                 <h3 className="mb-0">{doc.title}</h3>
                                 <div className="mb-1 text-muted">{doc.category}</div>
                                 <p className="card-text mb-auto">{doc.description}</p>
-                                <a href="/individualArticle" className="stretched-link">Continue reading</a>
+                                <button type="button" className="btn btn-primary" onClick={()=> {let attributeId = Element.attributeName('key'); setGridArticleId(attributeId);
+                                    console.log("this is the chosen article id: " + attributeId)} }>Get element key</button>
+                                <a href="/individualArticle" onClick={()=> {let attributeId = Element.attributeName('key'); setGridArticleId(attributeId);
+                                    console.log("this is the chosen article id: " + attributeId)} } className="stretched-link">Continue reading</a>
                             </div>
                             <div className="col-auto d-none d-lg-block">
                                 <svg className="bd-placeholder-img" width="200" height="250"
@@ -37,3 +43,7 @@ export default function ArticlesList() {
         </>
     );
 }
+
+
+    // <Link to='/characters'>Characters</Link>
+    // {/ <a href="#">Characters</a> /}

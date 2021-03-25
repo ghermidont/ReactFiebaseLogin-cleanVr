@@ -1,5 +1,5 @@
 import React from 'react';
-import {useContextProvider} from '../../context/ContextProvider';
+import {useAuthContext} from '../../context/ContextProvider';
 
     export default function MainUserPagePh2() {
         //const {userPoints, setUserPoints} = useContextProvider();

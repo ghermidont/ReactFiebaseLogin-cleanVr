@@ -1,7 +1,9 @@
+//https://firebase.google.com/docs/firestore/solutions/role-based-access
 //https://react.i18next.com/guides/quick-start
+//https://www.youtube.com/watch?v=5VxqV8FhlVg
 import React, {useEffect} from 'react';
 import PictureUploadFormPh2 from './PictureUploadForm-Ph2';
-import {useContextProvider} from '../context/ContextProvider';
+import {useAuthContext} from '../context/ContextProvider';
 import {Link} from "react-router-dom";
 import UserProfilePagePh2 from "./UserProfile/UserProfilePage-Ph2";
 import { Trans } from 'react-i18next';
@@ -13,7 +15,7 @@ const LoginSignUpFormPh2 = ()=>{
         authListener();
     });
 
-    const {authListener, handleLogout, currentUser, email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError} = useContextProvider();
+    const {authListener, handleLogout, currentUser, email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError} = useAuthContext();
 
     console.log("LoginSignUpFormPh2 worked.");
 

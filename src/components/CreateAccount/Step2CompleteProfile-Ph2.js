@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {useContextProvider} from "../../context/ContextProvider";
+import {useAuthContext} from "../../context/ContextProvider";
 
 export default function Step2CompleteProfilePh2() {
-    const {currentUser, handleLogout, auth} = useContextProvider();
+    const {currentUser, handleLogout, auth} = useAuthContext();
     let currentUserFirstName = "";
     let currentUserLastName = "";
 
