@@ -28,8 +28,8 @@ export default function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav me-auto mb-2 mb-md-0">
                             <li className="nav-item">
-                                <Link to="/LoginSignUpForm">
-                                    <a className="nav-link">{t("NavBar.Links.Link1")}</a>
+                                <Link to="/Contact">
+                                    <a className="nav-link">{t("NavBar.Links.Contact")}</a>
                                 </Link>
                             </li>
                             <li className="nav-item">

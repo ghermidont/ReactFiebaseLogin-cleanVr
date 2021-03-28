@@ -47,7 +47,24 @@ const useOneArticleFirestore = (docId) => {
     return { docs };
 }
 
-export {useDataFromFirestore, useOneArticleFirestore};
+const useSearchArticlesFirestore = (docId) => {
+    const [docs, setDocs] = useState([]);
+    useEffect(() => {
+        const unsubFromCollection = projectFirestore.collection('articles').where("id", "==", docId)
+            .onSnapshot(snap => {
+                let documents = [];
+                snap.forEach(doc => {
+                    documents.push({...doc.data(), id: doc.id});
+                });
+                setDocs(documents);
+            });
+        return () => unsubFromCollection();
+    }, );
+    return { docs };
+}
+
+
+export {useDataFromFirestore, useOneArticleFirestore, useSearchArticlesFirestore};
 
 /*
 const useStorage = (file) => {

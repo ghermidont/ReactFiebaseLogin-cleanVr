@@ -3,6 +3,7 @@ import SwiperCoverflowPh1 from "./SwiperCoverflow-Ph1";
 //import NavBar from "./NavBar-Ph1";
 import Footer from "./Footer-Ph1";
 import ArticlesList from "./Articles/ArticlesList-Ph1";
+import ReactPlayer from 'react-player/youtube';
 
 export default function HomePage() {
 
@@ -17,7 +18,15 @@ export default function HomePage() {
             <SwiperCoverflowPh1 />
             <div>Button to other stream videos</div>
             <div>contacts</div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2F24d2abbd3596.jpg?alt=media&token=e4827cdd-dffa-4b41-bf89-13da4eee3d19" alt="Girl in a jacket" width="500" height="600" />
+            <ReactPlayer
+                url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+                controls = 'true' />
+
+
             {/*
+
+
 
             <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">

@@ -1,6 +1,7 @@
 //https://www.freecodecamp.org/news/how-to-identify-and-resolve-wasted-renders-in-react-cc4b1e910d10/
 //https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/
 //https://javascript.plainenglish.io/react-context-why-am-i-getting-unnecessary-re-renders-b61836d224a7
+//https://medium.com/@nazmifeeroz/how-to-use-react-usecontext-and-usestate-hooks-as-a-global-store-1b4f1898034f
 
 import React, {useState, useContext} from "react";
 //auth is the auth function we created in the firebase.js file. All functions called after auth. are firebase functions.

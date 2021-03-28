@@ -11,6 +11,7 @@ import CheckboxGameQt from "./components/CreateAccount/Step5CheckboxGameQt-Ph2";
 import UpdateUserProfile from "./components/UserProfile/UpdateUserProfile-Ph2";
 import UserProfilePage from "./components/UserProfile/UserProfilePage-Ph2";
 import IndividualArticle from "./components/Articles/IndividualArticle-Ph1";
+import Contact from "./components/Contact";
 import {Route, Switch} from 'react-router';
 //import { Trans, useTranslation } from "react-i18next";
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/UpdateUserProfile" component={UpdateUserProfile} />
             <Route path="/UserProfilePage" component={UserProfilePage} />
             <Route path="/IndividualArticle" component={IndividualArticle} />
+            <Route path="/Contact" component={Contact} />
         </Switch>
     </div>
     );
