@@ -6,8 +6,18 @@ Multi language logic: https://www.techomoro.com/how-to-create-a-simple-multi-lan
 https://www.npmjs.com/package/react-player
 https://react.rocks/tag/Form
 https://lo-victoria.com/lets-build-a-simple-bulletin-board-react-app
+https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
 
 Installed packages:
 react-player:
 https://www.npmjs.com/package/react-player
 https://www.emailjs.com/docs/examples/reactjs/
+
+Project management tools:
+1. Email sender:
+https://dashboard.emailjs.com/admin
+
+2. Database admin panel:
+
+3. Search bar setter (Algolia):
+

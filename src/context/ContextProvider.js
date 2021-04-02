@@ -70,7 +70,26 @@ export function AuthContextProvider({ children }) {
           break;
       }
     });
-
+//FB functions example:
+    // function callAddMessage() {
+    //   const messageText = "Hello, World!";
+    //
+    //   // [START fb_functions_call_add_message]
+    //   var addMessage = firebase.functions().httpsCallable('addMessage');
+    //   addMessage({ text: messageText })
+    //       .then((result) => {
+    //         // Read result of the Cloud Function.
+    //         var sanitizedMessage = result.data.text;
+    //       });
+    //   // [END fb_functions_call_add_message]
+    // }
+    // After you uploaded and got the url of the file you have to call a cloud function I made, named "setUserData" with these parameters:
+    // {
+    //   "displayName": displayName,
+    //     "photoURL": photoURL,
+    //     "firstName": firstName,
+    //     "lastName": lastName
+    // }
     //updateTotalUsersNumber();
     //setEmail(email);
     //verifyEmail();
@@ -237,8 +256,10 @@ export function AuthContextProvider({ children }) {
 export function ArticlesContextProvider({ children }) {
   const [contextDocs, setContextDocs] = useState('');
   const [gridArticleId, setGridArticleId] = useState('');
+  const [articleContent, setArticleContent] = useState(null);
 
   console.log("ArticlesContextProvider() worked!");
+
   /* ######################## Functions for managing collections ########################*/
 
   // const addArticle = (article, userId) => {
@@ -271,7 +292,9 @@ export function ArticlesContextProvider({ children }) {
     contextDocs,
     setContextDocs,
     gridArticleId,
-    setGridArticleId
+    setGridArticleId,
+    articleContent,
+    setArticleContent
   }
 
   return (

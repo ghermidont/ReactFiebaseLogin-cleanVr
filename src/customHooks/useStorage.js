@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { projectStorage, projectFirestore } from '../fireBase';
+import {projectStorage, projectFirestore} from '../fireBase';
 import {useAuthContext} from '../context/ContextProvider';
 
-const useStorage = (file) => {
+const useStorage = (file, userId) => {
   console.log("useStorage() custom hook worked!");
   const [error, setError] = useState(null);
   //Here we will tore the url we get from the storage after the file has fully uploaded.
@@ -16,8 +16,8 @@ const useStorage = (file) => {
     const storageRef = projectStorage.ref();//file.name
     const collectionRef = projectFirestore.collection('userInfo');
     //put() puts the file in the reference defined in the storageRef.
-    storageRef.child('images/' + file.name).put(file).on('state_changed', (err) => {
-      setError(err);
+    storageRef.child('profile_pictures/' + userId).put(file).on('state_changed', (err) => {
+      setError(err); //storage().reference().child("profile_pictures").child("<userId>-<timestamp>.jpg")
     }, async () => {
       //gets the url of the upload file.
       const innerScopeUrl = await storageRef.getDownloadURL();

@@ -10,7 +10,7 @@ import InputGamesQt from "./components/CreateAccount/Step4InputGamesQt-Ph2.js";
 import CheckboxGameQt from "./components/CreateAccount/Step5CheckboxGameQt-Ph2";
 import UpdateUserProfile from "./components/UserProfile/UpdateUserProfile-Ph2";
 import UserProfilePage from "./components/UserProfile/UserProfilePage-Ph2";
-import IndividualArticle from "./components/Articles/IndividualArticle-Ph1";
+import Article from "./components/Articles/IndividualArticle-Ph1";
 import Contact from "./components/Contact";
 import {Route, Switch} from 'react-router';
 //import { Trans, useTranslation } from "react-i18next";
@@ -29,8 +29,8 @@ function App() {
             <Route path="/CheckboxGameQt" component={CheckboxGameQt} />
             <Route path="/UpdateUserProfile" component={UpdateUserProfile} />
             <Route path="/UserProfilePage" component={UserProfilePage} />
-            <Route path="/IndividualArticle" component={IndividualArticle} />
             <Route path="/Contact" component={Contact} />
+            <Route path="/:slug" component={Article} />
         </Switch>
     </div>
     );

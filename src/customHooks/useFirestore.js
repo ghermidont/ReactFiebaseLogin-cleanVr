@@ -16,9 +16,10 @@ const useDataFromFirestore = (collection) => {
             .onSnapshot(snap => {
                 //the array where all the data from the db will be stored.
                 let documents = [];
+                let orderNumb = 1;
                 //Now we circle through the documents of the database that are there at this specific moment.
                 snap.forEach(doc => {
-                    documents.push({...doc.data(), id: doc.id});
+                    documents.push({...doc.data(), id: doc.id,  slug: orderNumb++});
                 });
                 setDocs(documents);
             });
@@ -31,40 +32,8 @@ const useDataFromFirestore = (collection) => {
     return { docs };
 }
 
-const useOneArticleFirestore = (docId) => {
-    const [docs, setDocs] = useState([]);
-    useEffect(() => {
-        const unsubFromCollection = projectFirestore.collection('articles').where("id", "==", docId)
-            .onSnapshot(snap => {
-                let documents = [];
-                snap.forEach(doc => {
-                    documents.push({...doc.data(), id: doc.id});
-                });
-                setDocs(documents);
-            });
-        return () => unsubFromCollection();
-    }, );
-    return { docs };
-}
 
-const useSearchArticlesFirestore = (docId) => {
-    const [docs, setDocs] = useState([]);
-    useEffect(() => {
-        const unsubFromCollection = projectFirestore.collection('articles').where("id", "==", docId)
-            .onSnapshot(snap => {
-                let documents = [];
-                snap.forEach(doc => {
-                    documents.push({...doc.data(), id: doc.id});
-                });
-                setDocs(documents);
-            });
-        return () => unsubFromCollection();
-    }, );
-    return { docs };
-}
-
-
-export {useDataFromFirestore, useOneArticleFirestore, useSearchArticlesFirestore};
+export {useDataFromFirestore};
 
 /*
 const useStorage = (file) => {

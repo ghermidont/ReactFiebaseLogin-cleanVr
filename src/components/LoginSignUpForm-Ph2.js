@@ -2,13 +2,13 @@
 //https://react.i18next.com/guides/quick-start
 //https://www.youtube.com/watch?v=5VxqV8FhlVg
 import React, {useEffect} from 'react';
-import PictureUploadFormPh2 from './PictureUploadForm-Ph2';
+import PictureUploadForm from './PictureUploadForm-Ph2';
 import {useAuthContext} from '../context/ContextProvider';
 import {Link} from "react-router-dom";
-import UserProfilePagePh2 from "./UserProfile/UserProfilePage-Ph2";
+import UserProfilePage from "./UserProfile/UserProfilePage-Ph2";
 import { Trans } from 'react-i18next';
 
-const LoginSignUpFormPh2 = ()=>{
+const LoginSignUpForm = ()=>{
 
     useEffect(() => {
         console.log("LoginSignUpFormPh2 useEffect worked.");
@@ -23,7 +23,7 @@ const LoginSignUpFormPh2 = ()=>{
         <Trans>
         <div>
             {currentUser ? (
-                <UserProfilePagePh2 handleLogout={handleLogout} />
+                <UserProfilePage handleLogout={handleLogout} />
             ) : (
                 <section className="login">
                     <div className="loginContainer">
@@ -45,7 +45,7 @@ const LoginSignUpFormPh2 = ()=>{
                                 </>
                             ):(
                                 <>
-                                    <PictureUploadFormPh2 />
+                                    <PictureUploadForm />
                                     <Link to="/UserProfilePage">
                                         <button onClick={handleSignup}>Sign up</button>
                                     </Link>
@@ -64,4 +64,4 @@ const LoginSignUpFormPh2 = ()=>{
     );
 };
 
-export default LoginSignUpFormPh2;
+export default LoginSignUpForm;
