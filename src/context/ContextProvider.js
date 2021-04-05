@@ -3,9 +3,9 @@
 //https://javascript.plainenglish.io/react-context-why-am-i-getting-unnecessary-re-renders-b61836d224a7
 //https://medium.com/@nazmifeeroz/how-to-use-react-usecontext-and-usestate-hooks-as-a-global-store-1b4f1898034f
 
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 //auth is the auth function we created in the firebase.js file. All functions called after auth. are firebase functions.
-import {auth} from "../fireBase";
+import {auth, projectFirestore} from "../fireBase";
 
 const authContext = React.createContext();
 const articlesContext = React.createContext();
@@ -204,8 +204,10 @@ export function AuthContextProvider({ children }) {
         return transaction.set(newRatingDocument, rating);
       });
     });*/
-    //Cloud Firestore provides transaction functionality that allows us to perform multiple reads and writes in a single atomic operation, ensuring that our data remains consistent.
-    //In the block above, we trigger a transaction to update the numeric values of avgRating and numRatings in the restaurant document. At the same time, we add the new rating to the ratings sub collection.
+    //Cloud Firestore provides transaction functionality that allows us to perform multiple reads and writes in a single atomic operation,
+   // ensuring that our data remains consistent.
+    //In the block above, we trigger a transaction to update the numeric values of avgRating and numRatings in the restaurant document.
+  // At the same time, we add the new rating to the ratings sub collection.
   //};
 
   /* ######################## END Functions for managing collections ########################*/
@@ -254,39 +256,11 @@ export function AuthContextProvider({ children }) {
 
 /*########################## Articles Context Provider ##########################*/
 export function ArticlesContextProvider({ children }) {
+  console.log("ArticlesContextProvider() worked!");
+
   const [contextDocs, setContextDocs] = useState('');
   const [gridArticleId, setGridArticleId] = useState('');
   const [articleContent, setArticleContent] = useState(null);
-
-  console.log("ArticlesContextProvider() worked!");
-
-  /* ######################## Functions for managing collections ########################*/
-
-  // const addArticle = (article, userId) => {
-  //   projectFirestore.collection('users').doc(userId).collection('articles').add(article);
-  //   console.log("addArticle() worked!");
-  //   //Adds a new document to the articles collection.
-  // };
-
-  // const getAllArticles = () => {
-  //   //let articlesDB = projectFirestore.collection('articles')//.orderBy('createdAt', 'desc').limit(3);
-  //   console.log("getAllArticles() worked!");
-  //   return projectFirestore.collection('articles').get().then((querySnapshot)=>
-  //   {
-  //     querySnapshot.forEach((doc)=>{
-  //       console.log(doc.data().category);
-  //     });
-  //   });
-    //The query will retrieve up to 10 articles from the articles collection. After we declared this query, we pass it
-    // to the getDocumentsInQuery() method which is responsible for loading and rendering the data.
-
-  // };
-
-  // const getAnArticle = (id, userId) => {
-  //   projectFirestore.collection('users').doc(userId).collection('articles').doc(id).get().then(() => console.log('article retrieved'));
-  //   //After you've implemented this method, you'll be able to view pages for each restaurant. Just click on a restaurant in the list and you should see the restaurant's details page.
-  //   console.log("getAnArticle() worked!");
-  // };
 
   const value = {
     contextDocs,
@@ -316,3 +290,30 @@ export function UserProfileContextProvider({ children }) {
       </userProfileContext.Provider>
   );
 }
+
+//Useful syntax
+// const addArticle = (article, userId) => {
+//   projectFirestore.collection('users').doc(userId).collection('articles').add(article);
+//   console.log("addArticle() worked!");
+//   //Adds a new document to the articles collection.
+// };
+
+// const getAllArticles = () => {
+//   //let articlesDB = projectFirestore.collection('articles')//.orderBy('createdAt', 'desc').limit(3);
+//   console.log("getAllArticles() worked!");
+//   return projectFirestore.collection('articles').get().then((querySnapshot)=>
+//   {
+//     querySnapshot.forEach((doc)=>{
+//       console.log(doc.data().category);
+//     });
+//   });
+//The query will retrieve up to 10 articles from the articles collection. After we declared this query, we pass it
+// to the getDocumentsInQuery() method which is responsible for loading and rendering the data.
+
+// };
+
+// const getAnArticle = (id, userId) => {
+//   projectFirestore.collection('users').doc(userId).collection('articles').doc(id).get().then(() => console.log('article retrieved'));
+//   //After you've implemented this method, you'll be able to view pages for each restaurant. Just click on a restaurant in the list and you should see the restaurant's details page.
+//   console.log("getAnArticle() worked!");
+// };

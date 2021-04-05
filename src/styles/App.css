@@ -5,6 +5,22 @@ body {
   overflow-x: hidden;
 }
 
+.bouton-image:before {
+  content: "";
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+  background-color: transparent;
+  background-position : center center;
+  background-repeat:no-repeat;
+}
+
+.monBouton:before{
+  background-image : url(https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2F24d2abbd3596.jpg?alt=media&token=e4827cdd-dffa-4b41-bf89-13da4eee3d19);
+}
+
 /* HOMEPAGE CAROUSEL*/
 
 /* Carousel base class */

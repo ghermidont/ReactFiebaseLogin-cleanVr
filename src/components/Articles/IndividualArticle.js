@@ -8,14 +8,16 @@ export default function Article() {
     const currentSlug = window.location.pathname;
     const urlSlugValue = currentSlug.substr(-1);
     console.log(urlSlugValue);
+    let selectedArticle = "";
 
-    const selectedArticle = articleContent.filter(function(hero) {
+    if(articleContent) {
+    selectedArticle = articleContent.filter(function (hero) {
         return hero.slug == urlSlugValue;
     });
-
+}
     return(
         <>
-            {selectedArticle.map(doc =>(<div>{doc.content}</div>))}
+            {selectedArticle && selectedArticle.map(doc =>(<div>{doc.content}</div>))}
         </>
     );
 }

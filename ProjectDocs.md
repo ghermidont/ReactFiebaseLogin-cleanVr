@@ -8,6 +8,9 @@ https://react.rocks/tag/Form
 https://lo-victoria.com/lets-build-a-simple-bulletin-board-react-app
 https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
 
+//Performance
+https://www.youtube.com/watch?v=5fLW5Q5ODiE&t=302s
+
 Installed packages:
 react-player:
 https://www.npmjs.com/package/react-player

@@ -33,8 +33,13 @@ export default function NavBar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/LoginSignUpForm">
-                                <a className="nav-link">{t("NavBar.Links.Link2")}</a>
+                                <Link to="/Content">
+                                    <a className="nav-link">Content</a>
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/Blog">
+                                <a className="nav-link">{t("NavBar.Links.Blog")}</a>
                                 </Link>
                             </li>
                             <li className="nav-item">

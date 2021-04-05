@@ -2,7 +2,7 @@
 //https://react.i18next.com/guides/quick-start
 //https://www.youtube.com/watch?v=5VxqV8FhlVg
 import React, {useEffect} from 'react';
-import PictureUploadForm from './PictureUploadForm-Ph2';
+import PictureUploadForm from './PictureUploadForm';
 import {useAuthContext} from '../context/ContextProvider';
 import {Link} from "react-router-dom";
 import UserProfilePage from "./UserProfile/UserProfilePage-Ph2";

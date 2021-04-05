@@ -15,6 +15,7 @@ export default function ArticlesList() {
     setArticleContent(docs);
 
     docs.map(doc => console.log(doc));
+
     return(
         <>
             <div className="row mb-2">
@@ -28,7 +29,7 @@ export default function ArticlesList() {
                                 <div className="mb-1 text-muted">{doc.category}</div>
                                 <p className="card-text mb-auto">{doc.description}</p>
 
-                                <Link to={`/${doc.slug}`} onClick={()=>console.log('clicked')}>Continue reading...</Link>
+                                <Link to={`/article/${doc.slug}`} onClick={()=>console.log('clicked')}>Continue reading...</Link>
                             </div>
                             <div className="col-auto d-none d-lg-block">
                                 <img src={doc.imageURL} alt="article" style={{ width: "12em", height: "8em" }}/>

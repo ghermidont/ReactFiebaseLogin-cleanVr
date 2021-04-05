@@ -7,11 +7,10 @@ const useDataFromFirestore = (collection) => {
     const [docs, setDocs] = useState([]);
     console.log("useDataFromFirestore() hook worked");
     //this useEffect interacts with the database every time the db changes (the collection).
-    useEffect(() => {
+    useEffect( () => {
         //this method unsubscribes from the collection every time we unmount an element.
         // Like in case when we are not showing an element anymore, like an images grid.
         const unsubFromCollection = projectFirestore.collection(collection)
-            .orderBy('createdAt')
             //onSnapshot rune every time a change in the db occurs. A real time monitor.
             .onSnapshot(snap => {
                 //the array where all the data from the db will be stored.
