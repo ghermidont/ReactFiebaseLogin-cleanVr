@@ -2,13 +2,13 @@
 //https://react.i18next.com/guides/quick-start
 //https://www.youtube.com/watch?v=5VxqV8FhlVg
 import React, {useEffect} from 'react';
-import PictureUploadForm from './PictureUploadForm';
+import P2PictureUploadForm from './P2-PictureUploadForm';
 import {useAuthContext} from '../context/ContextProvider';
 import {Link} from "react-router-dom";
-import UserProfilePage from "./UserProfile/UserProfilePage-Ph2";
+import UserProfilePage from "../pages/UserProfile/UserProfilePage-Ph2";
 import { Trans } from 'react-i18next';
 
-const LoginSignUpForm = ()=>{
+const P2LoginSignUpForm = ()=>{
 
     useEffect(() => {
         console.log("LoginSignUpFormPh2 useEffect worked.");
@@ -45,7 +45,7 @@ const LoginSignUpForm = ()=>{
                                 </>
                             ):(
                                 <>
-                                    <PictureUploadForm />
+                                    <P2PictureUploadForm />
                                     <Link to="/UserProfilePage">
                                         <button onClick={handleSignup}>Sign up</button>
                                     </Link>
@@ -64,4 +64,4 @@ const LoginSignUpForm = ()=>{
     );
 };
 
-export default LoginSignUpForm;
+export default P2LoginSignUpForm;

@@ -7,9 +7,18 @@ https://www.npmjs.com/package/react-player
 https://react.rocks/tag/Form
 https://lo-victoria.com/lets-build-a-simple-bulletin-board-react-app
 https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
+https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
 
 //Performance
 https://www.youtube.com/watch?v=5fLW5Q5ODiE&t=302s
+https://www.infoq.com/articles/reduce-react-load-time/
+//https://www.freecodecamp.org/news/how-to-identify-and-resolve-wasted-renders-in-react-cc4b1e910d10/
+//https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/
+//https://javascript.plainenglish.io/react-context-why-am-i-getting-unnecessary-re-renders-b61836d224a7
+//https://medium.com/@nazmifeeroz/how-to-use-react-usecontext-and-usestate-hooks-as-a-global-store-1b4f1898034f
+To implement:
+https://reactjs.org/docs/react-api.html#reactlazy
+https://github.com/bvaughn/react-window
 
 Installed packages:
 react-player:

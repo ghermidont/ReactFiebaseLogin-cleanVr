@@ -1,7 +1,7 @@
 /*import React, {useEffect} from 'react';
 import LoginSignUpFormPh2 from './LoginSignUpFormPh2';
 import UserProfilePagePh2 from './UserProfile/UserProfilePagePh2';
-import {useContextProvider} from '../context/ContextProvider';
+import {useAuthContextProvider} from '../context/AuthContext';
 
 export default function LoginPage() {
   const {authListener, handleLogout, user} = useContextProvider();

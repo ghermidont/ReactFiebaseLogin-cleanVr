@@ -1,5 +1,5 @@
 import React from 'react';
-import {useAuthContext} from "../../context/ContextProvider";
+import {useAuthContext} from "../../context/AuthContext";
 
 export default function UserPointsFieldPh2 (){
     const{userPoints} = useAuthContext();

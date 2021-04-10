@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {useAuthContext} from '../../context/ContextProvider';
+import {useAuthContext} from '../../context/AuthContext';
 
 const UserProfilePagePh2 = () =>{
     const {currentUser, handleLogout} = useAuthContext();

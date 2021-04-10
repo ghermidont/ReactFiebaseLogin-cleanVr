@@ -1,5 +1,5 @@
 import React from 'react';
-import {useAuthContext} from '../../context/ContextProvider';
+import {useAuthContext} from '../../context/AuthContext';
 import useStorage from "../../customHooks/useStorage";
 //https://www.youtube.com/watch?v=Vj96piq6WGk
 

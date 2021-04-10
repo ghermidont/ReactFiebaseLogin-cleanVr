@@ -4,8 +4,10 @@ import { useState, useEffect } from 'react';
 import { projectFirestore } from '../fireBase';
 
 const useDataFromFirestore = (collection) => {
-    const [docs, setDocs] = useState([]);
+    const [docsFromHook, setDocsFromHook] = useState([]);
+
     console.log("useDataFromFirestore() hook worked");
+
     //this useEffect interacts with the database every time the db changes (the collection).
     useEffect( () => {
         //this method unsubscribes from the collection every time we unmount an element.
@@ -20,7 +22,7 @@ const useDataFromFirestore = (collection) => {
                 snap.forEach(doc => {
                     documents.push({...doc.data(), id: doc.id,  slug: orderNumb++});
                 });
-                setDocs(documents);
+                setDocsFromHook(documents);
             });
 
         return () => unsubFromCollection();
@@ -28,7 +30,7 @@ const useDataFromFirestore = (collection) => {
         // a component using the hook unmounts
     }, [collection]);
 
-    return { docs };
+    return { docsFromHook };
 }
 
 

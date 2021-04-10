@@ -5,7 +5,7 @@
 //To be adapted
 import React from "react";
 import UserPointsFieldPh2 from "./UserPointsField-Ph2";
-import {useAuthContext} from "../../context/ContextProvider";
+import {useAuthContext} from "../../context/AuthContext";
 
 
 

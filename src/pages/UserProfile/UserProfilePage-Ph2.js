@@ -1,7 +1,7 @@
 //https://react.i18next.com/guides/quick-start
 import React from 'react';
 import UserProfilePageContent from './UserProfilePageContent-Ph2';
-import {useAuthContext} from '../../context/ContextProvider';
+import {useAuthContext} from '../../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 
 const UserProfilePagePh2 = ({ file }) =>{
