@@ -15,7 +15,7 @@ export default function HomePage() {
                                 <img className="banner__img" src="" alt=""/>
                             </div>
                             <div className="banner__icon-down">
-                                <img src="" alt=""/>
+                                <img src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
                             </div>
                         </div>
                     </section>
@@ -27,28 +27,34 @@ export default function HomePage() {
                             </h2>
                             <ul className="info__list">
                                 <li className="info__item">
-                                    <a href="#" className="info__link">
-                                        <div className="info__image">
-                                            <img className="info__img" src="" alt=""/>
-                                        </div>
-                                        <h3 className="info__item-title">Tornei</h3>
-                                    </a>
+                                    <Link to="/TournamentsPage">
+                                        <a className="info__link">
+                                            <div className="info__image">
+                                                <img className="info__img" src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
+                                            </div>
+                                            <h3 className="info__item-title">Tornei</h3>
+                                        </a>
+                                    </Link>
                                 </li>
                                 <li className="info__item">
-                                    <a href="#" className="info__link">
-                                        <div className="info__image">
-                                            <img className="info__img" src="" alt=""/>
-                                        </div>
-                                        <h3 className="info__item-title">Team e giochi</h3>
-                                    </a>
+                                    <Link to="/AboutUsPage">
+                                        <a className="info__link">
+                                            <div className="info__image">
+                                                <img className="info__img" src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
+                                            </div>
+                                            <h3 className="info__item-title">Team e giochi</h3>
+                                        </a>
+                                    </Link>
                                 </li>
                                 <li className="info__item">
-                                    <a href="#" className="info__link">
-                                        <div className="info__image">
-                                            <img className="info__img" src="" alt=""/>
-                                        </div>
-                                        <h3 className="info__item-title">Sale Gaming</h3>
-                                    </a>
+                                    <Link to="/">
+                                        <a className="info__link">
+                                            <div className="info__image">
+                                                <img className="info__img" src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
+                                            </div>
+                                            <h3 className="info__item-title">Sale Gaming</h3>
+                                        </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -76,7 +82,7 @@ export default function HomePage() {
                         <span>Ultimi</span> contenuti dei nostri streamer
                     </h2>
                     <LatestStreamsSwiper />
-                    <Link to={"/ContentPage"}>
+                    <Link to="/ContentPage">
                         <button className="slider__btn btn"><span>Altri</span> video</button>
                     </Link>
                     </div>
@@ -89,7 +95,7 @@ export default function HomePage() {
                             <div className="feed__image">
                                 <img src="" alt="" className="feed__img"/>
                             </div>
-                            <Link to="/HomePage">
+                            <Link to="/">
                                 <a className="feed__link">Sponsorship</a>
                             </Link>
                         </div>

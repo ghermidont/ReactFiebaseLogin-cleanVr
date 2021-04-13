@@ -1,18 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 //import {useAuthContext} from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
+import SearchFomr from "../components/SearchForm";
 
 export default function NavBar() {
     //const {currentUser} = useAuthContext();
     const {t, i18n} = useTranslation();
     console.log("NavBar() worked!");
+    const [showSearch, setShowSearch] = useState(false);
 
     const changeLanguage = (lng) => {
          i18n.changeLanguage(lng);
     };
 
-    const searchForm = document.querySelector('.search__form');
+    //const searchForm = document.querySelector('.search__form');
 
     return(
         <header className="header">
@@ -37,7 +39,7 @@ export default function NavBar() {
                             <ul className="sub-menu__list">
                                 <li className="sub-menu__item">
                                     <Link to="/TournamentsPage">
-                                        <a className="sub-menu__link">Tornei</a>
+                                        <a className="sub-menu__link">Blog</a>
                                     </Link>
                                 </li>
                                 {/*Phase 2*/}
@@ -117,14 +119,13 @@ export default function NavBar() {
                 </ul>
 
                 <div className="search header__search">
-                    <button className="search__show" onClick={()=> searchForm.classList.toggle('search__form--active')}>
-                        <img className="search__img" src="search.png" alt=""/>
-                        {/*./assets/images/dest/icons/search.png*/}
+                    <button className="search__show" onClick={()=> {
+                        showSearch?setShowSearch(false):setShowSearch(true);
+                        console.log(showSearch);}
+                    }>
+                        <span className="icon-search"></span>
                     </button>
-                    <form className="search__form ">
-                        <input type="text" className="search__input"/>
-                            <button className="search__btn" type="submit">Go!</button>
-                    </form>
+                    { showSearch ? <SearchFomr  /> : null }
                 </div>
             </div>
         </header>

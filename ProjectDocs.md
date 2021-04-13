@@ -8,6 +8,7 @@ https://react.rocks/tag/Form
 https://lo-victoria.com/lets-build-a-simple-bulletin-board-react-app
 https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
 https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
+https://www.pluralsight.com/guides/return-variable-in-render-function-in-react
 
 //Performance
 https://www.youtube.com/watch?v=5fLW5Q5ODiE&t=302s
