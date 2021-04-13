@@ -1,0 +1,12 @@
+{
+  "title": "English version of the app",
+  "NavBar": {
+    "SearchButton": "To get started, edit <1>src/App.js</1> and save to reload.",
+    "Links": {
+      "ContactUs": "Contact eng",
+      "Blog": "Blog eng",
+      "Link3": "Link1 eng"
+    }
+  }
+
+}

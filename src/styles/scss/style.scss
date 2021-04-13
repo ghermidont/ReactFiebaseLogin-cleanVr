@@ -1,0 +1,28 @@
+@import 'vars';
+@import 'mixin';
+@import 'global';
+@import 'fonts';
+
+/*=====Bloks=====*/
+
+@import './Blocks/header';
+@import './Blocks/title';
+@import './Blocks/btn';
+@import './Blocks/menu';
+@import './Blocks/lang';
+@import './Blocks/search';
+@import './Blocks/banner';
+@import './Blocks/info';
+@import './Blocks/news';
+@import './Blocks/article';
+@import './Blocks/slider';
+@import './Blocks/feed';
+@import './Blocks/contact-btn';
+@import './Blocks/social';
+@import './Blocks/tournament';
+@import './Blocks/tab';
+@import './Blocks/_footer';
+@import './Blocks/_news-banner';
+@import './Blocks/_tab';
+@import './Blocks/_tournament';
+

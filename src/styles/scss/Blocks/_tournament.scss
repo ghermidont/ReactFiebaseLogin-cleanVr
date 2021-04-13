@@ -1,0 +1,25 @@
+/*====Tournament====*/
+.tournament {
+  padding: 14rem 0 5rem;
+
+  &__title {
+    margin-bottom: 5rem;
+  }
+  &__image {
+    width: 80rem;
+    height: auto;
+    min-height: 36rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    background-color: var(--blue);
+    display: block;
+    margin: 0 auto 3rem;
+  }
+  &__text {
+    max-width: 90rem;
+    font-size: 1.8rem;
+    font-style: normal;
+    text-align: center;
+    margin: 0 auto 6rem;
+  }
+}

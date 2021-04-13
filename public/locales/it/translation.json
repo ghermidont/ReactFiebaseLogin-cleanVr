@@ -1,0 +1,11 @@
+{
+  "title": "Italian version of the app",
+  "NavBar": {
+    "SearchButton": "Search in italian",
+    "Links": {
+      "Contact": "Contact it",
+      "Blog": "Blog it",
+      "Link3": "Link1 it"
+    }
+  }
+}
