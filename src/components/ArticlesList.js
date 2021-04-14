@@ -2,10 +2,9 @@
 //https://firebase.google.com/docs/firestore/query-data/index-overview
 //https://www.pluralsight.com/guides/how-to-implement-a-read-more-link-in-react
 import React from 'react';
-import {useDataFromFirestore, useGetLatestStreams} from '../customHooks/useFirestore';
+import {useDataFromFirestore} from '../customHooks/useFirestore';
 import {Link} from "react-router-dom";
 import {useArticlesContext} from "../context/ArticlesContext";
- import{useLatestStreamsContext} from "../context/StreamsContext";
 
 export default function ArticlesList() {
     console.log("ArticlesList started");

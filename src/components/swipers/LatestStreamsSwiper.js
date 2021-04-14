@@ -5,6 +5,8 @@
 import React, {useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { EffectCoverflow } from 'swiper';
+
+import 'swiper/components/effect-coverflow/effect-coverflow.scss';
 import 'swiper/swiper-bundle.css';
 import ReactPlayer from "react-player/youtube";
 import {useDataFromFirestore} from "../../customHooks/useFirestore";
@@ -19,16 +21,27 @@ export default  function LatestStreamsSwiper () {
 
   console.log(docsFromHook);
 
+  const [playState, setPlayState] = useState(false);
+
    return (
         <>
             <Swiper
-                spaceBetween={5}
-                slidesPerView={5}
+                effect={'coverflow'}
+                //spaceBetween={5}
+                grabCursor = {'true'}
+                centeredSlides = {'true'}
+                initialSlide = {2}
+                slidesPerView = {4}
+                pagination= {{el: '.swiper-pagination'}}
                 navigation
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide changed')}
+                onSlideChange={() => setPlayState(false)}
+                coverflowEffect={{
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                }}
             >
                 {docsFromHook && docsFromHook.slice(0, 6).map(doc => (
                     <SwiperSlide>
@@ -36,7 +49,7 @@ export default  function LatestStreamsSwiper () {
                         key={doc.id}
                         url = {doc.URL}
                         controls={true}
-                        playing={false}/>
+                        playing={playState}/>
                     </SwiperSlide>
                 ))}
             </Swiper>

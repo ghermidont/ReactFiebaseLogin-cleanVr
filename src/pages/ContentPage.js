@@ -10,29 +10,26 @@ export default function Contents() {
     return(
         <main className="page">
 
-            <section className="video-page">
-                <div className="container">
-                    <h1 className="video-page__title title"><span>Continu</span></h1>
-                    <p className="video-page__subtitle">
-                        Lorem ipsum dolor sit.
-                    </p>
-                </div>
-            </section>
+        <section className="video-page">
+            <div className="container">
+                <h1 className="video-page__title title"><span>Continu</span></h1>
+                <p className="video-page__subtitle">
+                    Lorem ipsum dolor sit.
+                </p>
+            </div>
+        </section>
 
-            <section className="video">
-                <div className="container">
-
-                    <EntertainmentSwiper />
-                    <button className="video__btn btn">Guarda altri</button>
-                </div>
-
+        <section className="video">
+           <div className="container">
+              <EntertainmentSwiper />
+              <button className="video__btn btn">Guarda altri</button>
+           </div>
         </section>
 
         <section className="video">
             <div className="container">
                 <h2 className="video__title">Math e tornei</h2>
                 <MatchesTournamentsSwiper />
-                <button className="video__btn btn">Guarda altri</button>
             </div>
         </section>
 

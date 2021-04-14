@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 //import useStorage from '../customHooks/useStorage';
-import {useAuthContext} from '../context/ContextProvider';
+import {useAuthContext} from '../context/AuthContext';
 
-const P2PictureUploadForm = () => {
+const PictureUploadForm = () => {
   //store file in a local state
   const {uploadedFile, uploadedFileSetter} = useAuthContext();
   const [error, setError] = useState(null);
   const fileTypesArray = ['image/png', 'image/jpeg'];
 
-  console.log("P2PictureUploadForm worked");
+  console.log("PictureUploadForm worked");
 
   //use the event object. 'target' is the imported object. [0] is because we want the first element of the array and the only one in our case.
   //'e' stands for the event Object that we get automatically.
@@ -38,4 +38,4 @@ const P2PictureUploadForm = () => {
   );
 }
 
-export default P2PictureUploadForm;
+export default PictureUploadForm;

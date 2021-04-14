@@ -1,8 +1,14 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-//import {useAuthContext} from '../context/AuthContext';
+import {useAuthContext} from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
-import SearchFomr from "../components/SearchForm";
+import SearchForm from "../components/SearchForm";
+//implement Algolia
+import algoliasearch from 'algoliasearch';
+const client = algoliasearch('XGRV8FFQZN', '77dc5d6782782698aba27c5c45d58cd1');
+const index = client.initIndex('your_index_name');
+
+
 
 export default function NavBar() {
     //const {currentUser} = useAuthContext();
@@ -125,7 +131,7 @@ export default function NavBar() {
                     }>
                         <span className="icon-search"></span>
                     </button>
-                    { showSearch ? <SearchFomr  /> : null }
+                    { showSearch ? <SearchForm  /> : null }
                 </div>
             </div>
         </header>
@@ -134,7 +140,7 @@ export default function NavBar() {
 
     // <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     //     <a className="navbar-brand" href="/">AkiDragon</a>
-    //     <Link to="/P2LoginSignUpForm">
+    //     <Link to="/LoginSignUpForm">
     //         {!currentUser && <button type="button" className="btn btn-primary">Login/Signup</button>}
     //     </Link>
     //

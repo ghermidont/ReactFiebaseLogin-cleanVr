@@ -4,12 +4,12 @@ import UserProfilePageContent from './UserProfilePageContent-Ph2';
 import {useAuthContext} from '../../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 
-const UserProfilePagePh2 = ({ file }) =>{
+const UserProfilePage = ({ file }) =>{
     const {currentUser, handleLogout} = useAuthContext();
 
     const { t } = useTranslation();
 
-    console.log("UserProfilePagePh2 worked.");
+    console.log("UserProfilePage worked.");
 
     return(
     <section className="hero">
@@ -23,4 +23,4 @@ const UserProfilePagePh2 = ({ file }) =>{
     );
 };
 
-export default UserProfilePagePh2;
+export default UserProfilePage;

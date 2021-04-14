@@ -1,8 +1,7 @@
+//In future consider implementing the logic of this component through useContext an LocalStorage
 import React, {useState} from 'react';
 import SwiperCore, { EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
-import 'swiper/components/effect-coverflow/effect-coverflow.scss';
 import ReactPlayer from "react-player/youtube";
 import {useDataFromFirestore} from "../../customHooks/useFirestore";
 import {Button} from 'react-bootstrap';
@@ -15,34 +14,26 @@ export default function MatchesTournamentsSwiper (){
 
     const {docsFromHook} = useDataFromFirestore('matches-swiper');
 
-    let mainSlide;
-
-    const[entertainmentVidUrl, setEntertainmentVidUrl] = useState(mainSlide);
-
-    if(docsFromHook) {
-        docsFromHook.map(function(doc){
-            if(doc.id==='mainVideo'){
-                mainSlide = doc.videoURL;
-            }
-        });
-    }
-
-    const[matchVidUrl, setMatchVidUrl] = useState( '');
+    const [mainMatchVid, setMainMatchVid] = useState('');
 
     return (
+
         <>
             <ReactPlayer
-                url = {entertainmentVidUrl}
+                url = {mainMatchVid}
                 controls = {true}
                 playing = {false}
                 onStart = {()=>console.log("hello")}
             />
-
             <Swiper
                 effect={'coverflow'}
+                //spaceBetween={5}
                 grabCursor = {'true'}
                 centeredSlides = {'true'}
-                slidesPerView = {'auto'}
+                initialSlide = {2}
+                slidesPerView = {4}
+                navigation
+                //onSwiper={(swiper) => console.log(swiper)}
                 coverflowEffect={{
                     rotate: 50,
                     stretch: 0,
@@ -51,26 +42,14 @@ export default function MatchesTournamentsSwiper (){
                     slideShadows: true,
                 }}
                 pagination= {{el: '.swiper-pagination'}}
-            >
-                {docsFromHook && docsFromHook.slice(0, 6).map(
-                    function(doc){
-                        if(doc.id==='mainVideo'){
-                            console.log("It'a a match!")
-                            console.log(doc.id);
-                            console.log(doc.videoURL);
-                            mainSlide = doc.videoURL;
-                        }
 
-                        return (
-                            <>
-                                <SwiperSlide key={doc.id}>
-                                    <Button onClick={() => setEntertainmentVidUrl(doc.videoURL)}>
-                                        <img src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt="button"/>
-                                    </Button>
-                                </SwiperSlide>
-                            </>
-                        );
-                    }
+            >
+                {docsFromHook && docsFromHook.slice(0, 6).map(doc=>
+                    <SwiperSlide key={doc.id}>
+                        <Button onLoad={() => setMainMatchVid(doc.videoURL)} onClick={() => setMainMatchVid(doc.videoURL)}>
+                            <img src={doc.thumbnail} alt="button"/>
+                        </Button>
+                    </SwiperSlide>
                 )}
             </Swiper>
         </>

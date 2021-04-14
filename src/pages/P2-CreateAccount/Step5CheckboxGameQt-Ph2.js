@@ -28,7 +28,7 @@ export default function Step5CheckboxGameQtPh2() {
                     Fourth checkbox
                 </label>
             </div>
-            <Link to="/UserProfilePagePh2">
+            <Link to="/UserProfilePage">
                 <button
                     type="button"
                     className="btn btn-light"

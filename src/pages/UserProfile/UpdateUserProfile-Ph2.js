@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {useAuthContext} from '../../context/AuthContext';
 
-const UserProfilePagePh2 = () =>{
+const UserProfilePage = () =>{
     const {currentUser, handleLogout} = useAuthContext();
     let currentUserDisplayName = "";
     let currentUserEmail = "";
     let currentUserPassword = "";
 
-    console.log("UserProfilePagePh2 worked.");
+    console.log("UserProfilePage worked.");
     console.log("The current user:" + currentUser);
     return(
         <section className="hero">
@@ -31,7 +31,7 @@ const UserProfilePagePh2 = () =>{
                         </div>
                     </div>
                 </div>
-                <Link to="/UserProfilePagePh2">
+                <Link to="/UserProfilePage">
                     <button
                         type="button"
                         className="btn btn-light"

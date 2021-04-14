@@ -8,6 +8,8 @@ import {NewsContextProvider} from './context/NewsContext';
 
 //connect styles
 import './styles/scss/style.scss';
+import 'swiper/swiper-bundle.css';
+import 'swiper/components/effect-coverflow/effect-coverflow.scss';
 //import './styles/css/app.min.css';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -21,6 +23,8 @@ import ContentPage from "./pages/ContentPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import TournamentsPage from "./pages/TournamentsPage";
 import SponsorshipPage from "./pages/P2-SponsoshipPage";
+import LoginPage from './pages/LoginPage';
+
 //components import
 import NavBar from "./parts/NavBar";
 import Footer from "./parts/Footer";
@@ -36,6 +40,7 @@ function App() {
                             <ArticlesContextProvider>
                                 <NewsContextProvider>
                                     <Switch>
+                                        <Route path="/login" exact component={LoginPage} />
                                         <Route path="/" exact component={HomePage} />
                                         <Route path="/ContactUsPage" component={ContactUsPage} />
                                         <Route path="/article/:slug" component={ArticlePage} />
