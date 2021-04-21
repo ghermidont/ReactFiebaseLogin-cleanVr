@@ -20,6 +20,11 @@ button {
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
 }
 
 body {
@@ -56,7 +61,7 @@ a {
   display: inline-block;
 
   &:hover,
-  &:focus{
+  &:focus {
     text-decoration: none;
   }
 }
