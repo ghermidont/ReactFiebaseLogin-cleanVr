@@ -2,14 +2,17 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
+
 *:focus {
   outline: none;
 }
+
 button {
   padding: 0;
   border: none;
@@ -18,6 +21,7 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+
 body {
   @include fw400;
   font-size: 1.6rem;
@@ -32,27 +36,36 @@ body {
 section {
   position: relative;
 }
+
 .container {
   max-width: 1230px;
   padding: 0 1.5rem;
   margin: 0 auto;
 }
+
 ul,
 li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 a {
   text-decoration: none;
   color: inherit;
   display: inline-block;
+
+  &:hover,
+  &:focus{
+    text-decoration: none;
+  }
 }
 
 p {
   margin: 0;
   padding: 0;
 }
+
 h1,
 h2,
 h3,
@@ -62,10 +75,34 @@ h6 {
   margin: 0;
   padding: 0;
 }
+
+input {
+  outline: none;
+  border: none;
+  transition: all .3s;
+
+  &:hover,
+  &:focus {
+    opacity: .8;
+  }
+}
+
+textarea {
+  outline: none;
+  border: none;
+  transition: all .3s;
+
+  &:hover,
+  &:focus {
+    opacity: .8;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
+
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);

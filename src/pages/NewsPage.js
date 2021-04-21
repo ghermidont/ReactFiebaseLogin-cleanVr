@@ -160,7 +160,7 @@ export default function ArticlesList() {
 
             <section className="contact">
                 <div className="container">
-                    <h2 className="contact__title">Inviaci i toui articoli, la nostra redazione li leggera</h2>
+                    <h2 className="contact__title title">Inviaci i toui articoli, la nostra redazione li leggera</h2>
                     <div className="contact__btn">
                         <Link to="/ContacUsPage">
                             <a className="contact__btn-link">Contattaci</a>

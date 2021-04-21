@@ -10,21 +10,54 @@
     margin-bottom: 5rem;
     color: var(--white);
   }
+
   &__list {
     display: flex;
     justify-content: center;
   }
+
   &__item {
-    width: 4rem;
-    height: 4rem;
-    background-color: var(--white);
-    transition: opacity 0.3;
+    transition: opacity 0.5s;
+
+    .icon-facebook2 {
+      &:hover {
+        color: var(--blue);
+      }
+    }
+    .icon-youtube {
+      &:hover {
+        color: var(--red);
+      }
+    }
+    .icon-instagram {
+      &:hover {
+        color: var(--violet);
+      }
+    }
+    .icon-twitch {
+      &:hover {
+        color: var(--twitch);
+      }
+    }
+
+    span {
+      display: inline-block;
+      font-size: 3rem;
+      transition: all 0.3s;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.2);
+      }
+    }
+
     &:not(:first-child) {
       margin-left: 3rem;
     }
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-    }
   }
+
+
+
 }
+
+

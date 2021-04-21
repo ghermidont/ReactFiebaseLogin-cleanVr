@@ -18,9 +18,13 @@
     bottom: 5rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--blue);
+    width: 1.5rem;
+    height: 1.5rem;
+
+    span{
+      font-size: 2rem;
+      color: var(--white);
+    }
   }
 }
 

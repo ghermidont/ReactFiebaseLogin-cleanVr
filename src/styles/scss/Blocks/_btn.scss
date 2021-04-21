@@ -1,5 +1,7 @@
 /*====Btn====*/
 .btn {
+  width: 19rem;
+  display: block;
   font-size: 2rem;
   font-weight: 700;
   padding: 0.8rem 1.5rem;
@@ -26,3 +28,15 @@
     transform: scale(0.9);
   }
 }
+
+.btn-more{
+  width: 19rem;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+
+  &__home-slider{
+    margin-top: 5rem;
+  }
+}
+

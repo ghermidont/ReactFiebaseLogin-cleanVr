@@ -39,7 +39,7 @@ function TournamentsPage() {
                 </li>
             </ul>
             <div className="tab__btn">
-                <button className="tab__link-strim"><a className="btn" href={doc.videoURL}>Guarda</a></button>
+                <button className="tab__link-strim"><a href={doc.videoURL}>Guarda</a></button>
                 <Link to="/BlogPage">
                     <button className="tab__link-info">Info</button>
                 </Link>
@@ -66,7 +66,7 @@ function TournamentsPage() {
                 </li>
             </ul>
             <div className="tab__btn">
-                <button className="tab__link-strim"><a className="btn" href={doc.videoURL}>Guarda</a></button>
+                <button className="tab__link-strim"><a href={doc.videoURL}>Guarda</a></button>
                 <Link to="/BlogPage">
                     <button className="tab__link-info">Info</button>
                 </Link>
@@ -98,7 +98,7 @@ function TournamentsPage() {
                 </li>
             </ul>
             <div className="tab__btn">
-                <button className="tab__link-strim"><a className="btn" href={doc.videoURL}>Guarda</a></button>
+                <button className="tab__link-strim"><a href={doc.videoURL}>Guarda</a></button>
                 <Link to="/BlogPage">
                     <button className="tab__link-info">Info</button>
                 </Link>

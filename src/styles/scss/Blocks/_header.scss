@@ -12,12 +12,17 @@
     height: 7rem;
     align-items: center;
     padding: 0rem 5rem;
-    background-color: var(--headerBg);
+    background-color: var(--blueDark);
   }
   &__logo {
     font-size: 2rem;
     font-weight: 700;
     color: var(--white);
+  }
+  &__img{
+    width: 6rem;
+    height: auto;
+    object-fit: cover;
   }
   &__menu {
     margin-left: auto;

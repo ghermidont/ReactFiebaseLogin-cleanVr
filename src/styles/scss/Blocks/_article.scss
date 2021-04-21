@@ -3,7 +3,7 @@
   max-width: 50rem;
   width: 100%;
   margin: 2rem;
-  height: 100;
+  height: 100%;
 
   &__link {
     width: 100%;
@@ -14,7 +14,9 @@
     }
   }
   &__image {
-    height: 50rem;
+    max-width: 50rem;
+    width: 100%;
+    height: auto;
   }
   &__img {
     width: 100%;
@@ -33,7 +35,6 @@
     width: 4rem;
     height: 4rem;
     border-radius: 100%;
-    background-color: var(--blueDark);
   }
   &__box-text {
     padding: 1rem;
@@ -41,7 +42,7 @@
   }
   &__text {
     width: 30rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     text-align: center;
     font-style: normal;
@@ -51,7 +52,7 @@
   }
   &__footer {
     height: 7rem;
-    background: var(--blue);
+    background: var(--blueDark);
   }
 }
 
@@ -67,9 +68,6 @@
 }
 @media screen and (max-width: 420px) {
   .article {
-    &__image {
-      height: 36rem;
-    }
     &__text {
       width: 20rem;
       font-size: 1.4rem;
@@ -82,7 +80,11 @@
     margin: 2rem 0;
 
     &__image {
-      height: 26rem;
+      width: 100%;
+      height: 100%;
+    }
+    &__text{
+      font-size: 1.2rem;
     }
   }
 }
