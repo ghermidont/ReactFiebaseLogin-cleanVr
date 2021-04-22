@@ -6,13 +6,6 @@ import {ArticlesContextProvider} from  './context/ArticlesContext'
 import {StreamsContextProvider} from './context/StreamsContext';
 import {NewsContextProvider} from './context/NewsContext';
 
-//connect styles
-import './styles/scss/style.scss';
-import 'swiper/swiper-bundle.css';
-import 'swiper/components/effect-coverflow/effect-coverflow.scss';
-//import './styles/css/app.min.css';
-//import 'bootstrap/dist/css/bootstrap.min.css';
-
 //pages import
 import HomePage from './pages/HomePage';
 import ArticlePage from "./pages/IndividualArticlePage";
@@ -22,8 +15,11 @@ import IndividualNewsPage from "./pages/IndividualNewsPage";
 import ContentPage from "./pages/ContentPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import TournamentsPage from "./pages/TournamentsPage";
-import SponsorshipPage from "./pages/P2-SponsoshipPage";
+import SponsorshipPage from "./pages/SponsoshipPage";
 import LoginPage from './pages/LoginPage';
+import DeleteProfilePage from './pages/UserProfile/DeleteProfilePage';
+import EmailVerification from './pages/CreateAccount/Step1EmailVerification';
+import MessageSent from './pages/MessageSent';
 
 //components import
 import NavBar from "./parts/NavBar";
@@ -39,9 +35,11 @@ function App() {
                         <StreamsContextProvider>
                             <ArticlesContextProvider>
                                 <NewsContextProvider>
+                                    <NavBar />
                                     <Switch>
-                                        <Route path="/login" exact component={LoginPage} />
+                                        <Route path="/LoginPage" exact component={LoginPage} />
                                         <Route path="/" exact component={HomePage} />
+                                        <Route path="/DeleteProfilePage" exact component={DeleteProfilePage} />
                                         <Route path="/ContactUsPage" component={ContactUsPage} />
                                         <Route path="/article/:slug" component={ArticlePage} />
                                         <Route path="/NewsPage" component={NewsPage} />
@@ -50,6 +48,8 @@ function App() {
                                         <Route path="/AboutUsPage" component={AboutUsPage} />
                                         <Route path="/TournamentsPage" component={TournamentsPage} />
                                         <Route path="/SponsorshipPage" component={SponsorshipPage} />
+                                        <Route path="/EmailVerification" component={EmailVerification} />
+                                        <Route path="/MessageSent" component={MessageSent} />
                                     </Switch>
                                 </NewsContextProvider>
                             </ArticlesContextProvider>

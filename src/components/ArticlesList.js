@@ -8,16 +8,13 @@ import {useArticlesContext} from "../context/ArticlesContext";
 
 export default function ArticlesList() {
     console.log("ArticlesList started");
-
     const {setArticleContent} = useArticlesContext();
-
     //We pass the name of the collection we want to work with to the useDataFromFirestore hook
     const {docsFromHook} = useDataFromFirestore('articles');
     //Put out the articles objects array to the context.
     setArticleContent(docsFromHook);
-
+    console.log("Articles extracted from ArticlesList component.");
     console.log(docsFromHook);
-
 
     return(
         <>

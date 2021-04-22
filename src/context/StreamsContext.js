@@ -1,5 +1,4 @@
 import React, {useState, useContext} from "react";
-import {useDataFromFirestore} from "../customHooks/useFirestore";
 
 const streamsContext = React.createContext();
 
@@ -11,10 +10,11 @@ export function StreamsContextProvider({ children }) {
     console.log("StreamsContextProvider() worked!");
 
     const [latestStreams, setLatestStreams] =useState([]);
-
+    const[entStreams, setEntStreams] = useState([]);
 
     const value = {
-
+        entStreams,
+        setEntStreams,
         latestStreams,
         setLatestStreams
     }

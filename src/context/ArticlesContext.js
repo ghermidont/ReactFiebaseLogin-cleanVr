@@ -1,6 +1,9 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext} from "react";
 
-const articlesContext = React.createContext();
+const articlesContext = React.createContext({
+    articleContent: [],
+    setArticleContent: () => {},
+});
 
 export function useArticlesContext(){
     return useContext(articlesContext);
@@ -10,19 +13,11 @@ export function useArticlesContext(){
 export function ArticlesContextProvider({ children }) {
     console.log("ArticlesContextProvider() worked!");
 
-    const [contextDocs, setContextDocs] = useState('');
-    const [gridArticleId, setGridArticleId] = useState('');
     const [articleContent, setArticleContent] = useState(null);
 
-
     const value = {
-        contextDocs,
-        setContextDocs,
-        gridArticleId,
-        setGridArticleId,
         articleContent,
         setArticleContent
-
     }
 
     return (

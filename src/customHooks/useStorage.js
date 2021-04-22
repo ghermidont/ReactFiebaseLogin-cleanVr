@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {projectStorage, projectFirestore} from '../fireBase';
-import {useAuthContext} from '../context/ContextProvider';
+import {useAuthContext} from '../context/AuthContext';
 
 const useStorage = (file, userId) => {
   console.log("useStorage() custom hook worked!");

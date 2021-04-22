@@ -1,24 +1,31 @@
 //https://react.i18next.com/guides/quick-start
 import React from 'react';
-import UserProfilePageContent from './UserProfilePageContent-Ph2';
-import {useAuthContext} from '../../context/AuthContext';
+import UserProfilePageContent from './UserProfilePageContent';
+
 import { useTranslation } from 'react-i18next';
+import {Link} from "react-router-dom";
+import useStorage from "../../customHooks/useStorage";
+import {useAuthContext} from "../../context/AuthContext";
 
-const UserProfilePage = ({ file }) =>{
-    const {currentUser, handleLogout} = useAuthContext();
-
-    const { t } = useTranslation();
+const UserProfilePage = () =>{
+    const {currentUser, uploadedFile} = useAuthContext;
+    useStorage(uploadedFile, currentUser.uid);
 
     console.log("UserProfilePage worked.");
+
+    const { t } = useTranslation();
 
     return(
     <section className="hero">
         <nav>
-            <h2>{t('Welcome') + " " + currentUser.displayName}</h2>
-           <button onClick={handleLogout}>Logout</button>
+
         </nav>
         <UserProfilePageContent />
-        <div><a href={"/deleteProfile"}>Delete Profile</a></div>
+        <div>
+            <Link to="/DeleteProfilePage">
+                <a>Delete Profile</a>
+            </Link>
+        </div>
     </section>
     );
 };

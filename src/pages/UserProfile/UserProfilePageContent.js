@@ -4,10 +4,9 @@
 
 //To be adapted
 import React from "react";
-import UserPointsFieldPh2 from "./UserPointsField-Ph2";
+import UserPointsField from "./UserPointsField";
 import {useAuthContext} from "../../context/AuthContext";
-
-
+import {Link} from "react-router-dom";
 
 //import useFirestore from '../customHooks/useFirestore';
 //import {auth} from './firebase';
@@ -31,12 +30,12 @@ import {useAuthContext} from "../../context/AuthContext";
 import { Link, useHistory } from "react-router-dom";*/
 //end of to be integrated
 
-const UserProfilePageContentPh2 = () =>{
+const UserProfilePageContent = () =>{
 
     const {currentUser} = useAuthContext();
 
 
-    console.log("UserProfilePageContentPh2 worked.");
+    console.log("UserProfilePageContent worked.");
     //const { docs } = useFirestore('images');  //to be integrated
   /*const [error, setError] = useState("")
   const {currentUser, logout } = useAuth()
@@ -60,9 +59,12 @@ const UserProfilePageContentPh2 = () =>{
                 <div className="bg-white shadow rounded overflow-hidden">
                     <div className="px-4 pt-0 pb-4 cover">
                         <div className="media align-items-end profile-head">
-                            <div className="profile mr-3"><a href="/UpdateUserProfile" className="btn btn-outline-dark btn-sm btn-block">Edit profile</a></div>
+                            <div className="profile mr-3">
+                                <Link to="/UpdateUserProfile">
+                                    <a className="btn btn-outline-dark btn-sm btn-block">Edit profile</a>
+                                </Link>
+                            </div>
                             <div className="media-body mb-5 text-white">
-
                                 <h4 className="mt-0 mb-0">Mark Williams</h4>
                                 <h4 className="mt-0 mb-0">Email {currentUser.email}</h4>
                                 <p className="small mb-4"> <i className="fas fa-map-marker-alt mr-2"></i>New York</p>
@@ -72,7 +74,7 @@ const UserProfilePageContentPh2 = () =>{
                 </div>
 
                 <div className="bg-light p-4 d-flex justify-content-end text-center">
-                   <UserPointsFieldPh2 />
+                   <UserPointsField />
                 </div>
 
                 <div className="px-4 py-3">
@@ -87,7 +89,7 @@ const UserProfilePageContentPh2 = () =>{
                 <div className="py-4 px-4">
                     {/* Image gallery title*/}
                     <div className="d-flex align-items-center justify-content-between mb-3">
-                        <h5 className="mb-0">Recent photos</h5><a href="#" className="btn btn-link text-muted">Show all</a>
+                        <h5 className="mb-0">Recent photos</h5><a className="btn btn-link text-muted">Show all</a>
                     </div>
                     {/* Image gallery title END*/}
                     {/* Image gallery */}
@@ -105,4 +107,4 @@ const UserProfilePageContentPh2 = () =>{
     );
 };
 
-export default UserProfilePageContentPh2;
+export default UserProfilePageContent;

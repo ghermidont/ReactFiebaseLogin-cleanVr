@@ -3,10 +3,13 @@
 import React, {useState} from 'react';
 import emailjs from 'emailjs-com';
 import{ init } from 'emailjs-com';
+import {useHistory} from 'react-router-dom';
 init("user_CT1XM0LjSnypYte1fnGI7");
-//import axios from 'axios';
 
 export default function SponsorshipForm (){
+
+    const [checkBoxState, setCheckBoxState] = useState(true);
+    const history = useHistory();
 
     function sendSponsorshipEmail(e) {
         e.preventDefault();
@@ -14,6 +17,7 @@ export default function SponsorshipForm (){
         emailjs.sendForm('service_jhhv0ki', 'template_dim3yck', '#sponsorship-form', 'user_CT1XM0LjSnypYte1fnGI7')
             .then((result) => {
                 console.log("The result is: " + result.text);
+                result.text&&history.push("/MessageSent", { from: "/SponsorshipForm" });
             }, (error) => {
                 console.log("An error intervened:" + error.text);
             });
@@ -40,15 +44,7 @@ export default function SponsorshipForm (){
                                                    name="name"
                                             />
                                         </div>
-                                        <div className="col-md-6">
-                                            <input placeholder="Surname"
-                                                   id="surname"
-                                                   type="text"
-                                                   className="form-control"
-                                                   required
-                                                   name="surname"
-                                            />
-                                        </div>
+
                                         <div className="col-md-6">
                                             <input placeholder="Email"
                                                    id="email"
@@ -69,7 +65,15 @@ export default function SponsorshipForm (){
                                     />
                                 </div>
                                 <div className="input-group mb-3">
-                                    <input className="form-check-input mt-0" type="checkbox" value=""/>
+                                    <input
+                                        className="form-check-input mt-0"
+                                        type="checkbox"
+                                        value={!checkBoxState?"The checkBox was checked!":''}
+                                        name="checkbox"
+                                        onChange={()=> {
+                                            !checkBoxState?setCheckBoxState(true):setCheckBoxState(false);
+                                            console.log(checkBoxState)}}
+                                    />
                                     <div> process data</div>
                                 </div>
                                 <button type="submit" className="primary-btn submit">Submit</button>

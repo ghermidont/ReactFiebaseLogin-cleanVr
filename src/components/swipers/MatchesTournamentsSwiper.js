@@ -1,12 +1,9 @@
 //In future consider implementing the logic of this component through useContext an LocalStorage
 import React, {useState} from 'react';
-import SwiperCore, { EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ReactPlayer from "react-player/youtube";
 import {useDataFromFirestore} from "../../customHooks/useFirestore";
 import {Button} from 'react-bootstrap';
-
-SwiperCore.use([EffectCoverflow]);
 
 //CONTENT PAGE Swiper
 export default function MatchesTournamentsSwiper (){
@@ -27,13 +24,13 @@ export default function MatchesTournamentsSwiper (){
             />
             <Swiper
                 effect={'coverflow'}
-                //spaceBetween={5}
+
                 grabCursor = {'true'}
                 centeredSlides = {'true'}
                 initialSlide = {2}
                 slidesPerView = {4}
                 navigation
-                //onSwiper={(swiper) => console.log(swiper)}
+
                 coverflowEffect={{
                     rotate: 50,
                     stretch: 0,

@@ -1,13 +1,16 @@
 //https://www.youtube.com/watch?v=NgWGllOjkbs
 //https://www.geeksforgeeks.org/how-to-send-attachments-and-email-using-nodemailer-in-node-js/
 //https://www.emailjs.com/docs/examples/reactjs/
-
-import React from 'react';
+import React, {useState} from 'react';
 import emailjs from 'emailjs-com';
 import{ init } from 'emailjs-com';
+import {useHistory} from 'react-router-dom';
 init("user_CT1XM0LjSnypYte1fnGI7");
 
 export default function ContactUsForm (){
+    const [checkBoxState, setCheckBoxState] = useState(true);
+    const history = useHistory();
+
     function sendEmail(e) {
         //This default function prevents the page from refreshing when we click the submit button;
         e.preventDefault();
@@ -15,6 +18,7 @@ export default function ContactUsForm (){
         emailjs.sendForm('service_jhhv0ki', 'template_ev9ky2p', '#contact-form', 'user_CT1XM0LjSnypYte1fnGI7')
             .then((result) => {
                 console.log("The result is: " + result.text);
+                result.text&&history.push("/MessageSent", { from: "/ContactUsForm" });
             }, (error) => {
                 console.log("An error intervened:" + error.text);
             });
@@ -80,10 +84,18 @@ export default function ContactUsForm (){
                                {/*</form>*/}
 
                                 <div className="input-group mb-3">
-                                        <input className="form-check-input mt-0" type="checkbox" value=""/>
+                                        <input
+                                            className="form-check-input mt-0"
+                                            type="checkbox"
+                                            value={!checkBoxState?"The checkBox was checked!":''}
+                                            name="checkbox"
+                                            onChange={()=> {
+                                                !checkBoxState?setCheckBoxState(true):setCheckBoxState(false);
+                                                console.log(checkBoxState)}}
+                                        />
                                         <div> process data</div>
                                 </div>
-                               <button type="submit" className="primary-btn submit">Submit</button>
+                                    <button type="submit" className="primary-btn submit">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -93,3 +105,4 @@ export default function ContactUsForm (){
     );
 }
 
+//Save to local storage logics:

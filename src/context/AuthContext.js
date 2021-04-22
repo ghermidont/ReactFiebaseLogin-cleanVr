@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext} from "react";
 //auth is the auth function we created in the firebase.js file. All functions called after auth. are firebase functions.
 import {auth} from "../fireBase";
 

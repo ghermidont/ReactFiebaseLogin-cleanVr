@@ -3,19 +3,16 @@ import { Link } from 'react-router-dom';
 import {useAuthContext} from '../../context/AuthContext';
 
 const UserProfilePage = () =>{
-    const {currentUser, handleLogout} = useAuthContext();
+    const {currentUser} = useAuthContext();
     let currentUserDisplayName = "";
-    let currentUserEmail = "";
-    let currentUserPassword = "";
 
     console.log("UserProfilePage worked.");
-    console.log("The current user:" + currentUser);
+    console.log("The current user:");
+    console.log(currentUser);
+
     return(
         <section className="hero">
-            <nav>
-                <h2>Update profile:</h2>
-                <button onClick={handleLogout}>Logout</button>
-            </nav>
+
                 <div className="row py-5 px-4">
                 <div className="col-md-5 mx-auto">
                     <div className="bg-white shadow rounded overflow-hidden">
@@ -71,4 +68,4 @@ const UserProfilePage = () =>{
     );
 };
 
-export default UserProfilePagePh2;
+export default UserProfilePage;

@@ -1,7 +1,9 @@
 import React from 'react';
 import {useArticlesContext} from "../context/ArticlesContext";
+import { useTranslation } from 'react-i18next';
 
 export default function Article() {
+    const { t, i18n } = useTranslation();
     console.log("Article component worked!");
 
     const {articleContent} = useArticlesContext();
@@ -28,7 +30,7 @@ export default function Article() {
     return(
         //Display the content of the single article who's slug was identical to the window URL slug
         <>
-            {selectedArticle && selectedArticle.map(doc =>(<div>{doc.content}</div>))}
+            {selectedArticle && selectedArticle.map(doc =>(<div>t({doc.content})</div>))}
         </>
     );
 }

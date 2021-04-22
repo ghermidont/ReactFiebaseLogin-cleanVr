@@ -2,22 +2,22 @@ import React from 'react';
 import {useHistory} from "react-router-dom";
 import {useAuthContext} from '../../context/AuthContext';
 
-export default function ConfirmDeleteProfile(){
+export default function DeleteProfilePage(){
 
     const {currentUser} = useAuthContext;
 
-    console.log("ConfirmDeleteProfile worked.");
+    console.log("DeleteProfilePage worked.");
 
     const deleteCurrentUser = () => {
-    currentUser.delete().then(function() {
-        useHistory.push('/');
-        window.alert("Profile deleted.");
-        console.log("deleteCurrentUser() worked.");
-    }).catch(function(error) {
-        window.alert(error);
-    });
-
+        currentUser.delete().then(function() {
+            useHistory.push('/');
+            window.alert("Profile deleted.");
+            console.log("deleteCurrentUser() worked.");
+        }).catch(function(error) {
+            window.alert(error);
+        });
     }
+
     return(
         <div className="modal" tabIndex="-1">
             <div className="modal-dialog">

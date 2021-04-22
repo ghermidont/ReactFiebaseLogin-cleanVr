@@ -1,10 +1,10 @@
 import React from 'react';
 //import {useAuthContext} from '../../context/AuthContext';
 
-    export default function MainUserPagePh2() {
+    export default function MainUserPage() {
         //const {userPoints, setUserPoints} = useContextProvider();
 
-        console.log("MainUserPagePh2() worked.");
+        console.log("MainUserPage() worked.");
 
         return(
         <>

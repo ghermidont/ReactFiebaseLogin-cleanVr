@@ -1,10 +1,10 @@
 import React from 'react';
 import {useAuthContext} from "../../context/AuthContext";
 
-export default function UserPointsFieldPh2 (){
+export default function UserPointsField (){
     const{userPoints} = useAuthContext();
 
-    console.log("UserPointsFieldPh2 worked.");
+    console.log("UserPointsField worked.");
 
     return(
         <div className="font-weight-bold mb-0">Points {userPoints}</div>
