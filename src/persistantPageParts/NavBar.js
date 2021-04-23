@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import {useAuthContext} from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 import SearchBarDiv from "../components/SearchBar/SearchBarDiv";
+import {useNavBarContext} from "../context/NavBarContext";
 
 export default function NavBar() {
     const {currentUser, handleLogout} = useAuthContext();
+    const {showSearch, setShowSearch} = useNavBarContext();
+
     const {t, i18n} = useTranslation();
     console.log("NavBar() worked!");
-    const [showSearch, setShowSearch] = useState(false);
+
     const [toggleMenu, setToggleMenu] = useState('');
 
     const changeLanguage = (lng) => {
@@ -132,7 +135,7 @@ export default function NavBar() {
                     }>
                         <span className="icon-search"></span>
                     </button>
-                    { showSearch ? <SearchBarDiv  /> : null }
+                    { showSearch ? <SearchBarDiv /> : null }
                 </div>
             </div>
         </header>

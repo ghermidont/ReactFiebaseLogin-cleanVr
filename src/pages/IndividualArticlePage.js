@@ -30,7 +30,12 @@ export default function Article() {
     return(
         //Display the content of the single article who's slug was identical to the window URL slug
         <>
-            {selectedArticle && selectedArticle.map(doc =>(<div>t({doc.content})</div>))}
+            {selectedArticle && selectedArticle.map(doc =>(
+                <>
+                    <div>{doc.title}</div>
+                    <div>{doc.content}</div>
+                </>
+            ))}
         </>
     );
 }

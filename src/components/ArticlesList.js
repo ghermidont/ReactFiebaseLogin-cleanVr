@@ -13,6 +13,7 @@ export default function ArticlesList() {
     const {docsFromHook} = useDataFromFirestore('articles');
     //Put out the articles objects array to the context.
     setArticleContent(docsFromHook);
+
     console.log("Articles extracted from ArticlesList component.");
     console.log(docsFromHook);
 

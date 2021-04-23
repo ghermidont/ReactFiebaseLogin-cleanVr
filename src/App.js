@@ -2,9 +2,10 @@ import React, {Suspense} from 'react';
 import {Route, Switch} from 'react-router';
 import {BrowserRouter} from 'react-router-dom';
 import {AuthContextProvider} from './context/AuthContext';
-import {ArticlesContextProvider} from  './context/ArticlesContext'
+import {ArticlesContextProvider} from  './context/ArticlesContext';
 import {StreamsContextProvider} from './context/StreamsContext';
 import {NewsContextProvider} from './context/NewsContext';
+import {NavBarContextProvider} from "./context/NavBarContext";
 
 //pages import
 import HomePage from './pages/HomePage';
@@ -22,8 +23,8 @@ import EmailVerification from './pages/CreateAccount/Step1EmailVerification';
 import MessageSent from './pages/MessageSent';
 
 //components import
-import NavBar from "./parts/NavBar";
-import Footer from "./parts/Footer";
+import NavBar from "./persistantPageParts/NavBar";
+import Footer from "./persistantPageParts/Footer";
 
 function App() {
     return(
@@ -35,7 +36,9 @@ function App() {
                         <StreamsContextProvider>
                             <ArticlesContextProvider>
                                 <NewsContextProvider>
-                                    <NavBar />
+                                    <NavBarContextProvider>
+                                        <NavBar />
+                                    </NavBarContextProvider>
                                     <Switch>
                                         <Route path="/LoginPage" exact component={LoginPage} />
                                         <Route path="/" exact component={HomePage} />

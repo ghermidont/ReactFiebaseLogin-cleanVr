@@ -24,6 +24,7 @@ https://www.infoq.com/articles/reduce-react-load-time/
 //https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/
 //https://javascript.plainenglish.io/react-context-why-am-i-getting-unnecessary-re-renders-b61836d224a7
 //https://medium.com/@nazmifeeroz/how-to-use-react-usecontext-and-usestate-hooks-as-a-global-store-1b4f1898034f
+//https://stackoverflow.com/questions/65729119/how-to-allow-user-to-edit-a-section-of-a-website-in-react
 
 To implement:
 https://reactjs.org/docs/react-api.html#reactlazy
