@@ -76,7 +76,7 @@ const SearchBarDiv = () => {
 
     // Return Statement
     return (
-        <Grid container style={{paddingTop: "50px"}}>
+        <Grid container>
             <Grid container item xs={12} alignItems="center">
                 <Grid item xs={10}>
                     <SearchBar onInput={e => handleInput(e)} />
