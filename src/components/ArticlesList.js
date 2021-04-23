@@ -6,7 +6,7 @@ import {useDataFromFirestore, useGetLatestStreams} from '../customHooks/useFires
 import {Link} from "react-router-dom";
 import {useArticlesContext} from "../context/ArticlesContext";
 import {useLatestStreamsContext} from "../context/StreamsContext";
-import logo from '../assets/images/dest/logo.png';
+//import logo from '../assets/images/dest/logo.png';
 
 export default function ArticlesList() {
   console.log("ArticlesList started");
@@ -29,7 +29,7 @@ export default function ArticlesList() {
             <a className="article__link">
               <img src={doc.imageURL} alt="" className="article__image"/>
               <div className="article__content">
-                <img className="article__logo" src={logo} alt="logo"/>
+                <img className="article__logo" src="" alt="logo"/>
                 <div className="article__box-text">
                   <p className="article__text">
                     {doc.description}
