@@ -1,7 +1,7 @@
 //In future consider implementing the logic of this component through useContext an LocalStorage
 import React, {useState} from 'react';
 import ReactPlayer from "react-player/youtube";
-import {useDataFromFirestore} from "../../customHooks/useFirestore";
+import {useDataFromFirestore} from "../../../customHooks/useFirestore";
 import {Button} from "react-bootstrap";
 import {Swiper, SwiperSlide} from 'swiper/react';
 

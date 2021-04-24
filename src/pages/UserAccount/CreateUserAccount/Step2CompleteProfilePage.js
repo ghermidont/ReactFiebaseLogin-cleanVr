@@ -1,12 +1,32 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {useAuthContext} from "../../context/AuthContext";
+import {useAuthContext} from "../../../context/AuthContext";
+import {functions} from "../../../fireBase";
 
-export default function Step2CompleteProfilePh2() {
-    const {currentUser, handleLogout, auth} = useAuthContext();
+export default function Step2CompleteProfilePage() {
+    const {currentUser, handleLogout} = useAuthContext();
     let currentUserFirstName = "";
     let currentUserLastName = "";
 
+    const cloudFunctTrigger = () => {
+
+            if (currentUser) {
+                const addData = functions.httpsCallable('setUserData');
+
+                addData({
+                    firstName: currentUserFirstName,
+                    lastName: currentUserLastName
+                })
+                    .then((result) => {
+                            console.log(" Step2 Francesco cloud function worked. \n User profile info completed successfully!");
+
+                        }
+                    ).catch((error) => {
+                    console.log(error.code + " " + error.message + "" + error.details);
+                });
+            }
+
+    }
     return(
         <section className="hero">
             <nav>
@@ -36,16 +56,11 @@ export default function Step2CompleteProfilePh2() {
                         </div>
                     </div>
                 </div>
-                <Link to="/Step3RadioGameQtPh2">
+                <Link to="/Step3RadioGameQtPage">
                     <button
                         type="button"
                         className="btn btn-light"
-                        onClick={
-                            ()=>{
-                                let name = (currentUserFirstName + " " + currentUserLastName);
-                                currentUser.updateProfile({displayName: name});
-                                console.log(name);}
-                        }
+                        onClick={cloudFunctTrigger}
                     >Next</button>
                 </Link>
             </div>

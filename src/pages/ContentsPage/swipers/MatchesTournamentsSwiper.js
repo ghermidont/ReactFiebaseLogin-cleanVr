@@ -2,19 +2,16 @@
 import React, {useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ReactPlayer from "react-player/youtube";
-import {useDataFromFirestore} from "../../customHooks/useFirestore";
+import {useDataFromFirestore} from "../../../customHooks/useFirestore";
 import {Button} from 'react-bootstrap';
 
 //CONTENT PAGE Swiper
 export default function MatchesTournamentsSwiper (){
     console.log("MatchesTournamentsSwiper component worked");
-
     const {docsFromHook} = useDataFromFirestore('matches-swiper');
-
     const [mainMatchVid, setMainMatchVid] = useState('');
 
     return (
-
         <>
             <ReactPlayer
                 url = {mainMatchVid}

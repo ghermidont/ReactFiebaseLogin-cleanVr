@@ -1,6 +1,6 @@
 import React from 'react';
-import ArticlesList from "../components/ArticlesList";
-import LatestStreamsSwiper from "../components/swipers/LatestStreamsSwiper";
+import ArticlesList from "./ArticlesList";
+import LatestStreamsSwiper from "./LatestStreamsSwiper";
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {

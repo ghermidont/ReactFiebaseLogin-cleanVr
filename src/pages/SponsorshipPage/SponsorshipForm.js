@@ -1,24 +1,23 @@
 //https://www.youtube.com/watch?v=NgWGllOjkbs
 //https://www.geeksforgeeks.org/how-to-send-attachments-and-email-using-nodemailer-in-node-js/
-//https://www.emailjs.com/docs/examples/reactjs/
 import React, {useState} from 'react';
 import emailjs from 'emailjs-com';
 import{ init } from 'emailjs-com';
 import {useHistory} from 'react-router-dom';
 init("user_CT1XM0LjSnypYte1fnGI7");
 
-export default function ContactUsForm (){
+export default function SponsorshipForm (){
+
     const [checkBoxState, setCheckBoxState] = useState(true);
     const history = useHistory();
 
-    function sendEmail(e) {
-        //This default function prevents the page from refreshing when we click the submit button;
+    function sendSponsorshipEmail(e) {
         e.preventDefault();
 
-        emailjs.sendForm('service_jhhv0ki', 'template_ev9ky2p', '#contact-form', 'user_CT1XM0LjSnypYte1fnGI7')
+        emailjs.sendForm('service_jhhv0ki', 'template_dim3yck', '#sponsorship-form', 'user_CT1XM0LjSnypYte1fnGI7')
             .then((result) => {
                 console.log("The result is: " + result.text);
-                result.text&&history.push("/MessageSent", { from: "/ContactUsForm" });
+                result.text&&history.push("/MessageSentPage", { from: "/SponsorshipForm" });
             }, (error) => {
                 console.log("An error intervened:" + error.text);
             });
@@ -31,12 +30,9 @@ export default function ContactUsForm (){
                 <div className="row">
                     <div className="col-md-12">
                         <div className="section-title">
-                            <h2 className="title">Contact Us</h2>
-                            <p>Let us know what you think! In order to provide better service,
-                                please do not hesitate to give us your feedback. Thank you.
-                            </p>
+                            <h2 className="title">Cooperation offers</h2>
                             <hr/>
-                            <form id="contact-form" onSubmit={sendEmail} method="POST">
+                            <form id="sponsorship-form" onSubmit={sendSponsorshipEmail} method="POST">
                                 <div className="form-group">
                                     <div className="row">
                                         <div className="col-md-6">
@@ -48,6 +44,7 @@ export default function ContactUsForm (){
                                                    name="name"
                                             />
                                         </div>
+
                                         <div className="col-md-6">
                                             <input placeholder="Email"
                                                    id="email"
@@ -61,41 +58,25 @@ export default function ContactUsForm (){
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <input
-                                        placeholder = "Subject"
-                                        id="subject"
-                                        type="text"
-                                        className="form-control"
-                                        required
-                                        name="subject"
-                                    />
-                                </div>
-                                <div className="form-group">
                                     <textarea placeholder = "Message"  id="message"
                                               className="form-control" rows="1"
                                               required
                                               name="message"
                                     />
                                 </div>
-                               {/* <form>*/}
-                               {/*     <label>*/}
-                               {/*         <input type="file" onChange={()=> ("ContactUsForm form file uploaded.")} />*/}
-                               {/*     </label>*/}
-                               {/*</form>*/}
-
                                 <div className="input-group mb-3">
-                                        <input
-                                            className="form-check-input mt-0"
-                                            type="checkbox"
-                                            value={!checkBoxState?"The checkBox was checked!":''}
-                                            name="checkbox"
-                                            onChange={()=> {
-                                                !checkBoxState?setCheckBoxState(true):setCheckBoxState(false);
-                                                console.log(checkBoxState)}}
-                                        />
-                                        <div> process data</div>
+                                    <input
+                                        className="form-check-input mt-0"
+                                        type="checkbox"
+                                        value={!checkBoxState?"The checkBox was checked!":''}
+                                        name="checkbox"
+                                        onChange={()=> {
+                                            !checkBoxState?setCheckBoxState(true):setCheckBoxState(false);
+                                            console.log(checkBoxState)}}
+                                    />
+                                    <div> process data</div>
                                 </div>
-                                    <button type="submit" className="primary-btn submit">Submit</button>
+                                <button type="submit" className="primary-btn submit">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -105,4 +86,3 @@ export default function ContactUsForm (){
     );
 }
 
-//Save to local storage logics:

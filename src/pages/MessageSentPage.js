@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-function MessageSent() {
+function MessageSentPage() {
     return (
         <center>
             <div style={{paddingTop: "200px"}}>Your message was successfully sent.</div>
@@ -12,4 +12,4 @@ function MessageSent() {
     );
 }
 
-export default MessageSent;
+export default MessageSentPage;

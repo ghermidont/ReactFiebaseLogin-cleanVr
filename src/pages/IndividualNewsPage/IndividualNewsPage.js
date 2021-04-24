@@ -1,6 +1,6 @@
 import React from 'react';
-import {useNewsContext} from "../context/NewsContext";
-import OtherNewsGrid from "../components/OtherNewsGrid";
+import {useNewsContext} from "../../context/NewsContext";
+import OtherNewsGrid from "./OtherNewsGrid";
 
 export default function IndividualNewsPage() {
     console.log("News component worked");

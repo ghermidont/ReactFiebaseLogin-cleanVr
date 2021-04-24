@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 //import useStorage from '../customHooks/useStorage';
-import {useAuthContext} from '../context/AuthContext';
+import {useAuthContext} from '../../context/AuthContext';
 
 const PictureUploadForm = () => {
   //store file in a local state
-  const {uploadedFile, uploadedFileSetter} = useAuthContext();
+  const {setSignUpFormUserUploadedFile} = useAuthContext();
   const [error, setError] = useState(null);
   const fileTypesArray = ['image/png', 'image/jpeg'];
 
@@ -17,11 +17,11 @@ const PictureUploadForm = () => {
     let uploadedFilesArray = e.target.files[0];
     //'image/png', 'image/jpeg' are also some default values we can see in the uploadedFilesArray object.
     if (uploadedFilesArray && fileTypesArray.includes(uploadedFilesArray.type)) {
-      uploadedFileSetter(uploadedFilesArray);
+      setSignUpFormUserUploadedFile(uploadedFilesArray);
       setError('');
     } else {
       //reset the value.
-      uploadedFileSetter(null);
+      setSignUpFormUserUploadedFile(null);
       setError('Please select an image file (png or jpg)');
     }
   };

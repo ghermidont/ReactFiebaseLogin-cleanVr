@@ -12,10 +12,12 @@ https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
 https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
 https://www.pluralsight.com/guides/return-variable-in-render-function-in-react
 https://reactjsexample.com/a-fully-accessible-and-react-powered-tab-panel-component/
-//Set up ReactJs environment: https://codeburst.io/react-ecosystem-setup-step-by-step-walkthrough-721ff45a7fc1
+
+//Set up ReactJs environment: 
+https://codeburst.io/react-ecosystem-setup-step-by-step-walkthrough-721ff45a7fc1
+
 //Swiper:
 https://github.com/andyyou/react-coverflow
-//
 
 //Performance
 https://www.youtube.com/watch?v=5fLW5Q5ODiE&t=302s

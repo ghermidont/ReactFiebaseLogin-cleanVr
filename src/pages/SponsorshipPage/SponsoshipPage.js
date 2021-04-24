@@ -1,5 +1,5 @@
 import React from 'react';
-import SponsorshipForm from "../components/SponsorshipForm";
+import SponsorshipForm from "./SponsorshipForm";
 
 function SponsoshipPage(props) {
     return (

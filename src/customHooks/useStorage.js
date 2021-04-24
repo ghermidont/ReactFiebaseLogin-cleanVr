@@ -1,45 +1,33 @@
 import { useState, useEffect } from 'react';
-import {projectStorage, projectFirestore} from '../fireBase';
-import {useAuthContext} from '../context/AuthContext';
+import {projectStorage, timestamp} from '../fireBase';
 
-const useStorage = (file, userId) => {
+const useStorage = (file, user) => {
   console.log("useStorage() custom hook worked!");
+
   const [error, setError] = useState(null);
   //Here we will tore the url we get from the storage after the file has fully uploaded.
-  const [url, setUrl] = useState(null);
-  const {setUserPictureUrl} = useAuthContext();
+  const [userUploadedPictureUrl, setUserUploadedPictureUrl] = useState(null);
 
   //This function will handle all the file upload and will run every time the user uploads a file thus the file dependency changes.
   useEffect(() => {
-    console.log("useStorage custom hook/useEffect() worked!");
+    console.log("useStorage custom hook useEffect() worked!");
     //reference to the storage bucket where a reference to the file has been created.
-    const storageRef = projectStorage.ref();//file.name
-    const collectionRef = projectFirestore.collection('userInfo');
+    const storageRef = projectStorage.ref().child("profile_pictures").child(`${user.uid}-${timestamp()}.jpg`);
+
+    //Now do not add to the collection here the url. will add it with francesco functions in the Step1.
+    //const collectionRef = projectFirestore.collection('userInfo');
+
     //put() puts the file in the reference defined in the storageRef.
-    storageRef.child('profile_pictures/' + userId).put(file).on('state_changed', (err) => {
-      setError(err); //storage().reference().child("profile_pictures").child("<userId>-<timestamp>.jpg")
+    storageRef.put(file).on('state_changed', (err) => {
+      setError(err);
     }, async () => {
       //gets the url of the upload file.
       const innerScopeUrl = await storageRef.getDownloadURL();
-      //Passing an object we want to add to our collection. Because the names of the parameter and the value we assign to it is the same we can write just innerScopeUrl.
-      //Add here the users id.
-      await collectionRef.add({
-        name: "ion",
-        lastname: "chiron"
-      })
-      .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .catch((error) => {
-        console.error("Error adding document: ", error);
+      setUserUploadedPictureUrl(innerScopeUrl);
       });
-      setUrl(innerScopeUrl);
-      setUserPictureUrl(innerScopeUrl);
-    });
+  }, [file, user.uid]);
 
-  }, [file]);
-
-  return { url, error };
+  return { userUploadedPictureUrl, error };
 }
 
 export default useStorage;

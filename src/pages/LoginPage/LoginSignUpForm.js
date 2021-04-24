@@ -1,10 +1,12 @@
 //https://firebase.google.com/docs/firestore/solutions/role-based-access
 //https://react.i18next.com/guides/quick-start
 //https://www.youtube.com/watch?v=5VxqV8FhlVg
+//https://www.freecodecamp.org/news/how-to-persist-a-logged-in-user-in-react/
+
 import React, {useEffect} from 'react';
 import PictureUploadForm from './PictureUploadForm';
-import {useAuthContext} from '../context/AuthContext';
-import UserProfilePage from "../pages/UserProfile/UserProfilePage";
+import {useAuthContext} from '../../context/AuthContext';
+import UserProfilePage from "../UserAccount/UserProfilePage";
 import { Trans } from 'react-i18next';
 
 const LoginSignUpForm = ()=>{
@@ -14,7 +16,20 @@ const LoginSignUpForm = ()=>{
         authListener();
     });
 
-    const {authListener, currentUser, email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError} = useAuthContext();
+    const {
+        authListener,
+        currentUser,
+        email,
+        setEmail,
+        password,
+        setPassword,
+        handleLogin,
+        handleSignup,
+        hasAccount,
+        setHasAccount,
+        emailError,
+        passwordError
+    } = useAuthContext();
 
     console.log("LoginSignUpForm worked.");
 
@@ -29,12 +44,27 @@ const LoginSignUpForm = ()=>{
                         <img className="mb-4" src="" alt="" width="72" height="57" />
                             <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
                             <label htmlFor="inputEmail" className="visually-hidden">Email address</label>
-                            <input type="email" id="inputEmail" className="form-control" placeholder="Email address"
-                                   required autoFocus value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                            <input
+                                type="email"
+                                id="inputEmail"
+                                className="form-control"
+                                placeholder="Email address"
+                                required
+                                autoFocus
+                                value={email}
+                                onChange={(e)=>setEmail(e.target.value)}
+                            />
                         <p className="errorMsg">{emailError}</p>
                                 <label htmlFor="inputPassword" className="visually-hidden">Password</label>
-                                <input type="password" id="inputPassword" className="form-control"
-                                       placeholder="Password" required value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                                <input
+                                    type="password"
+                                    id="inputPassword"
+                                    className="form-control"
+                                    placeholder="Password"
+                                    required
+                                    value={password}
+                                    onChange={(e)=>setPassword(e.target.value)}
+                                />
                         <p className={(e)=>setPassword(e.target.value)}>{passwordError}</p>
                                     <div className="checkbox mb-3">
                                         <label>

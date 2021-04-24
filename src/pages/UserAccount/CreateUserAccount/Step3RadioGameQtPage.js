@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-export default function Step3RadioGameQtPh2() {
+export default function Step3RadioGameQtPage() {
     return(
         <div>
             <label>Some question about games</label>
@@ -23,12 +23,12 @@ export default function Step3RadioGameQtPh2() {
                     Third category
                 </label>
             </div>
-            <Link to="/Step5CheckboxGameQtPh2">
+            <Link to="/Step5CheckboxGameQtPage">
                 <button
                     type="button"
                     className="btn btn-light"
                     onClick={
-                        ()=>console.log("Hello from Step3RadioGameQtPh2")
+                        ()=>console.log("Hello from Step3RadioGameQtPage")
                     }
                 >Next</button>
             </Link>

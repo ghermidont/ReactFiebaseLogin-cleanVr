@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDataFromFirestore} from "../customHooks/useFirestore";
+import {useDataFromFirestore} from "../../customHooks/useFirestore";
 
 //NEWS PAGE bottom grid
 

@@ -6,6 +6,7 @@
  import 'firebase/storage';
  import 'firebase/firestore';
  import 'firebase/auth';
+ import "firebase/functions";
 
  //Firebase configuration
  const firebaseConfig = {

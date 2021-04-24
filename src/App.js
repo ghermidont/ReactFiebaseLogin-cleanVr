@@ -8,23 +8,24 @@ import {NewsContextProvider} from './context/NewsContext';
 import {NavBarContextProvider} from "./context/NavBarContext";
 
 //pages import
-import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage/HomePage';
 import ArticlePage from "./pages/IndividualArticlePage";
-import ContactUsPage from "./pages/ContactUsPage";
+import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
 import NewsPage from "./pages/NewsPage";
-import IndividualNewsPage from "./pages/IndividualNewsPage";
+import IndividualNewsPage from "./pages/IndividualNewsPage/IndividualNewsPage";
 import ContentPage from "./pages/ContentPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import TournamentsPage from "./pages/TournamentsPage";
-import SponsorshipPage from "./pages/SponsoshipPage";
-import LoginPage from './pages/LoginPage';
-import DeleteProfilePage from './pages/UserProfile/DeleteProfilePage';
-import EmailVerification from './pages/CreateAccount/Step1EmailVerification';
-import MessageSent from './pages/MessageSent';
+import SponsorshipPage from "./pages/SponsorshipPage/SponsoshipPage";
+import LoginPage from './pages/LoginPage/LoginPage';
+import DeleteProfilePage from './pages/UserAccount/DeleteProfilePage';
+import EmailVerification from './pages/UserAccount/CreateUserAccount/Step1EmailVerificationPage';
+import MessageSentPage from './pages/MessageSentPage';
 
 //components import
 import NavBar from "./persistantPageParts/NavBar";
 import Footer from "./persistantPageParts/Footer";
+import UserProfilePage from "./pages/UserAccount/UpdateUserProfile";
 
 function App() {
     return(
@@ -52,7 +53,10 @@ function App() {
                                         <Route path="/TournamentsPage" component={TournamentsPage} />
                                         <Route path="/SponsorshipPage" component={SponsorshipPage} />
                                         <Route path="/EmailVerification" component={EmailVerification} />
-                                        <Route path="/MessageSent" component={MessageSent} />
+                                        <Route path="/MessageSentPage" component={MessageSentPage} />
+                                        <Route path="/UserProfilePage" component={UserProfilePage} />
+
+
                                     </Switch>
                                 </NewsContextProvider>
                             </ArticlesContextProvider>

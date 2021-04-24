@@ -11,7 +11,7 @@ export function useAuthContext(){
 /*########################## Authentication Context Provider ##########################*/
 export function AuthContextProvider({ children }) {
 
-    const [uploadedFile, uploadedFileSetter] = useState(null);
+    const [signUpFormUserUploadedFile, setSignUpFormUserUploadedFile] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -229,8 +229,8 @@ export function AuthContextProvider({ children }) {
         lastName,
         setLastName,
         setUserPictureUrl,
-        uploadedFile,
-        uploadedFileSetter,
+        signUpFormUserUploadedFile,
+        setSignUpFormUserUploadedFile,
         verifyEmail
     }
 

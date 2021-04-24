@@ -1,12 +1,12 @@
 import React from 'react';
 
-import MatchesTournamentsSwiper from "../components/swipers/MatchesTournamentsSwiper";
+import MatchesTournamentsSwiper from "./ContentsPage/swipers/MatchesTournamentsSwiper";
 import {Link} from "react-router-dom";
 
 
 
 document.addEventListener('load', async () => {
-   let  {EntertainmentSwiper} = await import("../components/swipers/EntertainmentSwiper");
+   let  {EntertainmentSwiper} = await import("./ContentsPage/swipers/EntertainmentSwiper");
 });
 
 //import EntertainmentSwiper from "../components/swipers/EntertainmentSwiper";
