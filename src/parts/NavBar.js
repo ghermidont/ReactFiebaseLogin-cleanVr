@@ -91,24 +91,44 @@ export default function NavBar() {
             </li>
 
             <li className="menu__item">
-                <Link className="menu__link menu__link--contact" to="/ContactUsPage">
-                    Contatti
-                </Link>
-                <ul className="sub-menu__list">
-                    <li className="sub-menu__item">
-                        <Link to="/ContactUsPage">
-                            <a className="sub-menu__link">Form</a>
-                         </Link>
-                    </li>
-                    <li className="sub-menu__item">
-                        <Link to="/ContactUsPage">
-                            <a className="sub-menu__link">Info di contatto</a>
-                        </Link>
-                    </li>
-                </ul>
+              <Link className="menu__link menu__link--contact" to="/ContactUsPage">
+                Contatti
+              </Link>
+              <ul className="sub-menu__list">
+                <li className="sub-menu__item">
+                  <Link to="/ContactUsPage">
+                    <a className="sub-menu__link">Form</a>
+                  </Link>
+                </li>
+                <li className="sub-menu__item">
+                  <Link to="/ContactUsPage">
+                    <a className="sub-menu__link">Info di contatto</a>
+                  </Link>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>
+        <div className="box-user">
+          <ul className="box-user__list">
+            <li className="box-user__item">
+              <button className='box-user__enter' onClick={}>
+                <span className="icon-enter box-user__icon"></span>
+              </button>
+            </li>
+            <li className="box-user__item">
+              <Link className="box-user__userpic" to='/ProfilePage'>
+                <span className="icon-user box-user__icon"></span>
+              </Link>
+            </li>
+            <li className="box-user__item">
+              <button className='box-user__exit'>
+                <span className="icon-exit box-user__icon"></span>
+              </button>
+            </li>
+          </ul>
+
+        </div>
         <ul className="lang header__lang">
           <li className="lang__item">
             <button className="lang__link" onClick={() => changeLanguage("it")}>ITA</button>
