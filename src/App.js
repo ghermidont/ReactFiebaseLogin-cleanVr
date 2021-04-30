@@ -5,6 +5,8 @@ import {AuthContextProvider} from './context/AuthContext';
 import {ArticlesContextProvider} from  './context/ArticlesContext'
 import {StreamsContextProvider} from './context/StreamsContext';
 import {NewsContextProvider} from './context/NewsContext';
+import ProfilePage from './pages/ProfilePage';
+import ArticlesPage from './pages/ArticlesPage';
 
 //connect styles
 import './styles/scss/style.scss';
@@ -45,6 +47,8 @@ function App() {
                                         <Route path="/AboutUsPage" component={AboutUsPage} />
                                         <Route path="/TournamentsPage" component={TournamentsPage} />
                                         <Route path="/SponsorshipPage" component={SponsorshipPage} />
+                                        <Route path="/ProfilePage" component={ProfilePage} />
+                                        <Route path="/ArticlesPage" component={ArticlesPage} />
                                     </Switch>
                                 </NewsContextProvider>
                             </ArticlesContextProvider>

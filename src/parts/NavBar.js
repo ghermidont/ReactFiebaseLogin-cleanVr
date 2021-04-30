@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 //import {useAuthContext} from '../context/AuthContext';
 import {useTranslation} from 'react-i18next';
 import SearchFomr from "../components/SearchForm";
-//import logo from '../assets/images/dest/logo.png';
+import logo from '../assets/images/dest/logo.png';
 
 export default function NavBar() {
   //const {currentUser} = useAuthContext();
@@ -24,7 +24,7 @@ export default function NavBar() {
           <span></span>
         </div>
         <Link className='header__logo' to="/">
-          <img className="header__img" src="" alt="Akidragon"/>
+          <img className="header__img" src={logo} alt="Akidragon"/>
         </Link>
 
         <nav className="menu header__menu">
@@ -112,7 +112,7 @@ export default function NavBar() {
         <div className="box-user">
           <ul className="box-user__list">
             <li className="box-user__item">
-              <button className='box-user__enter' onClick={}>
+              <button className='box-user__enter'>
                 <span className="icon-enter box-user__icon"></span>
               </button>
             </li>
