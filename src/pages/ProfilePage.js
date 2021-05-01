@@ -7,14 +7,37 @@ export default function ProfilePage() {
     <>
       <section className="profile">
         <div className="container">
-          <div className="profile__box">
-            <div className="profile__image">
-              <img className="profile__img" src="" alt=""/>
+          <div className="profile__inner">
+            <div className="profile__box">
+              <div className="profile__image">
+                <img className="profile__img" src="" alt=""/>
+              </div>
+              <ul className="profile__list">
+                <li className="profile__item">Name</li>
+                <li className="profile__item">Lastname</li>
+                <li className="profile__item">mail@gmail.com</li>
+              </ul>
             </div>
-            <ul className="profile__list">
-              <li className="profile__item">Name</li>
-              <li className="profile__item">Lastname</li>
-              <li className="profile__item">mail@gmail.com</li>
+            <ul className="profile__settings">
+              <li>
+                <div className="profile__settings-title">
+                   <span className="icon-cog"></span> Settings
+                </div>
+                <ul className="profile__settings-list">
+                  <li className="profile__settings-item">
+                    <Link className='profile__settings-link'>Added Article</Link>
+                  </li>
+                  <li className="profile__settings-item">
+                    <Link className='profile__settings-link'>Added Stream</Link>
+                  </li>
+                  <li className="profile__settings-item">
+                    <Link className='profile__settings-link'>Added Tournament</Link>
+                  </li>
+                  <li className="profile__settings-item">
+                    <Link className='profile__settings-link'>Approve Article</Link>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

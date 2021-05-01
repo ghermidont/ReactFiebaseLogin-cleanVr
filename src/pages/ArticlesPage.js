@@ -75,7 +75,9 @@ const ArticlesPage = () => {
                       <img src="" alt="" className="articles-page__img"/>
                     </div>
                     <div className="articles-page__content">
-                      <h3 className="articles-page__content-title">New blog article</h3>
+
+                        <h3 className="articles-page__content-title">New blog article</h3>
+
                       <div className="articles-page__content-info">
                         <div className="articles-page__content-author">Autore</div>
                         <time className="articles-page__content-date">30.04.2021</time>
