@@ -1,4 +1,6 @@
 import React, {useState, useContext} from "react";
+import {projectFirestore} from "../fireBase";
+import {useAuthContext} from "./AuthContext";
 
 const articlesContext = React.createContext({
     articleContent: [],
@@ -12,12 +14,32 @@ export function useArticlesContext(){
 /*########################## Articles Context Provider ##########################*/
 export function ArticlesContextProvider({ children }) {
     console.log("ArticlesContextProvider() worked!");
+    const {currentUser, setUserSurveyPassedStatus, createSurveyCheckInUserDoc} = useAuthContext();
+    const [generalArticlesExtractArr, setGeneralArticlesExtractArr] = useState(null);
+    const [addArticlesFormUserUploadedFile, setAddArticlesFormUserUploadedFile] = useState();
+    const [addArticlesFormUserUploadedFileUrl, setAddArticlesFormUserUploadedFileUrl] = useState();
 
-    const [articleContent, setArticleContent] = useState(null);
+    const writeSurveyToFirestoreUF = (surveyAnswersObject) =>{
+
+        projectFirestore.collection("filled-surveys").doc(currentUser.uid).set(surveyAnswersObject)
+            .then(() => {
+                console.log("Survey results successfully written!");
+                createSurveyCheckInUserDoc();
+                setUserSurveyPassedStatus(true);
+            })
+            .catch((error) => {
+                console.error("Error writing survey results: ", error);
+            });
+    }
 
     const value = {
-        articleContent,
-        setArticleContent
+        writeSurveyToFirestoreUF,
+        articleContent: generalArticlesExtractArr,
+        setArticleContent: setGeneralArticlesExtractArr,
+        addArticlesFormUserUploadedFile,
+        setAddArticlesFormUserUploadedFile,
+        addArticlesFormUserUploadedFileUrl,
+        setAddArticlesFormUserUploadedFileUrl
     }
 
     return (

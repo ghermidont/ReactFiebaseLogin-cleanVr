@@ -4,6 +4,8 @@ import './styles/scss/style.scss';
 import App from './App';
 import './i18n';
 
+console.log("index.js worked");
+
 ReactDOM.render(
   <React.StrictMode>
      <App />

@@ -1,19 +1,10 @@
 import React from 'react';
-
-import MatchesTournamentsSwiper from "./ContentsPage/swipers/MatchesTournamentsSwiper";
 import {Link} from "react-router-dom";
+import EntertainmentSwiper from "./swipers/EntertainmentSwiper";
+import MatchesTournamentsSwiper from "./swipers/MatchesTournamentsSwiper";
 
-
-
-document.addEventListener('load', async () => {
-   let  {EntertainmentSwiper} = await import("./ContentsPage/swipers/EntertainmentSwiper");
-});
-
-//import EntertainmentSwiper from "../components/swipers/EntertainmentSwiper";
-
-
-export default function Contents() {
-    console.log("Contents component worked.");
+export default function ContentPage() {
+    console.log("ContentPage component worked.");
 
      return(
         <main className="page">
@@ -28,8 +19,8 @@ export default function Contents() {
 
             <section className="video">
                <div className="container">
-                  <EntertainmentSwiper />
-               <button className="video__btn btn">Guarda altri</button>
+                   <EntertainmentSwiper />
+                   <button className="video__btn btn">Guarda altri</button>
                </div>
             </section>
 

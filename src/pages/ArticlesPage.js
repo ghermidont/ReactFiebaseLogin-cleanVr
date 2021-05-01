@@ -2,31 +2,30 @@
 //https://firebase.google.com/docs/firestore/query-data/index-overview
 //https://www.pluralsight.com/guides/how-to-implement-a-read-more-link-in-react
 import React from 'react';
-import {useDataFromFirestore} from '../customHooks/useFirestore';
 import {Link} from "react-router-dom";
-import {useNewsContext} from "../context/NewsContext";
+import {useArticlesContext} from "../context/ArticlesContext";
 
-
-export default function ArticlesList() {
-    const {setNewsContent} = useNewsContext();
+export default function ArticlesPage() {
+    const {articleContent} = useArticlesContext();
+    console.log("ArticlesPage worked!");
 
     //We pass the name of the collection we want to work with to the useDataFromFirestore hook
-    const {docsFromHook} = useDataFromFirestore('articles');
+    //const {docsFromHook} = useDataFromFirestore('articles');
     //Put out the articles objects array to the context.
-    setNewsContent(docsFromHook);
+    //setNewsContent(docsFromHook);
 
-    docsFromHook.map(doc => console.log(doc));
+    articleContent.map(doc => console.log(doc));
 
     //Filter news by category:
-    const moviesNews =  docsFromHook.filter(function(doc) {
+    const moviesNews =  articleContent.filter(function(doc) {
         return doc.category === "movies";
     });
 
-    const musicNews =  docsFromHook.filter(function(doc) {
+    const musicNews =  articleContent.filter(function(doc) {
         return doc.category === "music";
     });
 
-    const videogamesNews =  docsFromHook.filter(function(doc) {
+    const videoGamesNews =  articleContent.filter(function(doc) {
         return doc.category === "videogames";
     });
 
@@ -57,7 +56,7 @@ export default function ArticlesList() {
 
                         <ul className="tab__list" id="tab_2">
                             <div className="news__inner">
-                                {docsFromHook && docsFromHook.slice(0, 8).map(doc=>
+                                {articleContent && articleContent.slice(0, 8).map(doc=>
                                     <article className="article">
                                         <a className="article__link">
                                             <img src="" alt="" className="article__image"/>
@@ -83,7 +82,7 @@ export default function ArticlesList() {
                         <ul className="tab__list" id="tab_3">
 
                             <div className="news__inner">
-                                {videogamesNews && videogamesNews.slice(0, 8).map(doc=>
+                                {videoGamesNews && videoGamesNews.slice(0, 8).map(doc=>
                                     <article className="article">
                                         <a className="article__link">
                                             <img src="" alt="" className="article__image"/>

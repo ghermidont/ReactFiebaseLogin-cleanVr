@@ -2,6 +2,7 @@ import React from 'react';
 import ContactUsForm from "./ContactUsForm";
 
 function ContactUsPage(props) {
+    console.log("ContactUsPage worked");
     return (
         <>
             <main className="page">

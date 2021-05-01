@@ -17,7 +17,8 @@ https://reactjsexample.com/a-fully-accessible-and-react-powered-tab-panel-compon
 https://codeburst.io/react-ecosystem-setup-step-by-step-walkthrough-721ff45a7fc1
 
 //Swiper:
-https://github.com/andyyou/react-coverflow
+//https://github.com/andyyou/react-coverflow
+//https://www.npmjs.com/package/react-multistep
 
 //Performance
 https://www.youtube.com/watch?v=5fLW5Q5ODiE&t=302s
@@ -27,6 +28,7 @@ https://www.infoq.com/articles/reduce-react-load-time/
 //https://javascript.plainenglish.io/react-context-why-am-i-getting-unnecessary-re-renders-b61836d224a7
 //https://medium.com/@nazmifeeroz/how-to-use-react-usecontext-and-usestate-hooks-as-a-global-store-1b4f1898034f
 //https://stackoverflow.com/questions/65729119/how-to-allow-user-to-edit-a-section-of-a-website-in-react
+//https://www.freecodecamp.org/news/how-to-persist-a-logged-in-user-in-react/
 
 To implement:
 https://reactjs.org/docs/react-api.html#reactlazy

@@ -1,25 +1,28 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {useAuthContext} from "../../../context/AuthContext";
 import {functions} from "../../../fireBase";
+import {useHistory} from 'react-router-dom';
 
 export default function Step2CompleteProfilePage() {
-    const {currentUser, handleLogout} = useAuthContext();
+    console.log("Step2CompleteProfilePage");
+    const history = useHistory;
+    const {currentUser} = useAuthContext();
     let currentUserFirstName = "";
     let currentUserLastName = "";
+    const {userUploadedPictureUrl} = useAuthContext;
 
     const cloudFunctTrigger = () => {
-
             if (currentUser) {
                 const addData = functions.httpsCallable('setUserData');
-
                 addData({
+                    displayName: currentUser.displayName,
+                    photoURL: userUploadedPictureUrl,
                     firstName: currentUserFirstName,
                     lastName: currentUserLastName
                 })
                     .then((result) => {
-                            console.log(" Step2 Francesco cloud function worked. \n User profile info completed successfully!");
-
+                            console.log(" Step2 cloud function worked. \n User profile info completed successfully!");
+                            history.push("/MessageSentPage", {from: "/ContactUsForm"});
                         }
                     ).catch((error) => {
                     console.log(error.code + " " + error.message + "" + error.details);
@@ -27,12 +30,9 @@ export default function Step2CompleteProfilePage() {
             }
 
     }
+
     return(
         <section className="hero">
-            <nav>
-                <h2>Welcome</h2>
-                <button onClick={handleLogout}>Logout</button>
-            </nav>
             <div className="row py-5 px-4">
                 <div className="col-md-5 mx-auto">
                     <div className="bg-white shadow rounded overflow-hidden">
@@ -56,13 +56,13 @@ export default function Step2CompleteProfilePage() {
                         </div>
                     </div>
                 </div>
-                <Link to="/Step3RadioGameQtPage">
+
                     <button
                         type="button"
                         className="btn btn-light"
                         onClick={cloudFunctTrigger}
                     >Next</button>
-                </Link>
+
             </div>
         </section>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function Footer (){
+    console.log("Footer component worked.")
     return(
         <footer className="footer">
             <div className="container">

@@ -1,28 +1,46 @@
 //https://www.youtube.com/watch?v=NgWGllOjkbs
 //https://www.geeksforgeeks.org/how-to-send-attachments-and-email-using-nodemailer-in-node-js/
 //https://www.emailjs.com/docs/examples/reactjs/
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import emailjs from 'emailjs-com';
 import{ init } from 'emailjs-com';
 import {useHistory} from 'react-router-dom';
-init("user_CT1XM0LjSnypYte1fnGI7");
+init("user_ryi2yglqohFlHpuZyAqiJ");
 
 export default function ContactUsForm (){
+    console.log("contactUsForm worked");
+
     const [checkBoxState, setCheckBoxState] = useState(true);
+    const [sizeExceededError, setSizeExceededError] = useState();
+    const [fileSize, setFileSize] = useState(0);
     const history = useHistory();
+
+    useEffect(()=>{
+            if(fileSize>512000){
+                setSizeExceededError(true);
+            }else{
+                setSizeExceededError(false)
+            }
+        },[fileSize]
+    );
 
     function sendEmail(e) {
         //This default function prevents the page from refreshing when we click the submit button;
         e.preventDefault();
 
-        emailjs.sendForm('service_jhhv0ki', 'template_ev9ky2p', '#contact-form', 'user_CT1XM0LjSnypYte1fnGI7')
-            .then((result) => {
-                console.log("The result is: " + result.text);
-                result.text&&history.push("/MessageSentPage", { from: "/ContactUsForm" });
-            }, (error) => {
-                console.log("An error intervened:" + error.text);
-            });
-        e.target.reset();
+        if(sizeExceededError===false) {
+            e.preventDefault();
+
+            emailjs.sendForm('service_neq4dxf', 'template_sij1vgl', '#contactus-form', 'user_ryi2yglqohFlHpuZyAqiJ')
+                .then((result) => {
+                    console.log("The result is: " + result.text);
+                    result.text && history.push("/MessageSentPage", {from: "/ContactUsForm"});
+                }, (error) => {
+                    console.log("An error intervened:" + error.text);
+                    alert("Your message was not sent because " + error.text);
+                });
+            e.target.reset();
+        }
     }
 
     return (
@@ -36,7 +54,7 @@ export default function ContactUsForm (){
                                 please do not hesitate to give us your feedback. Thank you.
                             </p>
                             <hr/>
-                            <form id="contact-form" onSubmit={sendEmail} method="POST">
+                            <form id="contactus-form" onSubmit={sendEmail} method="POST">
                                 <div className="form-group">
                                     <div className="row">
                                         <div className="col-md-6">
@@ -77,25 +95,27 @@ export default function ContactUsForm (){
                                               name="message"
                                     />
                                 </div>
-                               {/* <form>*/}
-                               {/*     <label>*/}
-                               {/*         <input type="file" onChange={()=> ("ContactUsForm form file uploaded.")} />*/}
-                               {/*     </label>*/}
-                               {/*</form>*/}
 
                                 <div className="input-group mb-3">
                                         <input
                                             className="form-check-input mt-0"
                                             type="checkbox"
-                                            value={!checkBoxState?"The checkBox was checked!":''}
+                                            value={!checkBoxState?"I consent to the processing of my personal data":''}
                                             name="checkbox"
                                             onChange={()=> {
                                                 !checkBoxState?setCheckBoxState(true):setCheckBoxState(false);
                                                 console.log(checkBoxState)}}
                                         />
-                                        <div> process data</div>
+                                        <div>I consent to the processing of my personal data</div>
                                 </div>
-                                    <button type="submit" className="primary-btn submit">Submit</button>
+                                <div className="form-group">
+                                    {sizeExceededError&&<error>Max file size exceeded</error>}
+                                    <label>Attach file:</label>
+                                    <input type="file" name="attachment" id="fileInput" onChange={e=>setFileSize(e.target.files[0].size)}/>
+                                    <input type="submit" value="Submit" />
+                                </div>
+
+                                <button type="submit" className="primary-btn submit">Submit</button>
                             </form>
                         </div>
                     </div>

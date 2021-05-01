@@ -4,9 +4,8 @@ import UserProfilePage from '../UserAccount/UserProfilePage';
 import {useAuthContext} from '../../context/AuthContext';
 
 export default function LoginPage() {
-    console.log("LoginPage component worked.");
-
-    const {authListener, handleLogout, currentUser} = useAuthContext();
+    console.log("LoginPage worked.");
+    const {authListener, currentUser} = useAuthContext();
 
  //Hook that checks if user exists when user signup and login.
 useEffect(() => {
@@ -16,7 +15,7 @@ useEffect(() => {
     return(
           <div>
             {currentUser ? (
-                <UserProfilePage handleLogout={handleLogout} />
+                <UserProfilePage />
             ) : (
                 <LoginSignUpForm />
             )}

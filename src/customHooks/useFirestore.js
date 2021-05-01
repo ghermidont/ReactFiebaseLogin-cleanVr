@@ -75,7 +75,7 @@ export default useStorage;*/
 /*async function addUserPoints (){
     const collectionRef = projectFirestore.collection(collection);
     await collectionRef.add({  first: "Alan",
-        middle: "Mathison",
+        middle: "Mathisson",
         last: "Turing",
         born: 1912
     })

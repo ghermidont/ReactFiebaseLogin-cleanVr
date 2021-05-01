@@ -8,14 +8,13 @@ import {useNavBarContext} from "../context/NavBarContext";
 export default function NavBar() {
     const {currentUser, handleLogout} = useAuthContext();
     const {showSearch, setShowSearch} = useNavBarContext();
-
     const {t, i18n} = useTranslation();
-    console.log("NavBar() worked!");
-
     const [toggleMenu, setToggleMenu] = useState('');
 
+    console.log("NavBar component worked!");
+
     const changeLanguage = (lng) => {
-         i18n.changeLanguage(lng);
+         i18n.changeLanguage(lng).then(() => console.log("language changed") );
     };
 
     return(
@@ -29,13 +28,19 @@ export default function NavBar() {
                     <img className="header__img" src="" alt=""/>
                         Akidragon
                 </Link>
-                {currentUser&&<>
-                    <h2>{t('Welcome') + " " + currentUser?currentUser.displayName:''}</h2>
-                    <button type="button" className="btn btn-primary" onClick={()=>handleLogout}>Logout</button>
-                    </>
+                {currentUser?
+                    <section>
+                        <button type="button" className="btn btn-primary" onClick={()=>handleLogout()}>Logout</button>
+                        <h2 style={{marginTop: "100 px" }}>{t('Welcome') + " " + currentUser.displayName}</h2>
+                        <Link to="/UserProfilePage">
+                            <h1>Profile page</h1>
+                        </Link>
+                    </section>
+                    :
+                    ''
                 }
                 <Link to="/LoginPage">
-                    {!currentUser && <button type="button" className="btn btn-primary">Login/Signup</button>}
+                    {!currentUser ? <button type="button" className="btn btn-primary">Login/Signup</button>:''}
                 </Link>
                 {/*menu*/}
                 <nav className={`menu header__menu ${toggleMenu}`}>

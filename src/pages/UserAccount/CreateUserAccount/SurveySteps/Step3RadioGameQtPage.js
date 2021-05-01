@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-export default function Step3RadioGameQtPage() {
+export default function Step3RadioGameQtPage({surveyResultObject}) {
     return(
         <div>
             <label>Some question about games</label>

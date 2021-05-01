@@ -3,7 +3,8 @@ import React, {useState} from 'react';
 import ReactPlayer from "react-player/youtube";
 import {useDataFromFirestore} from "../../../customHooks/useFirestore";
 import {Button} from "react-bootstrap";
-import {Swiper, SwiperSlide} from 'swiper/react';
+import {Swiper, SwiperSlide} from "swiper/react";
+import NoImageFallBack from "../../../assets/images/NoImageFallBack.png";
 
 import SwiperCore, {EffectCoverflow} from 'swiper';
 SwiperCore.use([EffectCoverflow]);
@@ -41,14 +42,16 @@ SwiperCore.use([EffectCoverflow]);
                     //onSwiper={(swiper) => console.log(swiper)}
                     pagination={{el: '.swiper-pagination'}}
                 >
-                    {docsFromHook && docsFromHook.slice(0, 6).map(doc =>
+                    {docsFromHook ? docsFromHook.slice(0, 6).map(doc =>
                         <SwiperSlide key={doc.id}>
-                            <Button onLoad={() => setMainEntVid(doc.videoURL)}
-                                    onClick={() => setMainEntVid(doc.videoURL)}>
-                                <img src={doc.thumbnail} alt="button"/>
+                            <Button onLoad={() => setMainEntVid(doc.videoURL||NoImageFallBack)}
+                                    onClick={() => setMainEntVid(doc.videoURL||NoImageFallBack)}>
+                                <img src={NoImageFallBack} alt="button"/>
+                                {/*{doc.thumbnail||NoImageFallBack}*/}
                             </Button>
                         </SwiperSlide>
-                    )}
+                    ):<div><img src={NoImageFallBack} alt="button"/>No data from DB</div>}
+
                 </Swiper>
             </>
         );

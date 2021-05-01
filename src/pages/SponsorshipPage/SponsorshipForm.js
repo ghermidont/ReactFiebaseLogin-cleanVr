@@ -1,20 +1,19 @@
 //https://www.youtube.com/watch?v=NgWGllOjkbs
 //https://www.geeksforgeeks.org/how-to-send-attachments-and-email-using-nodemailer-in-node-js/
-import React, {useState} from 'react';
+import React from 'react';
 import emailjs from 'emailjs-com';
 import{ init } from 'emailjs-com';
 import {useHistory} from 'react-router-dom';
 init("user_CT1XM0LjSnypYte1fnGI7");
 
 export default function SponsorshipForm (){
-
-    const [checkBoxState, setCheckBoxState] = useState(true);
+    console.log("SponsorshipForm component worked.");
     const history = useHistory();
 
     function sendSponsorshipEmail(e) {
         e.preventDefault();
 
-        emailjs.sendForm('service_jhhv0ki', 'template_dim3yck', '#sponsorship-form', 'user_CT1XM0LjSnypYte1fnGI7')
+        emailjs.sendForm('service_neq4dxf', 'template_y2x1337', '#sponsorship-form', 'user_CT1XM0LjSnypYte1fnGI7')
             .then((result) => {
                 console.log("The result is: " + result.text);
                 result.text&&history.push("/MessageSentPage", { from: "/SponsorshipForm" });
@@ -64,18 +63,7 @@ export default function SponsorshipForm (){
                                               name="message"
                                     />
                                 </div>
-                                <div className="input-group mb-3">
-                                    <input
-                                        className="form-check-input mt-0"
-                                        type="checkbox"
-                                        value={!checkBoxState?"The checkBox was checked!":''}
-                                        name="checkbox"
-                                        onChange={()=> {
-                                            !checkBoxState?setCheckBoxState(true):setCheckBoxState(false);
-                                            console.log(checkBoxState)}}
-                                    />
-                                    <div> process data</div>
-                                </div>
+
                                 <button type="submit" className="primary-btn submit">Submit</button>
                             </form>
                         </div>

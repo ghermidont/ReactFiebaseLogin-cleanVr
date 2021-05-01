@@ -1,13 +1,13 @@
 import React from 'react';
+import ResumeForm from "./ResumeFor";
 
 function AboutUsPage() {
 
-    console.log();
+    console.log("AboutUsPage worked!");
 
     return (
         <main className="page">
             <section className="intro"></section>
-
             <section className="about">
                 <div className="container">
                     <div className="about__inner">
@@ -140,7 +140,7 @@ function AboutUsPage() {
                                 praesentium, quibusdam nisi dolor, inventore dolore voluptate, accusamus possimus
                                 dignissimos nam
                                 aperiam beatae rerum explicabo. Vel recusandae eius nulla, odit reiciendis numquam?</p>
-                            <button className="career__btn">Invia il tuo CV</button>
+                            <ResumeForm />
                         </div>
                     </div>
                 </div>

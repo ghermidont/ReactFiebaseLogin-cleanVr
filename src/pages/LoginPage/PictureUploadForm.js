@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-
-//import useStorage from '../customHooks/useStorage';
 import {useAuthContext} from '../../context/AuthContext';
 
 const PictureUploadForm = () => {

@@ -1,20 +1,23 @@
 //https://firebase.google.com/docs/firestore/data-model
 //https://firebase.google.com/docs/firestore/query-data/index-overview
 //https://www.pluralsight.com/guides/how-to-implement-a-read-more-link-in-react
-import React from 'react';
-import {useDataFromFirestore} from '../../customHooks/useFirestore';
+import React, {useEffect} from 'react';
+import {useDataFromFirestore} from '../customHooks/useFirestore';
 import {Link} from "react-router-dom";
-import {useArticlesContext} from "../../context/ArticlesContext";
+import {useArticlesContext} from "../context/ArticlesContext";
 
-export default function ArticlesList() {
-    console.log("ArticlesList started");
+export default function ShortArticlesList() {
+    console.log("ShortArticlesList worked");
     const {setArticleContent} = useArticlesContext();
     //We pass the name of the collection we want to work with to the useDataFromFirestore hook
     const {docsFromHook} = useDataFromFirestore('articles');
-    //Put out the articles objects array to the context.
-    setArticleContent(docsFromHook);
 
-    console.log("Articles extracted from ArticlesList component.");
+    //Put out the articles objects array to the context.
+    useEffect(() => {
+        docsFromHook&&setArticleContent(docsFromHook);
+    }, [docsFromHook, setArticleContent] );
+
+    console.log("Articles extracted from ShortArticlesList component.");
     console.log(docsFromHook);
 
     return(

@@ -6,14 +6,13 @@ import Counter from "./Counter";
 import Grid from '@material-ui/core/Grid'
 
 const SearchBarDiv = ({setShowSearch}) => {
+    console.log("SearchBarDiv worked.");
     const [dataFromServer, setDataFromServer] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [search, setSearchBarInput] = useState('');
     const [serverDataSearchResultArr, setServerDataSearchResultArr] = useState([]);
 
     const {articleContent} = useArticlesContext();
-    console.log("SearchBarDiv articleContent content:");
-    console.log(articleContent);
 
     useEffect(() => {
         setDataFromServer(articleContent);

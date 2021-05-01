@@ -1,7 +1,9 @@
 import React from 'react';
 import SponsorshipForm from "./SponsorshipForm";
 
-function SponsoshipPage(props) {
+function SponsorshipPage(props) {
+    console.log("SponsorshipPage worked");
+
     return (
         <>
             <div>Sponsorship Page</div>
@@ -10,4 +12,4 @@ function SponsoshipPage(props) {
     );
 }
 
-export default SponsoshipPage;
+export default SponsorshipPage;

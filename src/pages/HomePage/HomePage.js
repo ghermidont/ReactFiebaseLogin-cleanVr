@@ -1,10 +1,10 @@
 import React from 'react';
-import ArticlesList from "./ArticlesList";
+import ShortArticlesList from "../../components/ShortArticlesList";
 import LatestStreamsSwiper from "./LatestStreamsSwiper";
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
-    console.log("HomePage component worked.");
+    console.log("HomePage worked.");
 
     return(
        <>
@@ -28,32 +28,26 @@ export default function HomePage() {
                             <ul className="info__list">
                                 <li className="info__item">
                                     <Link to="/TournamentsPage">
-                                        <a className="info__link">
-                                            <div className="info__image">
-                                                <img className="info__img" src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
-                                            </div>
-                                            <h3 className="info__item-title">Tornei</h3>
-                                        </a>
+                                        <div className="info__image">
+                                            <img className="info__img" src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
+                                        </div>
+                                        <h3 className="info__item-title">Tornei</h3>
                                     </Link>
                                 </li>
                                 <li className="info__item">
                                     <Link to="/AboutUsPage">
-                                        <a className="info__link">
-                                            <div className="info__image">
-                                                <img className="info__img" src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
-                                            </div>
-                                            <h3 className="info__item-title">Team e giochi</h3>
-                                        </a>
+                                        <div className="info__image">
+                                            <img className="info__img" src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
+                                        </div>
+                                        <h3 className="info__item-title">Team e giochi</h3>
                                     </Link>
                                 </li>
                                 <li className="info__item">
                                     <Link to="/">
-                                        <a className="info__link">
-                                            <div className="info__image">
-                                                <img className="info__img" src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
-                                            </div>
-                                            <h3 className="info__item-title">Sale Gaming</h3>
-                                        </a>
+                                        <div className="info__image">
+                                            <img className="info__img" src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9" alt=""/>
+                                        </div>
+                                        <h3 className="info__item-title">Sale Gaming</h3>
                                     </Link>
                                 </li>
                             </ul>
@@ -61,19 +55,22 @@ export default function HomePage() {
                     </section>
                 </main>
 
+           <Link to="/MainSurveyPage">
+                <button>MainSurveyPage</button>
+           </Link>
+
            <section className="news">
                     <div className="container">
                         <h2 className="news__title title">
                             <span>Ultimi</span> articole
                         </h2>
                         <div className="news__inner">
-                            <ArticlesList />
+                            <ShortArticlesList />
                         </div>
                         <Link to="/BlogPage">
                             <button className="news__btn btn"><span>Altri</span> articoli</button>
                         </Link>
                     </div>
-
                 </section>
 
            <section className="slider">
@@ -116,9 +113,7 @@ export default function HomePage() {
                     <a className="contact__btn-link">Contattaci</a>
                </Link>
            </div>
-
        </>
     );
 }
 
-// <LatestStreamsSwiper />

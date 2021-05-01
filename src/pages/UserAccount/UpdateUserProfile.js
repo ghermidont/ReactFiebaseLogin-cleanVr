@@ -7,6 +7,7 @@ const UserProfilePage = () =>{
     let currentUserDisplayName = "";
 
     console.log("UserProfilePage worked.");
+
     console.log("The current user:");
     console.log(currentUser);
 

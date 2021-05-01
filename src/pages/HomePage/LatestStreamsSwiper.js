@@ -16,12 +16,9 @@ SwiperCore.use([EffectCoverflow]);
 //HOME PAGE Swiper
 export default  function LatestStreamsSwiper () {
     console.log("LatestStreamsSwiper component worked");
-
     const {docsFromHook} = useDataFromFirestore('latest-streams');
 
-  console.log(docsFromHook);
-
-  const [playState, setPlayState] = useState(false);
+   const [playState, setPlayState] = useState(false);
 
    return (
         <>

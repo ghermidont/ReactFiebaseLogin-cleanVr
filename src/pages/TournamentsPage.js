@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {useDataFromFirestore} from "../customHooks/useFirestore";
 
 function TournamentsPage() {
-    console.log("TournamentsPage component worked!");
+    console.log("TournamentsPage worked!");
 
     const[showTab1, setShowTab1] = useState('active');
     const[showTab2, setShowTab2] = useState('');

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {projectStorage, timestamp} from '../fireBase';
 
-const useStorage = (file, user) => {
+const useStorage = (file, user, folder) => {
   console.log("useStorage() custom hook worked!");
 
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const useStorage = (file, user) => {
   useEffect(() => {
     console.log("useStorage custom hook useEffect() worked!");
     //reference to the storage bucket where a reference to the file has been created.
-    const storageRef = projectStorage.ref().child("profile_pictures").child(`${user.uid}-${timestamp()}.jpg`);
+    const storageRef = projectStorage.ref().child(folder).child(`${user.uid}-${timestamp()}.jpg`);
 
     //Now do not add to the collection here the url. will add it with francesco functions in the Step1.
     //const collectionRef = projectFirestore.collection('userInfo');

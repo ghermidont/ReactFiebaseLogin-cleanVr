@@ -4,30 +4,36 @@ import {BrowserRouter} from 'react-router-dom';
 import {AuthContextProvider} from './context/AuthContext';
 import {ArticlesContextProvider} from  './context/ArticlesContext';
 import {StreamsContextProvider} from './context/StreamsContext';
-import {NewsContextProvider} from './context/NewsContext';
 import {NavBarContextProvider} from "./context/NavBarContext";
 
 //pages import
 import HomePage from './pages/HomePage/HomePage';
 import ArticlePage from "./pages/IndividualArticlePage";
 import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
-import NewsPage from "./pages/NewsPage";
-import IndividualNewsPage from "./pages/IndividualNewsPage/IndividualNewsPage";
-import ContentPage from "./pages/ContentPage";
-import AboutUsPage from "./pages/AboutUsPage";
+import ArticlesPage from "./pages/ArticlesPage";
+
+import ContentPage from "./pages/ContentsPage/ContentPage";
+import AboutUsPage from "./pages/AboutUsPage/AboutUsPage";
 import TournamentsPage from "./pages/TournamentsPage";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsoshipPage";
 import LoginPage from './pages/LoginPage/LoginPage';
 import DeleteProfilePage from './pages/UserAccount/DeleteProfilePage';
 import EmailVerification from './pages/UserAccount/CreateUserAccount/Step1EmailVerificationPage';
 import MessageSentPage from './pages/MessageSentPage';
+import UserProfilePage from "./pages/UserAccount/UserProfilePage";
+import AddArticlesPage from "./pages/UserAccount/AddArticlesPage/AddArticlesPage";
+import SponsorshipForm from "./pages/SponsorshipPage/SponsorshipForm";
+import ResumeForm from "./pages/AboutUsPage/ResumeFor";
+import MainSurveyPage from "./pages/UserAccount/CreateUserAccount/SurveySteps/MainSurveyPage";
+import UserProfileArticlesPage from "./pages/UserAccount/UserProfileArticlesPage";
 
 //components import
 import NavBar from "./persistantPageParts/NavBar";
 import Footer from "./persistantPageParts/Footer";
-import UserProfilePage from "./pages/UserAccount/UpdateUserProfile";
 
 function App() {
+    console.log("App.js worked.");
+
     return(
         <div className="App">
             <AuthContextProvider>
@@ -36,7 +42,7 @@ function App() {
                         <NavBar />
                         <StreamsContextProvider>
                             <ArticlesContextProvider>
-                                <NewsContextProvider>
+
                                     <NavBarContextProvider>
                                         <NavBar />
                                     </NavBarContextProvider>
@@ -46,8 +52,7 @@ function App() {
                                         <Route path="/DeleteProfilePage" exact component={DeleteProfilePage} />
                                         <Route path="/ContactUsPage" component={ContactUsPage} />
                                         <Route path="/article/:slug" component={ArticlePage} />
-                                        <Route path="/NewsPage" component={NewsPage} />
-                                        <Route path="/news/:slug" component={IndividualNewsPage} />
+                                        <Route path="/NewsPage" component={ArticlesPage} />
                                         <Route path="/ContentPage" component={ContentPage} />
                                         <Route path="/AboutUsPage" component={AboutUsPage} />
                                         <Route path="/TournamentsPage" component={TournamentsPage} />
@@ -55,10 +60,12 @@ function App() {
                                         <Route path="/EmailVerification" component={EmailVerification} />
                                         <Route path="/MessageSentPage" component={MessageSentPage} />
                                         <Route path="/UserProfilePage" component={UserProfilePage} />
-
-
+                                        <Route path="/AddArticlesPage" component={AddArticlesPage} />
+                                        <Route path="/SponsorshipForm" component={SponsorshipForm} />
+                                        <Route path="/ResumeForm" component={ResumeForm} />
+                                        <Route path="/MainSurveyPage" component={MainSurveyPage} />
+                                        <Route path="/UserProfileArticlesPage" component={UserProfileArticlesPage} />
                                     </Switch>
-                                </NewsContextProvider>
                             </ArticlesContextProvider>
                         </StreamsContextProvider>
                         <Footer/>
