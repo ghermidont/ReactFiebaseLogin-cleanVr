@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import ArticlesList from "../components/ArticlesList";
+import React from 'react';
 
 const ArticlesPage = () => {
 
@@ -48,18 +47,18 @@ const ArticlesPage = () => {
                       <img src="" alt="" className="articles-page__img"/>
                     </div>
                     <div className="articles-page__content">
-                      <h3 className="articles-page__post-title">New blog article</h3>
-                      <div className="articles-page__post-info">
-                        <div className="articles-page__post-author">Autore</div>
-                        <data className="articles-page__post-date">Data</data>
-                        <p className="articles-page__post-text">
-                          1Lorem ipsum dolor sit amet, consectetur
+                        <h3 className="articles-page__content-title">New blog article</h3>
+                      <div className="articles-page__content-info">
+                        <div className="articles-page__content-author">Autore</div>
+                        <time className="articles-page__content-date">30.04.2021</time>
+                      </div>
+                        <p className="articles-page__content-text">
+                          1 Lorem ipsum dolor sit amet, consectetur
                           adipisicing elit, sed do eiusmod tempor
                           incididunt ut labore et dolore magna aliqua. Ut
                           enim ad minim veniam, quis nostrud
                           exercitation ullamco laboris nisi ut aliquip ex
                         </p>
-                      </div>
                     </div>
                   </article>
                 </li>
@@ -78,7 +77,7 @@ const ArticlesPage = () => {
                         <time className="articles-page__content-date">30.04.2021</time>
                       </div>
                         <p className="articles-page__content-text">
-                          2Lorem ipsum dolor sit amet, consectetur
+                          2 Lorem ipsum dolor sit amet, consectetur
                           adipisicing elit, sed do eiusmod tempor
                           incididunt ut labore et dolore magna aliqua. Ut
                           enim ad minim veniam, quis nostrud
