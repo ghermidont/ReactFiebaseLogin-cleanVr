@@ -25,7 +25,7 @@ export default function ProfilePage() {
                 </div>
                 <ul className="profile__settings-list">
                   <li className="profile__settings-item">
-                    <Link className='profile__settings-link'>Added Article</Link>
+                    <Link className='profile__settings-link' to='/FormArticles'>Added Article</Link>
                   </li>
                   <li className="profile__settings-item">
                     <Link className='profile__settings-link'>Added Stream</Link>
