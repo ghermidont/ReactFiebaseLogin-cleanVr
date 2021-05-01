@@ -83,6 +83,15 @@
       font-weight: 400;
       font-style: normal;
       margin-bottom: 1.5rem;
+      transition: color .3s;
+
+      &:hover,
+      &:focus{
+        color: var(--blue);
+      }
+      &:active{
+        transform: scale(.9);
+      }
     }
     &-info{
       display: flex;

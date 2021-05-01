@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const ArticlesPage = () => {
 
@@ -47,7 +48,10 @@ const ArticlesPage = () => {
                       <img src="" alt="" className="articles-page__img"/>
                     </div>
                     <div className="articles-page__content">
+                      <Link to='/'>
                         <h3 className="articles-page__content-title">New blog article</h3>
+                      </Link>
+
                       <div className="articles-page__content-info">
                         <div className="articles-page__content-author">Autore</div>
                         <time className="articles-page__content-date">30.04.2021</time>
