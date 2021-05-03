@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function AboutUsPage() {
 
@@ -140,7 +141,7 @@ function AboutUsPage() {
                 praesentium, quibusdam nisi dolor, inventore dolore voluptate, accusamus possimus
                 dignissimos nam
                 aperiam beatae rerum explicabo. Vel recusandae eius nulla, odit reiciendis numquam?</p>
-              <button className="career__btn">Invia il tuo CV</button>
+              <Link className="career__btn" to='/FormCV'>Invia il tuo CV</Link>
             </div>
           </div>
         </div>

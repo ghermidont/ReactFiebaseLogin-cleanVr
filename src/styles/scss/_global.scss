@@ -115,3 +115,18 @@ img {
   height: 1px;
   margin: -1px;
 }
+
+.btn-upload {
+  padding: 1rem 2rem;
+  display: inline-block !important;
+  border-radius: 0.6rem;
+  color: var(--blueDark);
+  background-color: var(--blue);
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}

@@ -8,6 +8,8 @@ import {NewsContextProvider} from './context/NewsContext';
 import ProfilePage from './pages/ProfilePage';
 import ArticlesPage from './pages/ArticlesPage';
 import FormArticles from './pages/FormArticles';
+import FormUpdateProfile from './pages/FormUpdateProfile';
+import FormCV from './pages/FormCV';
 
 //connect styles
 import './styles/scss/style.scss';
@@ -51,6 +53,8 @@ function App() {
                                         <Route path="/ProfilePage" component={ProfilePage} />
                                         <Route path="/ArticlesPage" component={ArticlesPage} />
                                         <Route path="/FormArticles" component={FormArticles} />
+                                        <Route path="/FormUpdateProfile" component={FormUpdateProfile} />
+                                        <Route path="/FormCV" component={FormCV} />
                                     </Switch>
                                 </NewsContextProvider>
                             </ArticlesContextProvider>

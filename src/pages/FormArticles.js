@@ -32,13 +32,11 @@ export default function FormArticles() {
             <textarea className='form-article__input' rows='2' name="countent"></textarea>
           </label>
           <div className="form-article__box-btn">
-            <div className="form-article__input-wrapper">
-              <label className='form-article__label'>
-                <input className='btn form-article__btn' type="file" placeholder='file'/>
+              <label className='form-article__label btn-upload'> <span className='icon-upload2'></span> Upload
+                <input className='form-article__btn visually-hidden' type="file" placeholder='file'/>
               </label>
-            </div>
 
-            <input className='btn form-article__btn form-article__btn-send ' type="button" value='Submit'/>
+            <button className="form-article__btn">Submit</button>
           </div>
         </form>
       </div>
