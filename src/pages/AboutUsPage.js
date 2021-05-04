@@ -13,7 +13,7 @@ function AboutUsPage() {
         <div className="container">
           <div className="about__inner">
             <div className="about__image">
-              <img src="" alt="" className="about__img"/>
+              <img src="https://careercenter.aucegypt.edu/sites/caps.aucegypt.edu/files/2021-01/employers%207_0.jpg" alt="" className="about__img"/>
             </div>
             <div className="about__content">
               <h2 className="about__title title"><span>Chi</span> siamo</h2>
@@ -42,7 +42,7 @@ function AboutUsPage() {
         <div className="container">
           <div className="mission__wrapper">
             <div className="mission__image">
-              <img src="" alt="" className="mission__img"/>
+              <img src="https://i.pcmag.com/imagery/roundups/06PrCnKwZ4IEdw5J7cYtmlg-2.fit_lim.size_1050x.jpg" alt="" className="mission__img"/>
             </div>
             <h2 className="mission__title title">Mission</h2>
             <p className="mission__text">

@@ -112,9 +112,9 @@ export default function NavBar() {
         <div className="box-user">
           <ul className="box-user__list">
             <li className="box-user__item">
-              <button className='box-user__enter'>
+              <Link className='box-user__enter' to='/FormLogin'>
                 <span className="icon-enter box-user__icon"></span>
-              </button>
+              </Link>
             </li>
             <li className="box-user__item">
               <Link className="box-user__userpic" to='/ProfilePage'>

@@ -24,9 +24,9 @@ export default function ProfilePage() {
                    <span className="icon-cog"></span> Settings
                 </div>
                 <ul className="profile__settings-list">
-                  <li className="profile__settings-item">
-                    <Link className='profile__settings-link' to='/FormArticles'>Added Article</Link>
-                  </li>
+                  {/*<li className="profile__settings-item">*/}
+                  {/*  <Link className='profile__settings-link' to='/FormArticles'>Added Article</Link>*/}
+                  {/*</li>*/}
                   <li className="profile__settings-item">
                     <Link className='profile__settings-link' to='/FormUpdateProfile'>Added Stream</Link>
                   </li>

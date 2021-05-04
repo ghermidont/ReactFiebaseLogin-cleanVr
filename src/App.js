@@ -10,6 +10,7 @@ import ArticlesPage from './pages/ArticlesPage';
 import FormArticles from './pages/FormArticles';
 import FormUpdateProfile from './pages/FormUpdateProfile';
 import FormCV from './pages/FormCV';
+import FormLogin from './pages/FormLogin';
 
 //connect styles
 import './styles/scss/style.scss';
@@ -55,6 +56,7 @@ function App() {
                                         <Route path="/FormArticles" component={FormArticles} />
                                         <Route path="/FormUpdateProfile" component={FormUpdateProfile} />
                                         <Route path="/FormCV" component={FormCV} />
+                                        <Route path="/FormLogin" component={FormLogin} />
                                     </Switch>
                                 </NewsContextProvider>
                             </ArticlesContextProvider>

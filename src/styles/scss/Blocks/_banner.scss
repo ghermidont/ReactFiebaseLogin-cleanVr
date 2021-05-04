@@ -13,6 +13,9 @@
     border: 4px solid var(--blue);
     margin: 0 auto;
   }
+  &__img{
+    border-radius: 1rem;
+  }
   &__icon-down {
     position: absolute;
     bottom: 5rem;

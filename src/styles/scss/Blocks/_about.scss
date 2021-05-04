@@ -10,13 +10,12 @@
     max-width: 50rem;
     width: 100%;
     height: auto;
-    min-height: 36rem;
     background-color: var(--blue);
     margin-top: 5rem;
   }
   &__img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
   }
   &__content {

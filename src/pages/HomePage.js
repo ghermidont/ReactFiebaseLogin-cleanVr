@@ -12,7 +12,7 @@ export default function HomePage() {
         <section className="banner">
           <div className="container">
             <div className="banner__image">
-              <img className="banner__img" src="" alt=""/>
+              <img className="banner__img" src="https://static.dw.com/image/36055632_303.jpg" alt=""/>
             </div>
             <div className="banner__icon-down">
                 <span class="icon-arrow-down2"></span>
@@ -31,7 +31,7 @@ export default function HomePage() {
                   <a className="info__link">
                     <div className="info__image">
                       <img className="info__img"
-                           src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9"
+                           src="https://www.wipo.int/export/sites/www/wipo_magazine/images/2018_01_art_4_1_845.jpg"
                            alt=""/>
                     </div>
                     <h3 className="info__item-title">Tornei</h3>
@@ -43,7 +43,7 @@ export default function HomePage() {
                   <a className="info__link">
                     <div className="info__image">
                       <img className="info__img"
-                           src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9"
+                           src="https://static.republika.co.id/uploads/images/inpicture_slide/peluncuran-dewa-united-esports-kamis_210219083051-758.jpg"
                            alt=""/>
                     </div>
                     <h3 className="info__item-title">Team e giochi</h3>
@@ -55,7 +55,7 @@ export default function HomePage() {
                   <a className="info__link">
                     <div className="info__image">
                       <img className="info__img"
-                           src="https://firebasestorage.googleapis.com/v0/b/simplelogin-405ec.appspot.com/o/images%2Fphoto-1531525645387-7f14be1bdbbd.jpg?alt=media&token=872b25c4-c4ea-434c-95cd-b73cd9328ab9"
+                           src="https://en.parisinfo.com/var/otcp/sites/images/node_43/node_51/joueurs-d'esport-%7C-630x405-%7C-%C2%A9-dr/19307954-1-fre-FR/Joueurs-d'Esport-%7C-630x405-%7C-%C2%A9-DR.jpg"
                            alt=""/>
                     </div>
                     <h3 className="info__item-title">Sale Gaming</h3>
