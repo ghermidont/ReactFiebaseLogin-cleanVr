@@ -115,11 +115,11 @@ function AboutUsPage() {
         <div className="container">
           <h2 className="partner__title title">Partner</h2>
           <ul className="partner__list">
-            <li className="partner__item"><img src="" alt="" className="partner__image"/></li>
-            <li className="partner__item"><img src="" alt="" className="partner__image"/></li>
-            <li className="partner__item"><img src="" alt="" className="partner__image"/></li>
-            <li className="partner__item"><img src="" alt="" className="partner__image"/></li>
-            <li className="partner__item"><img src="" alt="" className="partner__image"/></li>
+            <li className="partner__item"><img src="https://pbs.twimg.com/profile_images/1227196756036898821/7TX7ZmQ4_400x400.jpg" alt="" className="partner__image"/></li>
+            <li className="partner__item"><img src="https://game-tournaments.com/media/logo/t43022.png?91" alt="" className="partner__image"/></li>
+            <li className="partner__item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw3nRr6HLTmOZq_uLX7ErrHyG5poYecNliwmJiRdkRGwSu2t0WvsX7iIRcqvCwq-kgEgY&usqp=CAU" alt="" className="partner__image"/></li>
+            <li className="partner__item"><img src="https://image.freepik.com/free-vector/kurokage-samurai-esport-logo_18228-1114.jpg" alt="" className="partner__image"/></li>
+            <li className="partner__item"><img src="https://game-tournaments.com/media/logo/t55124.png?85" alt="" className="partner__image"/></li>
           </ul>
         </div>
       </section>

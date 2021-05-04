@@ -10,10 +10,11 @@
     justify-content: space-around;
   }
   &__item {
-    width: 7rem;
-    height: 7rem;
-    border-radius: 100%;
-    background-color: var(--blue);
+    width: 10rem;
+    height: 10rem;
+  }
+  &__image{
+    object-fit: cover;
   }
 }
 @media screen and (max-width: 768px) {
