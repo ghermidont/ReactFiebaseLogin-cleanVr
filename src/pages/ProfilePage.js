@@ -31,7 +31,7 @@ export default function ProfilePage() {
                     <Link className='profile__settings-link' to='/FormAddStream'>Added Stream</Link>
                   </li>
                   <li className="profile__settings-item">
-                    <Link className='profile__settings-link'>Added Tournament</Link>
+                    <Link className='profile__settings-link' to='/FormAddTournament'>Added Tournament</Link>
                   </li>
                   <li className="profile__settings-item">
                     <Link className='profile__settings-link'>Approve Article</Link>
