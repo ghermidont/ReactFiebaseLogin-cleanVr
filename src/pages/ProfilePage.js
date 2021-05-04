@@ -46,11 +46,8 @@ export default function ProfilePage() {
       <section className="article-profile">
         <div className="container">
           <h2 className='article-profile__title title'>Article</h2>
-          <div className="article-profile__inner-btn">
-            <Link className='article-profile__btn ' to="/FormArticles">Add Articles</Link>
-            <Link className='article-profile__btn' to="/ArticlesPage">See All</Link>
-          </div>
           <div className="article-profile__inner">
+            <Link className='article-profile__btn' to="/ArticlesPage">See All</Link>
             <ArticlesList/>
           </div>
         </div>

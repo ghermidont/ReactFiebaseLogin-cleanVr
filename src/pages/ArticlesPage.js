@@ -33,6 +33,7 @@ const ArticlesPage = () => {
       <section className='articles-page'>
         <div className="container">
           <h1 className="articles-page__title title">Article</h1>
+          <Link className='btn ' to="/FormArticles">Add Articles</Link>
           <div className="articles-page__tab tab">
 
             <div className="articles-page__tab-body">
