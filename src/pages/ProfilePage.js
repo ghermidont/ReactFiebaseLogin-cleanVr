@@ -21,7 +21,7 @@ export default function ProfilePage() {
             <ul className="profile__settings">
               <li>
                 <div className="profile__settings-title">
-                   <span className="icon-cog"></span> Settings
+                  <span className="icon-cog"></span> Settings
                 </div>
                 <ul className="profile__settings-list">
                   {/*<li className="profile__settings-item">*/}
@@ -46,8 +46,11 @@ export default function ProfilePage() {
       <section className="article-profile">
         <div className="container">
           <h2 className='article-profile__title title'>Article</h2>
-          <div className="article-profile__inner">
+          <div className="article-profile__inner-btn">
+            <Link className='article-profile__btn ' to="/FormArticles">Add Articles</Link>
             <Link className='article-profile__btn' to="/ArticlesPage">See All</Link>
+          </div>
+          <div className="article-profile__inner">
             <ArticlesList/>
           </div>
         </div>

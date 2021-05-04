@@ -1,31 +1,34 @@
 /*====Article Profile====*/
-.article-profile{
-  &__title{
+.article-profile {
+  &__title {
     margin-bottom: 8rem;
   }
-  &__inner{
+
+  &__inner {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    position: relative;
+
+    &-btn {
+      display: flex;
+      justify-content: space-between;
+    }
   }
-  &__btn{
-    position: absolute;
-    right: 4rem;
-    top: -2rem;
+
+  &__btn {
     font-size: 2rem;
     transition: color .3s;
 
     &:hover,
-    &:focus{
+    &:focus {
       color: var(--blue);
     }
   }
 }
 
 @media screen and (max-width: 1110px) {
-  .article-profile{
-    &__inner{
+  .article-profile {
+    &__inner {
       flex-direction: column;
       align-items: center;
     }
