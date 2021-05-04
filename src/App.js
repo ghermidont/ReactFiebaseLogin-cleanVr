@@ -11,6 +11,7 @@ import FormArticles from './pages/FormArticles';
 import FormUpdateProfile from './pages/FormUpdateProfile';
 import FormCV from './pages/FormCV';
 import FormLogin from './pages/FormLogin';
+import FormAddStream from './pages/FormAddStream';
 
 //connect styles
 import './styles/scss/style.scss';
@@ -57,6 +58,7 @@ function App() {
                                         <Route path="/FormUpdateProfile" component={FormUpdateProfile} />
                                         <Route path="/FormCV" component={FormCV} />
                                         <Route path="/FormLogin" component={FormLogin} />
+                                        <Route path="/FormAddStream" component={FormAddStream} />
                                     </Switch>
                                 </NewsContextProvider>
                             </ArticlesContextProvider>

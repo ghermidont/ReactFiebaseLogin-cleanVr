@@ -122,6 +122,11 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="box-user__item">
+              <Link to='./FormUpdateProfile' className='box-user__exit'>
+                <span className="icon-cog box-user__icon"></span>
+              </Link>
+            </li>
+            <li className="box-user__item">
               <button className='box-user__exit'>
                 <span className="icon-exit box-user__icon"></span>
               </button>
