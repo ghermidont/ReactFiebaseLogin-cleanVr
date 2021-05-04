@@ -207,7 +207,10 @@ function TournamentsPage() {
             <h1 className="tournament__title title">
               <span>I tornei aki</span>dragon
             </h1>
-            <img src="" alt="" className="tournament__image"/>
+            <div className="tournament__image">
+              <img className="tournament__img" src="https://www.esportswizard.com/wp-content/uploads/south-korea-triumphing-in-the-overwatch-league.jpg" alt=""/>
+            </div>
+
             <p className="tournament__text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur odio ipsum explicabo
               repudiandae eius, quos corrupti dolorem sint voluptatum rem nihil sequi fugit quis amet

@@ -65,44 +65,44 @@ function AboutUsPage() {
             <h2 className="team__title title">Crew</h2>
             <ul className="team__list">
               <li className="team__item">
-                <img src="" alt="" className="team__image"/>
+                <img src="http://static.everypixel.com/ep-pixabay/0167/6119/0102/65563/1676119010265563032-man.jpg" alt="" className="team__image"/>
                 <div className="team__name">Name</div>
                 <div className="team__position">manager</div>
               </li>
               <li className="team__item">
-                <img src="" alt="" className="team__image"/>
+                <img src="http://static.everypixel.com/ep-pixabay/0167/6119/0102/65563/1676119010265563032-man.jpg" alt="" className="team__image"/>
                 <div className="team__name">Name</div>
                 <div className="team__position">manager</div>
               </li>
               <li className="team__item">
-                <img src="" alt="" className="team__image"/>
+                <img src="http://static.everypixel.com/ep-pixabay/0167/6119/0102/65563/1676119010265563032-man.jpg" alt="" className="team__image"/>
                 <div className="team__name">Name</div>
                 <div className="team__position">manager</div>
               </li>
             </ul>
             <ul className="team__list team__list--second">
               <li className="team__item">
-                <img src="" alt="" className="team__image"/>
+                <img src="http://static.everypixel.com/ep-pixabay/0167/6119/0102/65563/1676119010265563032-man.jpg" alt="" className="team__image"/>
                 <div className="team__name">Name</div>
                 <div className="team__position">manager</div>
               </li>
               <li className="team__item">
-                <img src="" alt="" className="team__image"/>
+                <img src="http://static.everypixel.com/ep-pixabay/0167/6119/0102/65563/1676119010265563032-man.jpg" alt="" className="team__image"/>
                 <div className="team__name">Name</div>
                 <div className="team__position">manager</div>
               </li>
               <li className="team__item">
-                <img src="" alt="" className="team__image"/>
+                <img src="http://static.everypixel.com/ep-pixabay/0167/6119/0102/65563/1676119010265563032-man.jpg" alt="" className="team__image"/>
                 <div className="team__name">Name</div>
                 <div className="team__position">manager</div>
               </li>
               <li className="team__item">
-                <img src="" alt="" className="team__image"/>
+                <img src="http://static.everypixel.com/ep-pixabay/0167/6119/0102/65563/1676119010265563032-man.jpg" alt="" className="team__image"/>
                 <div className="team__name">Name</div>
                 <div className="team__position">manager</div>
               </li>
               <li className="team__item">
-                <img src="" alt="" className="team__image"/>
+                <img src="http://static.everypixel.com/ep-pixabay/0167/6119/0102/65563/1676119010265563032-man.jpg" alt="" className="team__image"/>
                 <div className="team__name">Name</div>
                 <div className="team__position">manager</div>
               </li>
@@ -128,7 +128,7 @@ function AboutUsPage() {
         <div className="container">
           <div className="career__inner">
             <div className="career__image">
-              <img src="" alt="" className="career__img"/>
+              <img src="https://corporate.exxonmobil.com/-/media/Global/Images/New-purchases/business-meeting-breakout-discussions_supporting.jpg" alt="" className="career__img"/>
             </div>
             <div className="career__content">
               <h2 className="career__title title">Career</h2>

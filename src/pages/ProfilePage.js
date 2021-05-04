@@ -10,7 +10,7 @@ export default function ProfilePage() {
           <div className="profile__inner">
             <div className="profile__box">
               <div className="profile__image">
-                <img className="profile__img" src="" alt=""/>
+                <img className="profile__img" src="https://www.istockphoto.com/resources/images/PhotoFTLP/Signature-1205756464.jpg" alt=""/>
               </div>
               <ul className="profile__list">
                 <li className="profile__item">Name</li>

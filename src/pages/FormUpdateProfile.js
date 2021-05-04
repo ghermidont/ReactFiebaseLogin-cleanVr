@@ -6,7 +6,7 @@ export default function FormUpdateProfile() {
       <div className='form-update__body'>
         <form className="form-update">
           <div className="form-update__avatar-image">
-            <img src="" alt=""/>
+            <img className="form-update__avatar-img" src="https://www.istockphoto.com/resources/images/PhotoFTLP/Signature-1205756464.jpg" alt=""/>
           </div>
           <label className='form-update__label btn-upload'> <span className='icon-upload2'></span> Upload
             <input className='form-update__btn visually-hidden' type="file" placeholder='file'/>

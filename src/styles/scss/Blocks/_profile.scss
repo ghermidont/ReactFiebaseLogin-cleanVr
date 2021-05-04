@@ -15,11 +15,14 @@
   }
 
   &__image {
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 12rem;
     border-radius: 100%;
     background-color: var(--blue);
     margin-right: 3rem;
+  }
+  &__img{
+    border-radius: 100%;
   }
 
   &__list {
