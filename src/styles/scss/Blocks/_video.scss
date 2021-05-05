@@ -6,6 +6,10 @@
     margin-bottom: 6rem;
     text-align: center;
   }
+  &__wrapper{
+    max-width: 60rem;
+    margin: 3rem auto;
+  }
   &__link {
     display: block;
     max-width: 70rem;

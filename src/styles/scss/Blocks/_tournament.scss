@@ -6,12 +6,9 @@
     margin-bottom: 5rem;
   }
   &__image {
-    width: 80rem;
+    max-width: 80rem;
     height: auto;
-    min-height: 36rem;
-    display: inline-block;
     margin-bottom: 1rem;
-    background-color: var(--blue);
     display: block;
     margin: 0 auto 3rem;
   }

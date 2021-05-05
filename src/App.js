@@ -13,6 +13,7 @@ import FormCV from './pages/FormCV';
 import FormLogin from './pages/FormLogin';
 import FormAddStream from './pages/FormAddStream';
 import FormAddTournament from './pages/FormAddTournament';
+import ApproveArticle from './pages/ApproveArticle';
 
 //connect styles
 import './styles/scss/style.scss';
@@ -63,6 +64,7 @@ function App() {
                                         <Route path="/FormAddStream" component={FormAddStream} />
                                         <Route path="/FormAddTournament" component={FormAddTournament} />
                                         <Route path="/CompleteProfile" component={CompleteProfile} />
+                                        <Route path="/ApproveArticle" component={ApproveArticle} />
                                     </Switch>
                                 </NewsContextProvider>
                             </ArticlesContextProvider>

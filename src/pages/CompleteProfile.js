@@ -3,7 +3,6 @@ import React from 'react';
 export default function CompleteProfile() {
   return (
     <>
-
       <div className='form-article__body form-login__body'>
         <h1 className="title form-title">Complete Profile</h1>
         <form className="form-article">

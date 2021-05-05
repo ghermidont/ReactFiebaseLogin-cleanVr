@@ -21,7 +21,9 @@ export default function Contents() {
 
       <section className="video">
         <div className="container">
+          <div className="video__wrapper">
 
+          </div>
           <EntertainmentSwiper/>
           <button className="video__btn btn">Guarda altri</button>
         </div>
