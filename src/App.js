@@ -29,6 +29,7 @@ import ContentPage from "./pages/ContentPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import TournamentsPage from "./pages/TournamentsPage";
 import SponsorshipPage from "./pages/P2-SponsoshipPage";
+import CompleteProfile from "./pages/CompleteProfile";
 //components import
 import NavBar from "./parts/NavBar";
 import Footer from "./parts/Footer";
@@ -61,6 +62,7 @@ function App() {
                                         <Route path="/FormLogin" component={FormLogin} />
                                         <Route path="/FormAddStream" component={FormAddStream} />
                                         <Route path="/FormAddTournament" component={FormAddTournament} />
+                                        <Route path="/CompleteProfile" component={CompleteProfile} />
                                     </Switch>
                                 </NewsContextProvider>
                             </ArticlesContextProvider>
