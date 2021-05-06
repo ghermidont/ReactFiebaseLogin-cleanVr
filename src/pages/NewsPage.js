@@ -81,8 +81,9 @@ export default function ArticlesList() {
               </li>
             </ul>
 
-            <div className="tab__list" id="tab_2">
-              <div className="news__inner">
+            <div className="news__inner">
+
+              <div className="tab__list" id="tab_2">
                 {docsFromHook && docsFromHook.slice(0, 8).map(doc =>
                   <article className="article">
                     <a className="article__link">
@@ -101,14 +102,9 @@ export default function ArticlesList() {
                     </a>
                   </article>
                 )};
-
               </div>
 
-            </div>
-
-            <div className="tab__list" id="tab_3">
-
-              <div className="news__inner">
+              <div className="tab__list" id="tab_3">
                 {videogamesNews && videogamesNews.slice(0, 8).map(doc =>
                   <article className="article">
                     <a className="article__link">
@@ -129,11 +125,7 @@ export default function ArticlesList() {
                 )};
               </div>
 
-            </div>
-
-            <div className="tab__list" id="tab_4">
-
-              <div className="news__inner">
+              <div className="tab__list" id="tab_4">
                 {moviesNews && moviesNews.slice(0, 8).map(doc =>
                   <article className="article">
                     <a className="article__link">
@@ -154,11 +146,7 @@ export default function ArticlesList() {
                 )};
               </div>
 
-            </div>
-
-            <div className="tab__list" id="tab_5">
-
-              <div className="news__inner">
+              <div className="tab__list" id="tab_5">
                 {musicNews && musicNews.slice(0, 8).map(doc =>
                   <article className="article">
                     <a className="article__link">
