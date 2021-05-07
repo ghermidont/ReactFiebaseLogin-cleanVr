@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import logoBig from '../assets/images/dest/logo-big.png';
 
 function AboutUsPage() {
 
@@ -13,7 +14,7 @@ function AboutUsPage() {
         <div className="container">
           <div className="about__inner">
             <div className="about__image">
-              <img src="https://careercenter.aucegypt.edu/sites/caps.aucegypt.edu/files/2021-01/employers%207_0.jpg" alt="" className="about__img"/>
+              <img src={logoBig} alt="" className="about__img"/>
             </div>
             <div className="about__content">
               <h2 className="about__title title"><span>Chi</span> siamo</h2>

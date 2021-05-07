@@ -4,13 +4,12 @@
 
   &__inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   &__image {
     max-width: 50rem;
     width: 100%;
     height: auto;
-    background-color: var(--blue);
     margin-top: 5rem;
   }
   &__img {
