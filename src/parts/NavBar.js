@@ -96,13 +96,13 @@ export default function NavBar() {
               </Link>
               <ul className="sub-menu__list">
                 <li className="sub-menu__item">
-                  <Link to="/ContactUsPage">
-                    <a className="sub-menu__link">Form</a>
+                  <Link className="sub-menu__link" to="/ContactUsPage">
+                    Form
                   </Link>
                 </li>
                 <li className="sub-menu__item">
-                  <Link to="/ContactUsPage">
-                    <a className="sub-menu__link">Info di contatto</a>
+                  <Link className="sub-menu__link" to="/ContactUsPage">
+                    Info di contatto
                   </Link>
                 </li>
               </ul>

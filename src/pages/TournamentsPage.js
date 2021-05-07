@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {useDataFromFirestore} from "../customHooks/useFirestore";
+import logoSection from '../assets/images/dest/logo-section.png';
 
 function TournamentsPage() {
 
@@ -204,8 +205,11 @@ function TournamentsPage() {
       <main className="page">
         <section className="tournament">
           <div className="container">
+            <div className="info__logo logo-section">
+              <img src={logoSection} alt="" className="info__img"/>
+            </div>
             <h1 className="tournament__title title">
-              <span>I tornei aki</span>dragon
+              <span>I tornei aki</span>drago
             </h1>
             <div className="tournament__image">
               <img className="tournament__img" src="https://www.esportswizard.com/wp-content/uploads/south-korea-triumphing-in-the-overwatch-league.jpg" alt=""/>

@@ -2,6 +2,7 @@ import React from 'react';
 import ArticlesList from "../components/ArticlesList";
 import LatestStreamsSwiper from "../components/swipers/LatestStreamsSwiper";
 import {Link} from 'react-router-dom';
+import logoSection from '../assets/images/dest/logo-section.png';
 
 export default function HomePage() {
   console.log("HomePage component worked.");
@@ -14,16 +15,13 @@ export default function HomePage() {
             <div className="banner__image">
               <img className="banner__img" src="https://static.dw.com/image/36055632_303.jpg" alt=""/>
             </div>
-            <div className="banner__icon-down">
-                <span class="icon-arrow-down2"></span>
-            </div>
           </div>
         </section>
 
         <section className="info">
           <div className="container">
-            <h2 className="title info__title">
-              Esplora l'unniverso <span>aki</span>dragon
+            <h2 className="title info__title title-logo">
+              Esplora l'unniverso <span>aki</span>drago
             </h2>
             <ul className="info__list">
               <li className="info__item">
@@ -69,6 +67,9 @@ export default function HomePage() {
 
         <section className="news">
           <div className="container">
+            <div className="info__logo logo-section">
+              <img src={logoSection} alt="" className="info__img"/>
+            </div>
             <h2 className="news__title title">
               <span>Ultimi</span> articole
             </h2>

@@ -2,6 +2,7 @@ import React from 'react';
 import EntertainmentSwiper from "../components/swipers/EntertainmentSwiper";
 import MatchesTournamentsSwiper from "../components/swipers/MatchesTournamentsSwiper";
 import {Link} from "react-router-dom";
+import logoSection from '../assets/images/dest/logo-section.png';
 
 export default function Contents() {
 
@@ -12,7 +13,10 @@ export default function Contents() {
 
       <section className="video-page">
         <div className="container">
-          <h1 className="video-page__title title"><span>Continu</span></h1>
+          <div className="info__logo logo-section">
+              <img src={logoSection} alt="" className="info__img"/>
+            </div>
+          <h1 className="video-page__title title"><span>Contenuti</span></h1>
           <p className="video-page__subtitle">
             Lorem ipsum dolor sit.
           </p>
@@ -21,6 +25,7 @@ export default function Contents() {
 
       <section className="video">
         <div className="container">
+          <h2 className="video__title">Entertainment</h2>
           <div className="video__wrapper">
 
           </div>

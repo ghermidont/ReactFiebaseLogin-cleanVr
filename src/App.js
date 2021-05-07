@@ -2,7 +2,7 @@ import React, {Suspense} from 'react';
 import {Route, Switch} from 'react-router';
 import {BrowserRouter} from 'react-router-dom';
 import {AuthContextProvider} from './context/AuthContext';
-import {ArticlesContextProvider} from  './context/ArticlesContext'
+import {ArticlesContextProvider} from './context/ArticlesContext'
 import {StreamsContextProvider} from './context/StreamsContext';
 import {NewsContextProvider} from './context/NewsContext';
 import ProfilePage from './pages/ProfilePage';
@@ -36,45 +36,45 @@ import NavBar from "./parts/NavBar";
 import Footer from "./parts/Footer";
 
 function App() {
-    return(
-        <div className="App">
-            <AuthContextProvider>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <BrowserRouter>
-                        <NavBar />
-                        <StreamsContextProvider>
-                            <ArticlesContextProvider>
-                                <NewsContextProvider>
-                                    <Switch>
-                                        <Route path="/" exact component={HomePage} />
-                                        <Route path="/ContactUsPage" component={ContactUsPage} />
-                                        <Route path="/article/:slug" component={ArticlePage} />
-                                        <Route path="/NewsPage" component={NewsPage} />
-                                        <Route path="/news/:slug" component={IndividualNewsPage} />
-                                        <Route path="/ContentPage" component={ContentPage} />
-                                        <Route path="/AboutUsPage" component={AboutUsPage} />
-                                        <Route path="/TournamentsPage" component={TournamentsPage} />
-                                        <Route path="/SponsorshipPage" component={SponsorshipPage} />
-                                        <Route path="/ProfilePage" component={ProfilePage} />
-                                        <Route path="/ArticlesPage" component={ArticlesPage} />
-                                        <Route path="/FormArticles" component={FormArticles} />
-                                        <Route path="/FormUpdateProfile" component={FormUpdateProfile} />
-                                        <Route path="/FormCV" component={FormCV} />
-                                        <Route path="/FormLogin" component={FormLogin} />
-                                        <Route path="/FormAddStream" component={FormAddStream} />
-                                        <Route path="/FormAddTournament" component={FormAddTournament} />
-                                        <Route path="/CompleteProfile" component={CompleteProfile} />
-                                        <Route path="/ApproveArticle" component={ApproveArticle} />
-                                    </Switch>
-                                </NewsContextProvider>
-                            </ArticlesContextProvider>
-                        </StreamsContextProvider>
-                        <Footer/>
-                    </BrowserRouter>
-                </Suspense>
-            </AuthContextProvider>
-        </div>
-    );
+  return (
+    <div className="App">
+      <AuthContextProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+          <BrowserRouter>
+            <NavBar/>
+            <StreamsContextProvider>
+              <ArticlesContextProvider>
+                <NewsContextProvider>
+                  <Switch>
+                    <Route path="/" exact component={HomePage}/>
+                    <Route path="/ContactUsPage" component={ContactUsPage}/>
+                    <Route path="/article/:slug" component={ArticlePage}/>
+                    <Route path="/NewsPage" component={NewsPage}/>
+                    <Route path="/news/:slug" component={IndividualNewsPage}/>
+                    <Route path="/ContentPage" component={ContentPage}/>
+                    <Route path="/AboutUsPage" component={AboutUsPage}/>
+                    <Route path="/TournamentsPage" component={TournamentsPage}/>
+                    <Route path="/SponsorshipPage" component={SponsorshipPage}/>
+                    <Route path="/ProfilePage" component={ProfilePage}/>
+                    <Route path="/ArticlesPage" component={ArticlesPage}/>
+                    <Route path="/FormArticles" component={FormArticles}/>
+                    <Route path="/FormUpdateProfile" component={FormUpdateProfile}/>
+                    <Route path="/FormCV" component={FormCV}/>
+                    <Route path="/FormLogin" component={FormLogin}/>
+                    <Route path="/FormAddStream" component={FormAddStream}/>
+                    <Route path="/FormAddTournament" component={FormAddTournament}/>
+                    <Route path="/CompleteProfile" component={CompleteProfile}/>
+                    <Route path="/ApproveArticle" component={ApproveArticle}/>
+                  </Switch>
+                </NewsContextProvider>
+              </ArticlesContextProvider>
+            </StreamsContextProvider>
+            <Footer/>
+          </BrowserRouter>
+        </Suspense>
+      </AuthContextProvider>
+    </div>
+  );
 }
 
 export default App;

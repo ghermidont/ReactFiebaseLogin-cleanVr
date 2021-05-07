@@ -29,6 +29,7 @@
     color: var(--white);
     transition: all 0.3s;
     position: relative;
+    text-transform: uppercase;
 
     &:hover,
     &:focus {
@@ -139,6 +140,7 @@
   &__link {
     width: 100%;
     font-size: 1.8rem;
+    text-transform: uppercase;
     padding: 0.8rem 1rem;
     color: var(--blueLight);
     transition: all 0.3s;

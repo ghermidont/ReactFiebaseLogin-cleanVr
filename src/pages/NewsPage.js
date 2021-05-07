@@ -5,6 +5,7 @@ import React from 'react';
 import {useDataFromFirestore} from '../customHooks/useFirestore';
 import {Link} from "react-router-dom";
 import {useNewsContext} from "../context/NewsContext";
+import logoSection from '../assets/images/dest/logo-section.png';
 
 
 export default function ArticlesList() {
@@ -60,6 +61,9 @@ export default function ArticlesList() {
     <>
       <section className="news-banner">
         <div className="container">
+          <div className="info__logo logo-section">
+            <img src={logoSection} alt="" className="info__img"/>
+          </div>
           <h1 className="news-banner__title title"><span>News</span></h1>
           <p className="news-banner__subtitle">Le ultime della community</p>
           <div className="tab__body">
